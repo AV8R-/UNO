@@ -25,6 +25,8 @@ public enum CalculatorError: Error {
     case requestedPosition(Int, outOfExistingRoundRange: Range<Int>)
     /// Attempt to create round with players other than plaing the game
     case inconsistentRound(allPlayers: [Player], got: [Player])
+    /// Attempt to get info about player that does not participate in the game
+    case requestedPlayerDoesNotParticipate(all: [Player], requested: Player)
 }
 
 /// The main UNO-game calculator. Holds all the game info: players and thier
@@ -32,6 +34,9 @@ public enum CalculatorError: Error {
 public protocol Calculating {
     /// All players participating in the game
     var players: [Player] { get }
+    
+    /// Rounds have calculated to this moment
+    var roundsCount: Int { get }
     
     /// Get total scroes for all players in specified range
     ///
@@ -57,7 +62,7 @@ public protocol Calculating {
     ///     array must be persist in returned Round
     ///
     /// - Throws `CalculatorError.inconsistentRound(allPlayers:_,got:_)`
-    func addRound(_ createRoundHandler: (_ for: [Player])->[Player: Int]) throws
+    mutating func addRound(_ createRoundHandler: (_ for: [Player])->[Player: Int]) throws
 }
 
 extension Player: Hashable {

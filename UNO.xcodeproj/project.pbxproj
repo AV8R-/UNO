@@ -23,6 +23,7 @@
 		307D5903202D14C3007C899D /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307D58EE202D14C3007C899D /* Services.framework */; };
 		307D5904202D14C3007C899D /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 307D58EE202D14C3007C899D /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		307D590C202D14FE007C899D /* Calculating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D590B202D14FE007C899D /* Calculating.swift */; };
+		307D590E202E5A12007C899D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D590D202E5A12007C899D /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		307D58FD202D14C3007C899D /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		307D58FF202D14C3007C899D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		307D590B202D14FE007C899D /* Calculating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculating.swift; sourceTree = "<group>"; };
+		307D590D202E5A12007C899D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +205,9 @@
 		307D58EF202D14C3007C899D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				307D590F202E5A36007C899D /* Calculating */,
 				307D58F0202D14C3007C899D /* Services.h */,
 				307D58F1202D14C3007C899D /* Info.plist */,
-				307D590B202D14FE007C899D /* Calculating.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -217,6 +219,15 @@
 				307D58FF202D14C3007C899D /* Info.plist */,
 			);
 			path = ServicesTests;
+			sourceTree = "<group>";
+		};
+		307D590F202E5A36007C899D /* Calculating */ = {
+			isa = PBXGroup;
+			children = (
+				307D590B202D14FE007C899D /* Calculating.swift */,
+				307D590D202E5A12007C899D /* Calculator.swift */,
+			);
+			path = Calculating;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +450,7 @@
 				307D58B6202D12F7007C899D /* ViewController.swift in Sources */,
 				307D58E6202D13C3007C899D /* Player.swift in Sources */,
 				307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */,
+				307D590E202E5A12007C899D /* Calculator.swift in Sources */,
 				307D590C202D14FE007C899D /* Calculating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
