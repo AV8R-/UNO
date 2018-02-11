@@ -69,6 +69,13 @@
 			remoteGlobalIDString = 307D58ED202D14C3007C899D;
 			remoteInfo = Services;
 		};
+		30B842F720306EBA008C4367 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30C6AF2D202F0BEB00B6CF2D /* Quick.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5D117B19473F2100F6D13D;
+			remoteInfo = "Quick-iOS";
+		};
 		30C6AFAA202F0BEB00B6CF2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30C6AE82202F0BEA00B6CF2D /* Nimble.xcodeproj */;
@@ -564,6 +571,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				30B842F820306EBA008C4367 /* PBXTargetDependency */,
 				307D58F9202D14C3007C899D /* PBXTargetDependency */,
 				307D58FB202D14C3007C899D /* PBXTargetDependency */,
 			);
@@ -881,6 +889,11 @@
 			isa = PBXTargetDependency;
 			target = 307D58ED202D14C3007C899D /* Services */;
 			targetProxy = 307D5901202D14C3007C899D /* PBXContainerItemProxy */;
+		};
+		30B842F820306EBA008C4367 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Quick-iOS";
+			targetProxy = 30B842F720306EBA008C4367 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

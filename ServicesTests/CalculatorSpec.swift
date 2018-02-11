@@ -21,20 +21,24 @@ final class CalculatorSpec: QuickSpec {
     }
     
     override func spec() {
+        var calculator: Calculating!
+
         let players = try! ["First", "Second"].map(Player.init)
         let limit = 500
         let creating = MockCreating(players: players, rules: .min(limit: limit))
+        let firstPlayerScoresPerRound = 5
+        let secondPlayerScoresPerRound = 10
+
+        let round = { (_: [Player]) -> [Player : Int] in
+            return [
+                players[0]: firstPlayerScoresPerRound,
+                players[1]: secondPlayerScoresPerRound
+            ]
+        }
         
         describe("calculator") {
-            var calculator: Calculating = Calculator(creator: creating)
-            let firstPlayerScoresPerRound = 5
-            let secondPlayerScoresPerRound = 10
-            
-            let round = { (_: [Player]) -> [Player : Int] in
-                return [
-                    players[0]: firstPlayerScoresPerRound,
-                    players[1]: secondPlayerScoresPerRound
-                ]
+            beforeEach {
+                calculator = Calculator(creator: creating)
             }
             
             it("should add rounds") {
@@ -53,6 +57,7 @@ final class CalculatorSpec: QuickSpec {
             
             it("sould retrieve scores for one round") {
                 do {
+                    try! calculator.addRound(round)
                     let scores = try calculator.score(for: players.first!, within: .just(0))
                     expect(scores).to(equal(firstPlayerScoresPerRound))
                 } catch {
@@ -62,6 +67,8 @@ final class CalculatorSpec: QuickSpec {
             
             it("sould retrieve scores for range of rounds") {
                 do {
+                    try calculator.addRound(round)
+                    try calculator.addRound(round)
                     let scores = try calculator
                         .score(for: players.first!, within: .range(0..<2))
                     expect(scores).to(equal(firstPlayerScoresPerRound*2))
@@ -73,6 +80,10 @@ final class CalculatorSpec: QuickSpec {
             
             it("should retrieve total scores") {
                 do {
+                    try calculator.addRound(round)
+                    try calculator.addRound(round)
+                    try calculator.addRound(round)
+                    
                     let scores = try calculator
                         .score(for: players.first!, within: .total)
                     let perRound = firstPlayerScoresPerRound
@@ -82,6 +93,22 @@ final class CalculatorSpec: QuickSpec {
                 } catch {
                     fail("\(error)")
                 }
+            }
+            
+            it("should finish the game when limit reached") {
+                let lastRound = { (_: [Player]) -> [Player: Int] in
+                    return [players[0]: limit, players[1]: 0]
+                }
+                var gameOverCalls = 0
+                calculator.gameOverHandler = { _ in
+                    gameOverCalls += 1
+                }
+                do {
+                    try calculator.addRound(lastRound)
+                } catch {
+                    fail("\(error)")
+                }
+                expect(gameOverCalls).to(equal(1))
             }
             
         }
