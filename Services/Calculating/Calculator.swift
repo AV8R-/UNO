@@ -7,19 +7,27 @@
 //
 
 import Foundation
+import Model
 
-struct Calculator: Calculating {
+internal struct Calculator: Calculating {
+    
     var players: [Player] {
         return scores.keys.map { $0 }
     }
+    
     private(set) var roundsCount = 0
+    
+    let limit: Int
+
+    var gameOverHandler: (([Player : Int]) -> Void)?
     
     private var scores: [Player: [Int]]
     
-    init(players: [Player]) {
-        self.scores = players
+    init(creator: GameCreating) {
+        self.scores = creator.players
             .map { ($0, [Int]()) }
             .toDictionary()
+        self.limit = creator.scoresLimit
     }
 
     func score(within: RoundRange) throws -> [Player: Int] {
@@ -67,6 +75,18 @@ struct Calculator: Calculating {
             return scores
         }
         roundsCount += 1
+        
+        checkIsOver()
+    }
+    
+    private func checkIsOver() {
+        let accumulated = scores
+            .map { ($0.key, $0.value.reduce(0) {$0+$1}) }
+            .toDictionary()
+        
+        if let _ = accumulated.first(where: { $0.value >= limit }) {
+            gameOverHandler?(accumulated)
+        }
     }
 }
 

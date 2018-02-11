@@ -30,13 +30,19 @@ public enum CalculatorError: Error {
 }
 
 /// The main UNO-game calculator. Holds all the game info: players and thier
-/// scores by rounds.
+/// scores by rounds. In can be initialized with a `GameCreator`
 public protocol Calculating {
     /// All players participating in the game
     var players: [Player] { get }
     
     /// Rounds have calculated to this moment
     var roundsCount: Int { get }
+    
+    /// Scores limit
+    var limit: Int { get }
+    
+    /// Handler that will be called when on of the players will exceed score limit
+    var gameOverHandler: (([Player: Int]) -> Void)? { set get }
     
     /// Get total scroes for all players in specified range
     ///
@@ -55,6 +61,8 @@ public protocol Calculating {
     func score(for: Player, within: RoundRange) throws -> Int
     
     /// Add round. Round should be formed in given callback.
+    ///
+    /// It can trigger `gameOverHandler(_:)` if some player exceeded score limit
     ///
     /// - Parameters:
     ///   - createRoundHandler: callback to create and return round from
