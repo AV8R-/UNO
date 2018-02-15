@@ -23,11 +23,12 @@ internal struct Calculator: Calculating {
     
     private var scores: [Player: [Int]]
     
-    init(creator: GameCreating) {
-        self.scores = creator.players
+    /// Throws error of type `ValidationError`
+    init(rules: Rules, players: [Player]) throws {
+        self.scores = players
             .map { ($0, [Int]()) }
             .toDictionary()
-        self.limit = creator.scoresLimit
+        self.limit = try rules.limit()
     }
 
     func score(within: RoundRange) throws -> [Player: Int] {

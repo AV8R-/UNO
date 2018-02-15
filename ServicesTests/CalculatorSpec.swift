@@ -41,76 +41,83 @@ final class CalculatorSpec: QuickSpec {
                 calculator = Calculator(creator: creating)
             }
             
-            it("should add rounds") {
-                do {
-                    try calculator.addRound(round)
-                } catch {
-                    fail("\(error)")
+            describe("add round") {
+                it("executes without thorwing") {
+                    do {
+                        try calculator.addRound(round)
+                    } catch {
+                        fail("\(error)")
+                    }
                 }
-            }
-            
-            it("should increment rounds count on round add") {
-                let rounds = calculator.roundsCount
-                try! calculator.addRound(round)
-                expect(rounds+1).to(equal(calculator.roundsCount))
-            }
-            
-            it("sould retrieve scores for one round") {
-                do {
-                    try! calculator.addRound(round)
-                    let scores = try calculator.score(for: players.first!, within: .just(0))
-                    expect(scores).to(equal(firstPlayerScoresPerRound))
-                } catch {
-                    fail("\(error)")
-                }
-            }
-            
-            it("sould retrieve scores for range of rounds") {
-                do {
-                    try calculator.addRound(round)
-                    try calculator.addRound(round)
-                    let scores = try calculator
-                        .score(for: players.first!, within: .range(0..<2))
-                    expect(scores).to(equal(firstPlayerScoresPerRound*2))
-                } catch {
-                    fail("\(error)")
-                }
-
-            }
-            
-            it("should retrieve total scores") {
-                do {
-                    try calculator.addRound(round)
-                    try calculator.addRound(round)
-                    try calculator.addRound(round)
-                    
-                    let scores = try calculator
-                        .score(for: players.first!, within: .total)
-                    let perRound = firstPlayerScoresPerRound
+                
+                it("increments rounds count") {
                     let rounds = calculator.roundsCount
-                    let total = perRound * rounds
-                    expect(scores).to(equal(total))
-                } catch {
-                    fail("\(error)")
+                    try! calculator.addRound(round)
+                    expect(rounds+1).to(equal(calculator.roundsCount))
                 }
             }
             
-            it("should finish the game when limit reached") {
-                let lastRound = { (_: [Player]) -> [Player: Int] in
-                    return [players[0]: limit, players[1]: 0]
+            describe("scores") {
+                context("with 3 rounds played") {
+                    beforeEach {
+                        try! calculator.addRound(round)
+                        try! calculator.addRound(round)
+                        try! calculator.addRound(round)
+                    }
+                    
+                    it("calculates for one round") {
+                        do {
+                            let scores = try calculator
+                                .score(for: players.first!, within: .just(0))
+                            expect(scores).to(equal(firstPlayerScoresPerRound))
+                        } catch {
+                            fail("\(error)")
+                        }
+                    }
+                    
+                    it("calculates for two rounds") {
+                        do {
+                            let scores = try calculator
+                                .score(for: players.first!, within: .range(0..<2))
+                            expect(scores).to(equal(firstPlayerScoresPerRound*2))
+                        } catch {
+                            fail("\(error)")
+                        }
+                    }
+                    
+                    it("calculates for all rounds") {
+                        do {
+                            let scores = try calculator
+                                .score(for: players.first!, within: .total)
+                            let perRound = firstPlayerScoresPerRound
+                            let rounds = calculator.roundsCount
+                            let total = perRound * rounds
+                            expect(scores).to(equal(total))
+                        } catch {
+                            fail("\(error)")
+                        }
+
+                    }
                 }
-                var gameOverCalls = 0
-                calculator.gameOverHandler = { _ in
-                    gameOverCalls += 1
-                }
-                do {
-                    try calculator.addRound(lastRound)
-                } catch {
-                    fail("\(error)")
-                }
-                expect(gameOverCalls).to(equal(1))
             }
             
+            describe("finish") {
+                it("triggers on limint reached") {
+                    let lastRound = { (_: [Player]) -> [Player: Int] in
+                        return [players[0]: limit, players[1]: 0]
+                    }
+                    var gameOverCalls = 0
+                    calculator.gameOverHandler = { _ in
+                        gameOverCalls += 1
+                    }
+                    do {
+                        try calculator.addRound(lastRound)
+                    } catch {
+                        fail("\(error)")
+                    }
+                    expect(gameOverCalls).to(equal(1))
+                }
+            }
         }
     }
 }

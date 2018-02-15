@@ -9,8 +9,29 @@
 import Foundation
 import Model
 
-internal protocol GameCreating {
-    var players: [Player] { get }
-    var rules: Rules { get }
-    var scoresLimit: Int { get }
+/// Error in creating the game
+enum CreateGameError: Error {
+    /// Wrong players count
+    case wrongPlayersCount(got: Int, min: Int, max: Int)
+}
+
+public protocol GameCreating {
+    
+    /// Players from the history
+    var recentPlayers: [Player] { get }
+    
+    /// Add player to the game. If player was in recents,
+    /// it will be deleted from that one.
+    ///
+    /// - Rethrows errors of type `ValidationError`
+    mutating func add(player: Player) throws
+    
+    /// Remove player for the game. If player was in recents,
+    /// it will be recovered in that one.
+    mutating func remove(player: Player)
+    
+    /// Make calculator for the game
+    ///
+    /// - Throws Errors of types `CreateGameError`, `ValidationError`
+    func makeGame(rules: Rules) throws -> Calculating
 }

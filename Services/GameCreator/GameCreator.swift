@@ -1,43 +1,47 @@
 //
-//  GameCreating.swift
+//  GameCreator.swift
 //  Services
 //
-//  Created by Богдан Маншилин on 11/02/2018.
+//  Created by Богдан Маншилин on 15/02/2018.
 //  Copyright © 2018 BManshilin. All rights reserved.
 //
 
 import Foundation
 import Model
 
-/// Error in creating the game
-enum CreateGameError: Error {
-    /// Rules was not set to the Game Creator
-    case rulesWasNotChosen
+struct GameCreator: GameCreating {
+    enum Constants {
+        static let minPlayers = 2
+        static let maxPlayers = 12
+    }
     
-    /// 
-    case wrongPlayersCount(got: Int, min: Int, max: Int)
-}
-
-public protocol GameCreator {
+    var players: [Player] = []
     
-    /// Players from the history
-    var recentPlayers: [Player] { get }
+    var recentPlayers: [Player] {
+        return []
+    }
     
-    /// Choose the rules for the game
-    func set(rules: Rules)
+    mutating func add(player: Player) throws {
+        players.append(player)
+    }
     
-    /// Add player to the game. If player was in recents,
-    /// it will be deleted from that one.
-    ///
-    /// - Rethrows errors of type `ValidationError`
-    func add(player: Player) throws
+    mutating func remove(player: Player) {
+        players = players.filter { $0.name != player.name }
+    }
     
-    /// Remove player for the game. If player was in recents,
-    /// it will be recovered in that one.
-    func remove(player: Player)
+    func makeGame(rules: Rules) throws -> Calculating {
+        guard players.count + 1 > Constants.minPlayers ||
+            players.count + 1 < Constants.minPlayers else
+        {
+            throw CreateGameError.wrongPlayersCount(
+                got: players.count,
+                min: Constants.minPlayers,
+                max: Constants.maxPlayers
+            )
+        }
+        
+        return try Calculator(rules: rules, players: players)
+    }
     
-    /// Make calculator for the game
-    ///
-    /// - Throws Errors of type `CreateGameError`
-    func makeGame() throws -> Calculating
+    
 }
