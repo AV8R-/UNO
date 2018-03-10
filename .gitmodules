@@ -1,3 +1,6 @@
 [submodule "Dependencies/Quick"]
 	path = Dependencies/Quick
 	url = git@github.com:Quick/Quick.git
+[submodule "Dependencies/AttributedTextView"]
+	path = Dependencies/AttributedTextView
+	url = git@github.com:evermeer/AttributedTextView.git

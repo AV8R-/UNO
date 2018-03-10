@@ -8,6 +8,7 @@
 
 import UIKit
 import Core_UI
+import AttributedTextView
 
 public final class MainMenuView: UIViewController {
     
@@ -79,16 +80,18 @@ public final class MainMenuView: UIViewController {
         // Title
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.unoFont(forTextStyle: .headline)
         titleLabel.adjustsFontForContentSizeCategory = true
-        titleLabel.text = "UNO"
-        titleLabel.textColor = UIColor(red: 242/255.0, green: 201/255.0, blue: 76/255.0, alpha: 1)
-        titleLabel.layer.borderColor = UIColor.white.cgColor
-        titleLabel.layer.borderWidth = 1
+        titleLabel.attributedText = "UNO"
+            .color(UIColor(red: 242/255.0, green: 201/255.0, blue: 76/255.0, alpha: 1))
+            .font(UIFont.unoFont(forTextStyle: .headline))
+            .strokeColor(.white)
+            .strokeWidth(-1)
+            .attributedText
+        titleLabel.layer.shadowOpacity = 1
+        titleLabel.layer.shadowRadius = 4
         titleLabel.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         titleLabel.layer.shadowOffset = CGSize(width: 0, height: 4)
-        titleLabel.layer.shadowRadius = 4
-        titleLabel.layer.shadowOpacity = 1
+
         view.addSubview(titleLabel)
         
         // Constraints
