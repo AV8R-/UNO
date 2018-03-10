@@ -8,22 +8,24 @@
 
 import Foundation
 
-extension UIFont {
-    class func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
+public extension UIFont {
+    private static func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
         switch forTextStyle {
         case .headline: return 72
+        case .title1: return 24
         default: return 14
         }
     }
     
-    class func prefferedFontName(forTextStyle: UIFontTextStyle) -> String {
+    private static func prefferedFontName(forTextStyle: UIFontTextStyle) -> String {
         switch forTextStyle {
         case .headline: return "HelveticaNeue-CondensedBold"
+        case .title1: return "HelveticaNeue-CondensedBlack"
         default: return "HelveticaNeue"
         }
     }
     
-    class func unoFont(forTextStyle: UIFontTextStyle) -> UIFont {
+    public class func unoFont(forTextStyle: UIFontTextStyle) -> UIFont {
         return UIFontMetrics(forTextStyle: forTextStyle)
             .scaledFont(for: UIFont(
                 name: prefferedFontName(forTextStyle: forTextStyle),

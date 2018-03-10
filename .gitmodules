@@ -4,3 +4,6 @@
 [submodule "Dependencies/AttributedTextView"]
 	path = Dependencies/AttributedTextView
 	url = git@github.com:evermeer/AttributedTextView.git
+[submodule "Dependencies/SwiftUtils"]
+	path = Dependencies/SwiftUtils
+	url = git@github.com:AV8R-/SwiftUtils.git

@@ -14,8 +14,9 @@ public final class MainMenuView: UIViewController {
     
     enum Constants {
         static let cellReuse = "cell"
-        static let cellSize = CGSize(width: 160, height: 232)
         static let bundle = Bundle(for: MainMenuView.self)
+        static let titles = ["START NEW", "CONTINUE", "HISTORY", "RULES"]
+            .map { NSLocalizedString($0, comment: "") }
         static let backgrounds: [UIImage] = [
             UIImage(named: "card_green", in: bundle, compatibleWith: nil)!,
             UIImage(named: "card_yellow", in: bundle, compatibleWith: nil)!,
@@ -40,17 +41,12 @@ public final class MainMenuView: UIViewController {
         
         public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuse, for: indexPath)
-            cell.contentView.backgroundColor = .black
-            let bg = UIImageView(image: Constants.backgrounds[indexPath.item])
-            cell.contentView.addSubview(bg)
-            cell.contentView.backgroundColor = .clear
-            bg.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                bg.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
-                bg.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
-                bg.leftAnchor.constraint(equalTo: cell.contentView.leftAnchor),
-                bg.rightAnchor.constraint(equalTo: cell.contentView.rightAnchor),
-            ])
+            
+            let card = CardButton(background: Constants.backgrounds[indexPath.item], title: Constants.titles[indexPath.item])
+            
+            cell.contentView.addSubview(card)
+            try! card.constrainSuperview()
+            
             return cell
         }
     }
@@ -82,7 +78,7 @@ public final class MainMenuView: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.attributedText = "UNO"
-            .color(UIColor(red: 242/255.0, green: 201/255.0, blue: 76/255.0, alpha: 1))
+            .color(UIColor(red: 248/255.0, green: 201/255.0, blue: 33/255.0, alpha: 1))
             .font(UIFont.unoFont(forTextStyle: .headline))
             .strokeColor(.white)
             .strokeWidth(-1)
