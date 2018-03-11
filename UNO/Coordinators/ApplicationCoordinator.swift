@@ -12,25 +12,18 @@ import Views
 final class ApplicationCoordinator: Coordinator {
     let window: UIWindow
     let rootViewController: UINavigationController
+    let mainMenu: MainMenuCoordinator
     
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
         rootViewController.isNavigationBarHidden = true
-        
-        let mainMenu = MainMenuView()
-        mainMenu.delegate = self
-        rootViewController.pushViewController(mainMenu, animated: false)
+        mainMenu = MainMenuCoordinator(presenter: rootViewController)
     }
     
     func start() {
+        mainMenu.start()
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-    }
-}
-
-extension ApplicationCoordinator: MainMenuDelegate {
-    func didSelect(menuItem: MainMenuView.MenuItem) {
-        print("didSelect \(menuItem)")
     }
 }
