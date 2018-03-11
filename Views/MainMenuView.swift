@@ -10,26 +10,59 @@ import UIKit
 import Core_UI
 import AttributedTextView
 
+public protocol MainMenuDelegate: class {
+    func didSelect(menuItem: MainMenuView.MenuItem)
+}
+
 public final class MainMenuView: UIViewController {
+    
+    public enum MenuItem {
+        case start, `continue`, history, rules
+        
+        fileprivate var title: String {
+            let title: String
+            switch self {
+            case .start: title = "START NEW"
+            case .continue: title = "CONTINUE"
+            case .history: title = "HISTORY"
+            case .rules: title = "RULES"
+            }
+            return NSLocalizedString(title, comment: "")
+        }
+        
+        fileprivate var background: UIImage {
+            let bundle = Constants.bundle
+            let title: String
+            switch self {
+            case .start: title = "card_green"
+            case .continue: title = "card_yellow"
+            case .history: title = "card_blue"
+            case .rules: title = "card_red"
+            }
+            return UIImage(named: title, in: bundle, compatibleWith: nil)!
+        }
+            
+    }
     
     enum Constants {
         static let cellReuse = "cell"
         static let bundle = Bundle(for: MainMenuView.self)
-        static let titles = ["START NEW", "CONTINUE", "HISTORY", "RULES"]
-            .map { NSLocalizedString($0, comment: "") }
-        static let backgrounds: [UIImage] = [
-            UIImage(named: "card_green", in: bundle, compatibleWith: nil)!,
-            UIImage(named: "card_yellow", in: bundle, compatibleWith: nil)!,
-            UIImage(named: "card_blue", in: bundle, compatibleWith: nil)!,
-            UIImage(named: "card_red", in: bundle, compatibleWith: nil)!,
-            ]
     }
     
-    public final class MenuCollectionController: UICollectionViewController {
+    enum DataSource {
+        static let items: [MenuItem] = [.start, .continue, .history, .rules]
+    }
+    
+    public weak var delegate: MainMenuDelegate?
+    
+    internal final class MenuCollectionController: UICollectionViewController {
+        weak var delegate: MainMenuDelegate?
+
         public override func viewDidLoad() {
             super.viewDidLoad()
             collectionView?.backgroundColor = .clear
             collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.cellReuse)
+            collectionView?.clipsToBounds = false
         }
         public override func numberOfSections(in collectionView: UICollectionView) -> Int {
             return 1
@@ -40,10 +73,18 @@ public final class MainMenuView: UIViewController {
         }
         
         public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuse, for: indexPath)
-            
-            let card = CardButton(background: Constants.backgrounds[indexPath.item], title: Constants.titles[indexPath.item])
-            
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: Constants.cellReuse,
+                for: indexPath
+            )
+            let card = CardButton(
+                background: DataSource.items[indexPath.item].background,
+                title: DataSource.items[indexPath.item].title
+            )
+            card.onPress = { [weak self] in
+                self?.delegate?
+                    .didSelect(menuItem: DataSource.items[indexPath.item])
+            }
             cell.contentView.addSubview(card)
             try! card.constrainSuperview()
             
@@ -61,7 +102,6 @@ public final class MainMenuView: UIViewController {
         view.addSubview(bg)
         
         // Buttons
-        
         let layout = UICollectionViewFlowLayout()
         let width = (view.bounds.width - 60)/2
         let height = width * 232/160
@@ -72,6 +112,8 @@ public final class MainMenuView: UIViewController {
         buttons.willMove(toParentViewController: self)
         addChildViewController(buttons)
         view.addSubview(buttons.view)
+        buttons.didMove(toParentViewController: self)
+        buttons.delegate = self
 
         // Title
         let titleLabel = UILabel()
@@ -91,7 +133,6 @@ public final class MainMenuView: UIViewController {
         view.addSubview(titleLabel)
         
         // Constraints
-        
         NSLayoutConstraint.activate([
             bg.topAnchor.constraint(equalTo: view.topAnchor),
             bg.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -106,7 +147,11 @@ public final class MainMenuView: UIViewController {
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 32),
         ])
-        
     }
-    
+}
+
+extension MainMenuView: MainMenuDelegate {
+    public func didSelect(menuItem: MainMenuView.MenuItem) {
+        delegate?.didSelect(menuItem: menuItem)
+    }
 }

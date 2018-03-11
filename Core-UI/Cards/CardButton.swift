@@ -10,8 +10,28 @@ import UIKit
 import AttributedTextView
 
 public final class CardButton: ComplexButton {
+    override public var isHighlighted: Bool { didSet {
+        let animator = UIViewPropertyAnimator(
+            duration: 0.05,
+            curve: UIViewAnimationCurve.easeOut
+        ) {
+            self.transform = self.isHighlighted
+                ? CGAffineTransform.identity.scaledBy(x: 1.05, y: 1.05)
+                : CGAffineTransform.identity
+            
+            self.layer.shadowOpacity = self.isHighlighted
+                ? 0.3
+                : 0
+        }
+        animator.startAnimation()
+    }}
+    
     public init(background: UIImage, title: String) {
         super.init(frame: .zero)
+        shouldMakeTranclucentOnHiglhlight = false
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 10
         
         let bg = UIImageView(image: background)
         addSubview(bg)

@@ -13,14 +13,16 @@ import Views
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.rootViewController = MainMenuView()
-        window?.makeKeyAndVisible()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = .white
+        let coordinator = ApplicationCoordinator(window: window)
+        coordinator.start()
+        self.window = window
+        self.coordinator = coordinator
 
         // Override point for customization after application launch.
         return true

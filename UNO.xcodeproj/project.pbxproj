@@ -86,6 +86,8 @@
 		30D1434320546AB800B1D186 /* UITextViewFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431A205466E800B1D186 /* UITextViewFixed.swift */; };
 		30D1434420546AB800B1D186 /* UIView+Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431B205466E800B1D186 /* UIView+Constrain.swift */; };
 		30D1434520546AB800B1D186 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431C205466E800B1D186 /* UIView+Utils.swift */; };
+		30D143472055269500B1D186 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D143462055269500B1D186 /* Coordinator.swift */; };
+		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D30E97203509B300BFB904 /* Views.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D30E8E203509B300BFB904 /* Views.framework */; };
 		30D30E9E203509B300BFB904 /* ViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30E9D203509B300BFB904 /* ViewsTests.swift */; };
 		30D30EA0203509B300BFB904 /* Views.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D30E90203509B300BFB904 /* Views.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -424,6 +426,8 @@
 		30D1431A205466E800B1D186 /* UITextViewFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFixed.swift; sourceTree = "<group>"; };
 		30D1431B205466E800B1D186 /* UIView+Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constrain.swift"; sourceTree = "<group>"; };
 		30D1431C205466E800B1D186 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		30D143462055269500B1D186 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		30D14348205526C600B1D186 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		30D30E8E203509B300BFB904 /* Views.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Views.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D30E90203509B300BFB904 /* Views.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Views.h; sourceTree = "<group>"; };
 		30D30E91203509B300BFB904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -584,6 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				307D58B3202D12F7007C899D /* AppDelegate.swift */,
+				30D1434A205526CF00B1D186 /* Coordinators */,
 				307D58BA202D12F7007C899D /* Assets.xcassets */,
 				307D58BC202D12F7007C899D /* LaunchScreen.storyboard */,
 				307D58BF202D12F7007C899D /* Info.plist */,
@@ -812,6 +817,15 @@
 				30D14310205466E800B1D186 /* StringConvertable.swift */,
 			);
 			path = JsonTools;
+			sourceTree = "<group>";
+		};
+		30D1434A205526CF00B1D186 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				30D143462055269500B1D186 /* Coordinator.swift */,
+				30D14348205526C600B1D186 /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		30D30E8F203509B300BFB904 /* Views */ = {
@@ -1421,7 +1435,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D143472055269500B1D186 /* Coordinator.swift in Sources */,
 				307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */,
+				30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
