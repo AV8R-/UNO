@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Views
 
 final class StartGameCoordinator: Coordinator {
     
@@ -18,8 +19,7 @@ final class StartGameCoordinator: Coordinator {
     }
     
     func start() {
-        let startController = UIViewController()
-        startController.view.backgroundColor = .cyan
+        let startController = StartNewGameView()
         presenter.pushViewController(startController, animated: true)
     }
 }

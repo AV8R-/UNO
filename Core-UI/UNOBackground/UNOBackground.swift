@@ -9,7 +9,7 @@
 import UIKit
 
 public final class UNOBackground: UIView {
-    var colors = [
+    public var colors = [
         UIColor(red: 255/255.0, green: 182/255.0, blue: 0, alpha: 1),
         UIColor(red: 236/255.0, green: 27/255.0, blue: 35/255.0, alpha: 1),
     ]

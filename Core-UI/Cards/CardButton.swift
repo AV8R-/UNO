@@ -19,9 +19,9 @@ public final class CardButton: ComplexButton {
                 ? CGAffineTransform.identity.scaledBy(x: 1.05, y: 1.05)
                 : CGAffineTransform.identity
             
-            self.layer.shadowOpacity = self.isHighlighted
-                ? 0.3
-                : 0
+            self.layer.shadowRadius = self.isHighlighted
+                ? 10
+                : 4
         }
         animator.startAnimation()
     }}
@@ -31,7 +31,9 @@ public final class CardButton: ComplexButton {
         shouldMakeTranclucentOnHiglhlight = false
         
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 10
+        layer.shadowRadius = 4
+        layer.shadowOffset = CGSize(width: 0, height: 4)
+        layer.shadowOpacity = 0.6
         
         let bg = UIImageView(image: background)
         addSubview(bg)

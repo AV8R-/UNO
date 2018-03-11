@@ -90,6 +90,7 @@
 		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
+		30D14350205581C500B1D186 /* StartNewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434F205581C500B1D186 /* StartNewGameView.swift */; };
 		30D30E97203509B300BFB904 /* Views.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D30E8E203509B300BFB904 /* Views.framework */; };
 		30D30E9E203509B300BFB904 /* ViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30E9D203509B300BFB904 /* ViewsTests.swift */; };
 		30D30EA0203509B300BFB904 /* Views.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D30E90203509B300BFB904 /* Views.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -432,6 +433,7 @@
 		30D14348205526C600B1D186 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
 		30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordiantor.swift; sourceTree = "<group>"; };
+		30D1434F205581C500B1D186 /* StartNewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameView.swift; sourceTree = "<group>"; };
 		30D30E8E203509B300BFB904 /* Views.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Views.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D30E90203509B300BFB904 /* Views.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Views.h; sourceTree = "<group>"; };
 		30D30E91203509B300BFB904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				30D30E91203509B300BFB904 /* Info.plist */,
 				30D30EBE203509D700BFB904 /* MainMenuView.swift */,
 				30D30EC82036243000BFB904 /* Resources.xcassets */,
+				30D1434F205581C500B1D186 /* StartNewGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1498,6 +1501,7 @@
 				30D1434020546AB800B1D186 /* UIColor+random.swift in Sources */,
 				30D1433820546AB700B1D186 /* StrictTypes.swift in Sources */,
 				30D1434520546AB800B1D186 /* UIView+Utils.swift in Sources */,
+				30D14350205581C500B1D186 /* StartNewGameView.swift in Sources */,
 				30D1433320546AB700B1D186 /* AVCaptureDevice+Permissions.swift in Sources */,
 				30D1433C20546AB800B1D186 /* PHPhotoLibrary+Permissions.swift in Sources */,
 				30D1433E20546AB800B1D186 /* ScrollZone.swift in Sources */,
