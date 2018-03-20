@@ -9,7 +9,7 @@
 import Foundation
 
 public extension UIFont {
-    private static func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
+    public static func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
         switch forTextStyle {
         case .headline: return 72
         case .title1: return 24

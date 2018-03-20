@@ -15,8 +15,6 @@
 		3049167C20350085006DC13D /* Core_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3049166C20350085006DC13D /* Core_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3049167F20350085006DC13D /* Core_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3049166A20350085006DC13D /* Core_UI.framework */; };
 		3049168020350085006DC13D /* Core_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3049166A20350085006DC13D /* Core_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3049169B203500AD006DC13D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049169A203500AD006DC13D /* Step.swift */; };
-		3049169D20350160006DC13D /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049169C20350160006DC13D /* Memento.swift */; };
 		3049169F2035055C006DC13D /* GameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049169E2035055C006DC13D /* GameCreator.swift */; };
 		307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D58B3202D12F7007C899D /* AppDelegate.swift */; };
 		307D58BB202D12F7007C899D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307D58BA202D12F7007C899D /* Assets.xcassets */; };
@@ -98,6 +96,12 @@
 		30D30EA4203509B300BFB904 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D30E8E203509B300BFB904 /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30D30EBF203509D700BFB904 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30EBE203509D700BFB904 /* MainMenuView.swift */; };
 		30D30EC92036243000BFB904 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
+		30FDF4E520615AD400857066 /* StepProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4E420615AD400857066 /* StepProgressButton.swift */; };
+		30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4FE20615C5E00857066 /* ProgressView.swift */; };
+		30FDF50120615CA900857066 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50020615CA900857066 /* Step.swift */; };
+		30FDF50320615CC400857066 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50220615CC400857066 /* PageView.swift */; };
+		30FDF50520615D4D00857066 /* Reference.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 30FDF50420615D4D00857066 /* Reference.rtf */; };
+		30FDF5072061689C00857066 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF5062061689C00857066 /* StepsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,8 +379,6 @@
 		3049167220350085006DC13D /* Core-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3049167920350085006DC13D /* Core_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_UITests.swift; sourceTree = "<group>"; };
 		3049167B20350085006DC13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3049169A203500AD006DC13D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-		3049169C20350160006DC13D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
 		3049169E2035055C006DC13D /* GameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreator.swift; sourceTree = "<group>"; };
 		307D58B0202D12F7007C899D /* UNO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307D58B3202D12F7007C899D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -442,6 +444,12 @@
 		30D30E9F203509B300BFB904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D30EBE203509D700BFB904 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
+		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
+		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		30FDF50220615CC400857066 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		30FDF50420615D4D00857066 /* Reference.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Reference.rtf; sourceTree = "<group>"; };
+		30FDF5062061689C00857066 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -654,8 +662,12 @@
 		30BDAD1C2054141E0059DF96 /* Steps */ = {
 			isa = PBXGroup;
 			children = (
-				3049169A203500AD006DC13D /* Step.swift */,
-				3049169C20350160006DC13D /* Memento.swift */,
+				30FDF4E420615AD400857066 /* StepProgressButton.swift */,
+				30FDF4FE20615C5E00857066 /* ProgressView.swift */,
+				30FDF50020615CA900857066 /* Step.swift */,
+				30FDF50220615CC400857066 /* PageView.swift */,
+				30FDF50420615D4D00857066 /* Reference.rtf */,
+				30FDF5062061689C00857066 /* StepsViewController.swift */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -1330,6 +1342,7 @@
 			files = (
 				30D14328205466E800B1D186 /* README.md in Resources */,
 				30D14326205466E800B1D186 /* LICENSE in Resources */,
+				30FDF50520615D4D00857066 /* Reference.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1406,10 +1419,10 @@
 				30D1432F205466E800B1D186 /* UIView+Constrain.swift in Sources */,
 				30D14327205466E800B1D186 /* PHPhotoLibrary+Permissions.swift in Sources */,
 				30D1431E205466E800B1D186 /* AVCaptureDevice+Permissions.swift in Sources */,
-				3049169B203500AD006DC13D /* Step.swift in Sources */,
 				30D14324205466E800B1D186 /* StringConvertable.swift in Sources */,
 				30D1431D205466E800B1D186 /* AsyncImageView.swift in Sources */,
 				30D1432A205466E800B1D186 /* String+Size.swift in Sources */,
+				30FDF5072061689C00857066 /* StepsViewController.swift in Sources */,
 				30BDAD242054156B0059DF96 /* Beams.swift in Sources */,
 				30D1432E205466E800B1D186 /* UITextViewFixed.swift in Sources */,
 				30D14321205466E800B1D186 /* Dictionary+Merge.swift in Sources */,
@@ -1420,13 +1433,16 @@
 				30D14330205466E800B1D186 /* UIView+Utils.swift in Sources */,
 				30D1428920542C4A00B1D186 /* RadialGradientBuilder.swift in Sources */,
 				30D14323205466E800B1D186 /* StrictTypes.swift in Sources */,
+				30FDF50120615CA900857066 /* Step.swift in Sources */,
 				30D1431F205466E800B1D186 /* Chain.swift in Sources */,
 				30D1432D205466E800B1D186 /* UITableView+ReloadHeights.swift in Sources */,
+				30FDF4E520615AD400857066 /* StepProgressButton.swift in Sources */,
 				30BDAD222054149E0059DF96 /* Beam.swift in Sources */,
 				30D1432C205466E800B1D186 /* UINavigationBar+BorderColor.swift in Sources */,
 				30D14320205466E800B1D186 /* ComplexButton.swift in Sources */,
-				3049169D20350160006DC13D /* Memento.swift in Sources */,
+				30FDF50320615CC400857066 /* PageView.swift in Sources */,
 				30D14329205466E800B1D186 /* ScrollZone.swift in Sources */,
+				30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */,
 				30D14331205469F100B1D186 /* Styleguide.swift in Sources */,
 				30D14322205466E800B1D186 /* JsonTools.swift in Sources */,
 			);

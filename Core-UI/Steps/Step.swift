@@ -2,67 +2,25 @@
 //  Step.swift
 //  Core-UI
 //
-//  Created by Богдан Маншилин on 15/02/2018.
+//  Created by Богдан Маншилин on 20/03/2018.
 //  Copyright © 2018 BManshilin. All rights reserved.
 //
 
 import Foundation
 
-/**
- *  Defines a step as an asynchronus operation taking in the INPUT parameter
- *  and calling the completion block with the OUTPUT as a parameter
- *  Usually, the Step is a screen in the app
- */
 public protocol Step {
+    associatedtype Input
+    associatedtype Output
     
-    /// Alias for the INPUT parameter
-    associatedtype INPUT
-    /// Alias fot the OUTPUT parameter
-    associatedtype OUTPUT
-    
-    /**
-     Perofrm the Setp with the given *INPUT*, and calls the *completion* block with produced *OUTPUT* when done.
-     The completion block can be called multiple times - for instance, when the user goes back to change some
-     data, and than proceeds further again
-     
-     - parameter input:      input data
-     - parameter completion: completion block
-     */
-    func perform(_ input: INPUT, completion: @escaping (_ output: OUTPUT) -> Void)
-    
+    var input: Input? { set get }
+    var title: String { get }
+    var onFinish: ((Output) -> Void)? { set get }
+    var onShow: ((Self) -> Void)? { set get }
 }
 
-/**
- *  Struct wrapping the *Step* protocol to enable generic definitions of steps
- */
-public struct StepT<INPUT, OUTPUT> : Step {
-    
-    /// Perform function
-    fileprivate let _perform : (INPUT, @escaping (OUTPUT) -> Void) -> Void
-    
-    /**
-     Designated initializer. Takes an instance of *Step* protocol that matches the generic aliases and creates an instance.
-     
-     - parameter step: *Step* protocol instance
-     
-     - returns: Wrapped structure
-     */
-    public init<P : Step>(_ step: P) where P.INPUT == INPUT, P.OUTPUT == OUTPUT {
-        _perform = step.perform
-    }
-    
-    public func perform(_ input: INPUT, completion: @escaping (_ output: OUTPUT) -> Void) {
-        self._perform(input, completion)
-    }
-    
-}
-
-/// Decisions are used to remove logic from the flow code and to make that
-/// logic easily testable with unit tests.
-protocol Decision {
-    
-    associatedtype OUTPUT
-    
-    func make() -> OUTPUT
-    
+public protocol ProgressedStep: class {
+    var onChangeCanGoNext: ((Bool)->Void)? { set get }
+    var isCanGoNext: Bool { get }
+    func finish()
+    func didShow()
 }

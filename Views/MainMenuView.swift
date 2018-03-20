@@ -152,6 +152,6 @@ public final class MainMenuView: UIViewController {
 
 extension MainMenuView: MainMenuDelegate {
     public func didSelect(menuItem: MainMenuView.MenuItem) {
-//        delegate?.didSelect(menuItem: menuItem)
+        delegate?.didSelect(menuItem: menuItem)
     }
 }

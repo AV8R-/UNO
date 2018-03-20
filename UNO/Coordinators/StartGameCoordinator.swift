@@ -8,6 +8,7 @@
 
 import UIKit
 import Views
+import Core_UI
 
 final class StartGameCoordinator: Coordinator {
     
@@ -19,7 +20,7 @@ final class StartGameCoordinator: Coordinator {
     }
     
     func start() {
-        let startController = StartNewGameView()
+        let startController = StepsViewController(pages: [])
         presenter.pushViewController(startController, animated: true)
     }
 }
