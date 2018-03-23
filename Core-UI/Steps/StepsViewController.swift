@@ -11,6 +11,7 @@ import UIKit
 public class StepsViewController: UIViewController {
     let pagedContainer: PageView = .init()
     let pages: [ProgressedStep]
+    public var onClose: (() -> Void)?
     
     public init(pages: [ProgressedStep]) {
         self.pages = pages
@@ -66,6 +67,10 @@ public class StepsViewController: UIViewController {
         let progress = ProgressView(pageView: pagedContainer)
         progress.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(progress)
+        
+        progress.onClose = { [weak self] in
+            self?.onClose?()
+        }
         
         NSLayoutConstraint.activate([
             progress.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),

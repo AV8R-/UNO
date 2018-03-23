@@ -13,6 +13,8 @@ class ProgressView: UIView {
     private var steps: [ProgressedStep] = []
     private var allButtons: UIStackView
     private var pages: UIStackView
+    var onClose: (()->Void)?
+    var onFinish: (()->Void)?
     
     init(pageView: PageView) {
         allButtons = UIStackView()
@@ -22,10 +24,6 @@ class ProgressView: UIView {
         
         let backButton = StepProgressButton(kind: .back)
         allButtons.addArrangedSubview(backButton)
-        
-        backButton.onPress = { [weak pageView] in
-            pageView?.scrollBack()
-        }
         
         let spacing = UIView()
         spacing.translatesAutoresizingMaskIntoConstraints = false
@@ -54,12 +52,6 @@ class ProgressView: UIView {
         
         let forwardButton = StepProgressButton(kind: .forward(selectedColor: .green))
         allButtons.addArrangedSubview(forwardButton)
-        
-        forwardButton.onPress = { [weak pageView] in
-            if pageView?.scrollForward() == false {
-                pageView?.progressedSteps.last?.io.finish()
-            }
-        }
         
         for page in 0..<pageView.pages.arrangedSubviews.count {
             let numButton = StepProgressButton(kind: .page(num: page+1, color: .green, selectedColor: .white))
@@ -114,6 +106,19 @@ class ProgressView: UIView {
         addSubview(allButtons)
         addSubview(pages)
         self.pageView = pageView
+        
+        backButton.onPress = { [weak self] in
+            if self?.pageView?.scrollBack() == false {
+                self?.onClose?()
+            }
+        }
+        
+        forwardButton.onPress = { [weak self] in
+            if self?.pageView?.scrollForward() == false {
+                self?.pageView?.progressedSteps.last?.io.finish()
+                self?.onClose?()
+            }
+        }
         
         NSLayoutConstraint.activate([
             allButtons.topAnchor.constraint(equalTo: topAnchor),

@@ -25,5 +25,9 @@ final class StartGameCoordinator: Coordinator, Resolving {
         
         let startController = StepsViewController(pages: [rulesView])
         presenter.pushViewController(startController, animated: true)
+        
+        startController.onClose = { [weak presenter] in
+            presenter?.popViewController(animated: true)
+        }
     }
 }

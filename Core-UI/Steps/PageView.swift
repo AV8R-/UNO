@@ -97,14 +97,16 @@ class PageView: UIScrollView {
         scrollRectToVisible(page.frame, animated: true)
     }
     
-    func scrollBack() {
+    @discardableResult
+    func scrollBack() -> Bool {
         guard contentOffset.x > 0 else {
-            return
+            return false
         }
         var origin = contentOffset
         origin.x -= bounds.width
         let rect = CGRect(origin: origin, size: bounds.size)
         scrollRectToVisible(rect, animated: true)
+        return true
     }
     
     @discardableResult

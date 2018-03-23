@@ -34,8 +34,6 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         let b2 = RulesButton(title: NSLocalizedString("MIN", comment: ""))
         let limitView = UIView()
         let hintView = UIView()
-        b1.backgroundColor = .brown
-        b2.backgroundColor = .blue
         limitView.backgroundColor = .red
         hintView.backgroundColor = .cyan
         
