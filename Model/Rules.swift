@@ -46,4 +46,11 @@ public enum Rules {
             return limit
         }
     }
+    
+    public mutating func set(limit: Int) throws {
+        switch self {
+        case .max: self = try .validMax(limit: limit)
+        case .min: self = try .validMin(limit: limit)
+        }
+    }
 }

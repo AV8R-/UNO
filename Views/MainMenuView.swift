@@ -14,7 +14,9 @@ public protocol MainMenuDelegate: class {
     func didSelect(menuItem: MainMenuView.MenuItem)
 }
 
-public final class MainMenuView: UIViewController {
+public protocol MainMenuViewControlling {}
+
+public final class MainMenuView: UIViewController, MainMenuViewControlling {
     
     public enum MenuItem {
         case start, `continue`, history, rules

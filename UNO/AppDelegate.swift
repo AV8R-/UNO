@@ -8,14 +8,22 @@
 
 import UIKit
 import Views
+import ViewModels
+import Swinject
+import Services
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
+    static let container = Container()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        Services.register(container: AppDelegate.container)
+        ViewModels.register(container: AppDelegate.container)
+        Views.register(container: AppDelegate.container)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white

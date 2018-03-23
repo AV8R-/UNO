@@ -8,9 +8,10 @@
 
 import UIKit
 import Views
+import ViewModels
 import Core_UI
 
-final class StartGameCoordinator: Coordinator {
+final class StartGameCoordinator: Coordinator, Resolving {
     
     private let presenter: UINavigationController
     
@@ -19,8 +20,10 @@ final class StartGameCoordinator: Coordinator {
         
     }
     
-    func start() {
-        let startController = StepsViewController(pages: [])
+    func start() throws {
+        let rulesView: ChooseRulesViewControlling = try resolve()
+        
+        let startController = StepsViewController(pages: [rulesView])
         presenter.pushViewController(startController, animated: true)
     }
 }

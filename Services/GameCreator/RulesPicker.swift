@@ -2,26 +2,42 @@
 //  RulesPicker.swift
 //  Services
 //
-//  Created by Богдан Маншилин on 12/02/2018.
+//  Created by Богдан Маншилин on 23/03/2018.
 //  Copyright © 2018 BManshilin. All rights reserved.
 //
 
 import Foundation
 import Model
 
-/// Service for picking rules
-public protocol RulesPicker {
-    /// Get localized description for specified rules type
-    func description(for: Rules) -> String
+struct RulesPicker: RulesPicking {
+    func description(for: Rules) -> String {
+        switch currentRules {
+        case .max:
+            return NSLocalizedString(
+                """
+                Wins player that first reached score limit.
+                The winner of the round collect scores of all players.
+                """,
+                comment: ""
+            )
+        case .min:
+            return NSLocalizedString(
+                """
+                Loses player that first reached score limit.
+                Wins player with least scores.
+                The winner of the round gets no scores.
+                """,
+                comment: ""
+            )
+        }
+    }
+    private(set) var currentRules: Rules = .min(limit: 500)
     
-    /// Choose the rules for the game
-    func set(rules: Rules)
+    mutating func set(limit: Int) throws {
+        try currentRules.set(limit: limit)
+    }
     
-    /// Set new scores limit
-    ///
-    /// Thorws error of type `Model.ValidationError`
-    func set(limit: Int) throws
-    
-    /// Chosen rules. Default value is `.min(limit: 500)`
-    var currentRules: Rules { get }
+    mutating func set(rules: Rules) {
+        currentRules = rules
+    }
 }

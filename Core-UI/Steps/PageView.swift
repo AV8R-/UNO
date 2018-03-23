@@ -123,11 +123,11 @@ class PageView: UIScrollView {
 extension PageView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         didShowPage?(currentPage)
-        progressedSteps[currentPage].didShow()
+        progressedSteps[currentPage].io.didShow()
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         didShowPage?(currentPage)
-        progressedSteps[currentPage].didShow()
+        progressedSteps[currentPage].io.didShow()
     }
 }

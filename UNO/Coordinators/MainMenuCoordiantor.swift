@@ -28,6 +28,10 @@ final class MainMenuCoordinator: Coordinator {
 
 extension MainMenuCoordinator: MainMenuDelegate {
     func didSelect(menuItem: MainMenuView.MenuItem) {
-        startGameCoordinator.start()
+        do {
+            try startGameCoordinator.start()
+        } catch {
+            print(error)
+        }
     }
 }

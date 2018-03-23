@@ -10,9 +10,9 @@ import UIKit
 
 public class StepsViewController: UIViewController {
     let pagedContainer: PageView = .init()
-    let pages: [UIView & ProgressedStep]
+    let pages: [ProgressedStep]
     
-    public init(pages: [UIView & ProgressedStep]) {
+    public init(pages: [ProgressedStep]) {
         self.pages = pages
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,7 +23,16 @@ public class StepsViewController: UIViewController {
     
     override public func loadView() {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
+        
+        let background = UNOBackground()
+        background.translatesAutoresizingMaskIntoConstraints = false
+        background.colors = [
+            UIColor(red: 0/255.0, green: 114/255.0, blue: 187/255.0, alpha: 1),
+            UIColor(red: 42/255.0, green: 72/255.0, blue: 98/255.0, alpha: 1),
+        ]
+        
+        view.addSubview(background)
         
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -34,12 +43,16 @@ public class StepsViewController: UIViewController {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: view.topAnchor, constant: 47),
             title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            ])
+        ])
         
         pagedContainer.translatesAutoresizingMaskIntoConstraints = false
-        pagedContainer.backgroundColor = .blue
+        pagedContainer.backgroundColor = .clear
         view.addSubview(pagedContainer)
         NSLayoutConstraint.activate([
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.leftAnchor.constraint(equalTo: view.leftAnchor),
+            background.rightAnchor.constraint(equalTo: view.rightAnchor),
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             pagedContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
             pagedContainer.leftAnchor.constraint(equalTo: view.leftAnchor),
             pagedContainer.rightAnchor.constraint(equalTo: view.rightAnchor),
@@ -47,7 +60,7 @@ public class StepsViewController: UIViewController {
             ])
         
         for step in pages {
-            pagedContainer.append(page: step)
+            pagedContainer.append(page: step.view)
         }
         
         let progress = ProgressView(pageView: pagedContainer)

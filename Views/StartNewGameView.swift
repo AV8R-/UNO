@@ -9,8 +9,9 @@
 import UIKit
 import Core_UI
 
-public final class StartNewGameView: UIViewController {
-    
+public protocol StartnewgameViewControlling {}
+
+final class StartNewGameView: UIViewController, StartnewgameViewControlling {
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

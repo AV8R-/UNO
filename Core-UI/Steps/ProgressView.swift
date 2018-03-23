@@ -48,7 +48,7 @@ class ProgressView: UIView {
             buttons?[page].isSelected = true
             
             if page > 0 {
-                pageView?.progressedSteps[page-1].finish()
+                pageView?.progressedSteps[page-1].io.finish()
             }
         }
         
@@ -57,7 +57,7 @@ class ProgressView: UIView {
         
         forwardButton.onPress = { [weak pageView] in
             if pageView?.scrollForward() == false {
-                pageView?.progressedSteps.last?.finish()
+                pageView?.progressedSteps.last?.io.finish()
             }
         }
         
@@ -71,7 +71,7 @@ class ProgressView: UIView {
         
         var lastUnlocked = 0
         for step in pageView.progressedSteps {
-            if !step.isCanGoNext {
+            if !step.io.isCanGoNext {
                 break
             }
             lastUnlocked += 1
@@ -83,7 +83,7 @@ class ProgressView: UIView {
         }
         for (num, step) in pageView.progressedSteps.enumerated() {
             
-            step.onChangeCanGoNext = { [weak pageView, weak pages] isCanGoNext in
+            step.io.onChangeCanGoNext = { [weak pageView, weak pages] isCanGoNext in
                 guard let pageView = pageView, let pages = pages else {
                     return
                 }
@@ -141,6 +141,6 @@ class ProgressView: UIView {
             return
         }
         pageView.didShowPage?(0)
-        pageView.progressedSteps.first?.didShow()
+        pageView.progressedSteps.first?.io.didShow()
     }
 }
