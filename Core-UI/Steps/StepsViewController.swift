@@ -29,8 +29,8 @@ public class StepsViewController: UIViewController {
         let background = UNOBackground()
         background.translatesAutoresizingMaskIntoConstraints = false
         background.colors = [
-            UIColor(red: 0/255.0, green: 114/255.0, blue: 187/255.0, alpha: 1),
-            UIColor(red: 42/255.0, green: 72/255.0, blue: 98/255.0, alpha: 1),
+            UIColor.lightBlue,
+            UIColor.darkBlue,
         ]
         
         view.addSubview(background)

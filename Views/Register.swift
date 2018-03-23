@@ -12,7 +12,6 @@ import ViewModels
 
 public func register(container: Container) {
     container.register(MainMenuViewControlling.self) { _ in MainMenuView() }
-    container.register(StartnewgameViewControlling.self) { _ in StartNewGameView() }
     container.register(ChooseRulesViewControlling.self) { r in
         let vm = r.resolve(ChooseRulesViewModelling.self)!
         return ChooseRulesViewController(viewModel: vm, io: vm.io)

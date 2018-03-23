@@ -10,8 +10,15 @@ import Foundation
 
 open class UNOButton: ComplexButton {
     
+    public enum HighlightDirection {
+        case grow, diminish
+    }
+    
+    open var highlightDirection: HighlightDirection = .grow
+    
     public init() {
         super.init(frame: .zero)
+        shouldMakeTranclucentOnHiglhlight = false
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -19,17 +26,20 @@ open class UNOButton: ComplexButton {
     }
     
     override open var isHighlighted: Bool { didSet {
+        let isGrow = highlightDirection == .grow
+        let scale: CGFloat = isGrow ? 1.05 : 0.95
+        
         let animator = UIViewPropertyAnimator(
             duration: 0.05,
             curve: UIViewAnimationCurve.easeOut
         ) {
             self.transform = self.isHighlighted
-                ? CGAffineTransform.identity.scaledBy(x: 1.05, y: 1.05)
+                ? CGAffineTransform.identity.scaledBy(x: scale, y: scale)
                 : CGAffineTransform.identity
             
             self.layer.shadowRadius = self.isHighlighted
-                ? 10
-                : 4
+                ? (isGrow ? 10 : 4)
+                : (isGrow ? 4 : 10)
         }
         animator.startAnimation()
     }}

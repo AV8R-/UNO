@@ -122,7 +122,7 @@ public final class MainMenuView: UIViewController, MainMenuViewControlling {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.attributedText = "UNO"
-            .color(UIColor(red: 248/255.0, green: 201/255.0, blue: 33/255.0, alpha: 1))
+            .color(UIColor.materialYellow)
             .font(UIFont.unoFont(forTextStyle: .headline))
             .strokeColor(.white)
             .strokeWidth(-1)

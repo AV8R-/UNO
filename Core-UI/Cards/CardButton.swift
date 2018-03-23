@@ -12,9 +12,7 @@ import AttributedTextView
 public final class CardButton: UNOButton {
     
     public init(background: UIImage, title: String) {
-        super.init()
-        shouldMakeTranclucentOnHiglhlight = false
-        
+        super.init()        
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 4
         layer.shadowOffset = CGSize(width: 0, height: 4)

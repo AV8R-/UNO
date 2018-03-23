@@ -9,11 +9,11 @@
 import Foundation
 
 extension FloatingPoint {
-    func radiansToDegrees() -> Self {
+    public func radiansToDegrees() -> Self {
         return self * 180 / Self.pi
     }
     
-    func degreesToRadians() -> Self {
+    public func degreesToRadians() -> Self {
         return self * Self.pi / 180
     }
 }
