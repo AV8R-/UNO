@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core_UI
 
 final class LimitDescriptionView: UIView {
     
@@ -16,10 +17,9 @@ final class LimitDescriptionView: UIView {
         backgroundColor = .white
         layer.cornerRadius = 15
         
-        let background = UIView()
+        let background = BackgroundView()
         background.translatesAutoresizingMaskIntoConstraints = false
         background.backgroundColor = .lightGreen
-        background.layer.cornerRadius = 20
         addSubview(background)
         
         let label = UILabel()
@@ -47,5 +47,15 @@ final class LimitDescriptionView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+final class BackgroundView: UIView {
+    weak var shadowLayer: CALayer?
     
+    override var bounds: CGRect {
+        didSet {
+            layer.cornerRadius = 15
+            addInnerShadow(onSide: [.top, .bottom], color: .darkGreen, size: 4, cornerRadius: 15, opacity: 1)
+        }
+    }
 }

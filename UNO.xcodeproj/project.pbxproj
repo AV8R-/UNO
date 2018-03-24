@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		30073B172065CA99001E0E74 /* RulesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B162065CA99001E0E74 /* RulesButton.swift */; };
 		30073B192065CACA001E0E74 /* LimitDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B182065CACA001E0E74 /* LimitDescriptionView.swift */; };
+		30073B1B20665B17001E0E74 /* UIView+InnerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */; };
 		30167B6C202FADFB00DAE775 /* GameCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6B202FADFB00DAE775 /* GameCreating.swift */; };
 		30167B6E202FAE9800DAE775 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6D202FAE9800DAE775 /* Rules.swift */; };
 		30167B72202FB7E400DAE775 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B71202FB7E400DAE775 /* ValidationError.swift */; };
@@ -454,6 +455,7 @@
 /* Begin PBXFileReference section */
 		30073B162065CA99001E0E74 /* RulesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesButton.swift; sourceTree = "<group>"; };
 		30073B182065CACA001E0E74 /* LimitDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitDescriptionView.swift; sourceTree = "<group>"; };
+		30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InnerShadow.swift"; sourceTree = "<group>"; };
 		30167B6B202FADFB00DAE775 /* GameCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreating.swift; sourceTree = "<group>"; };
 		30167B6D202FAE9800DAE775 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		30167B71202FB7E400DAE775 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -852,6 +854,7 @@
 			isa = PBXGroup;
 			children = (
 				30BDAD1F205414790059DF96 /* FloatingPoint+AngleConverting.swift */,
+				30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -1711,6 +1714,7 @@
 				30D1432C205466E800B1D186 /* UINavigationBar+BorderColor.swift in Sources */,
 				30D14320205466E800B1D186 /* ComplexButton.swift in Sources */,
 				30FDF50320615CC400857066 /* PageView.swift in Sources */,
+				30073B1B20665B17001E0E74 /* UIView+InnerShadow.swift in Sources */,
 				30D14329205466E800B1D186 /* ScrollZone.swift in Sources */,
 				30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */,
 				30D14331205469F100B1D186 /* Styleguide.swift in Sources */,
