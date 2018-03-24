@@ -108,6 +108,8 @@
 		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
+		30D17A0A2066F1C6005C6331 /* LimitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D17A092066F1C6005C6331 /* LimitPicker.swift */; };
+		30D17A322066FDCC005C6331 /* Rescale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D17A312066FDCC005C6331 /* Rescale.swift */; };
 		30D30E97203509B300BFB904 /* Views.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D30E8E203509B300BFB904 /* Views.framework */; };
 		30D30E9E203509B300BFB904 /* ViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30E9D203509B300BFB904 /* ViewsTests.swift */; };
 		30D30EA0203509B300BFB904 /* Views.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D30E90203509B300BFB904 /* Views.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -119,7 +121,7 @@
 		30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4FE20615C5E00857066 /* ProgressView.swift */; };
 		30FDF50120615CA900857066 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50020615CA900857066 /* Step.swift */; };
 		30FDF50320615CC400857066 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50220615CC400857066 /* PageView.swift */; };
-		30FDF50520615D4D00857066 /* Reference.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 30FDF50420615D4D00857066 /* Reference.rtf */; };
+		30FDF50520615D4D00857066 /* Reference.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 30FDF50420615D4D00857066 /* Reference.rtfd */; };
 		30FDF5072061689C00857066 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF5062061689C00857066 /* StepsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -535,6 +537,8 @@
 		30D14348205526C600B1D186 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
 		30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordiantor.swift; sourceTree = "<group>"; };
+		30D17A092066F1C6005C6331 /* LimitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitPicker.swift; sourceTree = "<group>"; };
+		30D17A312066FDCC005C6331 /* Rescale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		30D30E8E203509B300BFB904 /* Views.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Views.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D30E90203509B300BFB904 /* Views.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Views.h; sourceTree = "<group>"; };
 		30D30E91203509B300BFB904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -547,7 +551,7 @@
 		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		30FDF50220615CC400857066 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		30FDF50420615D4D00857066 /* Reference.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Reference.rtf; sourceTree = "<group>"; };
+		30FDF50420615D4D00857066 /* Reference.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = Reference.rtfd; sourceTree = "<group>"; };
 		30FDF5062061689C00857066 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -648,6 +652,7 @@
 				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
 				30073B162065CA99001E0E74 /* RulesButton.swift */,
 				30073B182065CACA001E0E74 /* LimitDescriptionView.swift */,
+				30D17A092066F1C6005C6331 /* LimitPicker.swift */,
 				300935CE206693DF00CB499C /* Arrow.swift */,
 			);
 			path = ChooseRules;
@@ -716,6 +721,7 @@
 				30BDAD1D205414250059DF96 /* UNOBackground */,
 				30BDAD1C2054141E0059DF96 /* Steps */,
 				302FCBEA206515A200B02836 /* UNOButton.swift */,
+				30D17A312066FDCC005C6331 /* Rescale.swift */,
 			);
 			path = "Core-UI";
 			sourceTree = "<group>";
@@ -835,7 +841,7 @@
 				30FDF4FE20615C5E00857066 /* ProgressView.swift */,
 				30FDF50020615CA900857066 /* Step.swift */,
 				30FDF50220615CC400857066 /* PageView.swift */,
-				30FDF50420615D4D00857066 /* Reference.rtf */,
+				30FDF50420615D4D00857066 /* Reference.rtfd */,
 				30FDF5062061689C00857066 /* StepsViewController.swift */,
 			);
 			path = Steps;
@@ -1608,7 +1614,7 @@
 			files = (
 				30D14328205466E800B1D186 /* README.md in Resources */,
 				30D14326205466E800B1D186 /* LICENSE in Resources */,
-				30FDF50520615D4D00857066 /* Reference.rtf in Resources */,
+				30FDF50520615D4D00857066 /* Reference.rtfd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1698,6 +1704,7 @@
 				30D1431D205466E800B1D186 /* AsyncImageView.swift in Sources */,
 				30D1432A205466E800B1D186 /* String+Size.swift in Sources */,
 				30FDF5072061689C00857066 /* StepsViewController.swift in Sources */,
+				30D17A322066FDCC005C6331 /* Rescale.swift in Sources */,
 				30BDAD242054156B0059DF96 /* Beams.swift in Sources */,
 				30D1432E205466E800B1D186 /* UITextViewFixed.swift in Sources */,
 				30D14321205466E800B1D186 /* Dictionary+Merge.swift in Sources */,
@@ -1793,6 +1800,7 @@
 				30D1433F20546AB800B1D186 /* String+Size.swift in Sources */,
 				30D1434420546AB800B1D186 /* UIView+Constrain.swift in Sources */,
 				30D1433920546AB800B1D186 /* StringConvertable.swift in Sources */,
+				30D17A0A2066F1C6005C6331 /* LimitPicker.swift in Sources */,
 				30D1433720546AB700B1D186 /* JsonTools.swift in Sources */,
 				30D1434020546AB800B1D186 /* UIColor+random.swift in Sources */,
 				30D1433820546AB700B1D186 /* StrictTypes.swift in Sources */,

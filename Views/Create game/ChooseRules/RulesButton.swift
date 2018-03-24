@@ -12,6 +12,7 @@ import Core_UI
 final class RulesButton: UNOButton {
     init(title: String) {
         super.init()
+        translatesAutoresizingMaskIntoConstraints = false
         
         highlightDirection = .diminish
         

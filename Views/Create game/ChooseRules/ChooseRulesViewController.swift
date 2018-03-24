@@ -55,16 +55,10 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         
         let b1 = RulesButton(title: NSLocalizedString("MAX", comment: ""))
         let b2 = RulesButton(title: NSLocalizedString("MIN", comment: ""))
-        let limitView = UIView()
+        let limitView = LimitPicker()
         let hintView = LimitDescriptionView(description: viewModel.currentDescription)
         let arrow = Arrow()
-        limitView.backgroundColor = .red
-        
-        b1.translatesAutoresizingMaskIntoConstraints = false
-        b2.translatesAutoresizingMaskIntoConstraints = false
-        limitView.translatesAutoresizingMaskIntoConstraints = false
-        hintView.translatesAutoresizingMaskIntoConstraints = false
-        
+            
         view.addSubview(b1)
         view.addSubview(b2)
         view.addSubview(limitView)

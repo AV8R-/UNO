@@ -54,10 +54,10 @@ public class StepsViewController: UIViewController {
             background.leftAnchor.constraint(equalTo: view.leftAnchor),
             background.rightAnchor.constraint(equalTo: view.rightAnchor),
             background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            pagedContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
+            pagedContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 124),
             pagedContainer.leftAnchor.constraint(equalTo: view.leftAnchor),
             pagedContainer.rightAnchor.constraint(equalTo: view.rightAnchor),
-            pagedContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            pagedContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -109),
             ])
         
         for step in pages {
