@@ -8,7 +8,10 @@
 
 import Foundation
 import Swinject
+import Services
 
 public func register(container: Container) {
-    container.register(ChooseRulesViewModelling.self) { _ in ChooseRulesViewModel() }
+    container.register(ChooseRulesViewModelling.self) { r in
+        ChooseRulesViewModel(picker: r.resolve(RulesPicking.self)!)
+    }
 }

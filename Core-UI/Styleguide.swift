@@ -14,14 +14,15 @@ public extension UIFont {
         case .headline: return 72
         case .largeTitle: return 64
         case .title1: return 24
+        case .body: return 18
         default: return 14
         }
     }
     
     private static func prefferedFontName(forTextStyle: UIFontTextStyle) -> String {
         switch forTextStyle {
-        case .headline, .largeTitle: return "HelveticaNeue-CondensedBold"
-        case .title1: return "HelveticaNeue-CondensedBlack"
+        case .headline: return "HelveticaNeue-CondensedBold"
+        case .title1, .largeTitle, .body: return "HelveticaNeue-CondensedBlack"
         default: return "HelveticaNeue"
         }
     }

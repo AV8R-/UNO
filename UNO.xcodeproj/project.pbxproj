@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30073B172065CA99001E0E74 /* RulesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B162065CA99001E0E74 /* RulesButton.swift */; };
+		30073B192065CACA001E0E74 /* LimitDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B182065CACA001E0E74 /* LimitDescriptionView.swift */; };
 		30167B6C202FADFB00DAE775 /* GameCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6B202FADFB00DAE775 /* GameCreating.swift */; };
 		30167B6E202FAE9800DAE775 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6D202FAE9800DAE775 /* Rules.swift */; };
 		30167B72202FB7E400DAE775 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B71202FB7E400DAE775 /* ValidationError.swift */; };
@@ -450,6 +452,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		30073B162065CA99001E0E74 /* RulesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesButton.swift; sourceTree = "<group>"; };
+		30073B182065CACA001E0E74 /* LimitDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitDescriptionView.swift; sourceTree = "<group>"; };
 		30167B6B202FADFB00DAE775 /* GameCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreating.swift; sourceTree = "<group>"; };
 		30167B6D202FAE9800DAE775 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		30167B71202FB7E400DAE775 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -634,6 +638,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30073B152065CA75001E0E74 /* ChooseRules */ = {
+			isa = PBXGroup;
+			children = (
+				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
+				30073B162065CA99001E0E74 /* RulesButton.swift */,
+				30073B182065CACA001E0E74 /* LimitDescriptionView.swift */,
+			);
+			path = ChooseRules;
+			sourceTree = "<group>";
+		};
 		30167B56202FADE800DAE775 /* GameCreator */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,7 +684,7 @@
 		3035898D20646F80007F61D5 /* Create game */ = {
 			isa = PBXGroup;
 			children = (
-				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
+				30073B152065CA75001E0E74 /* ChooseRules */,
 			);
 			path = "Create game";
 			sourceTree = "<group>";
@@ -1780,9 +1794,11 @@
 				30D1433320546AB700B1D186 /* AVCaptureDevice+Permissions.swift in Sources */,
 				30D1433C20546AB800B1D186 /* PHPhotoLibrary+Permissions.swift in Sources */,
 				30B8298520653ABA00730A7C /* Register.swift in Sources */,
+				30073B192065CACA001E0E74 /* LimitDescriptionView.swift in Sources */,
 				30D1433E20546AB800B1D186 /* ScrollZone.swift in Sources */,
 				30D1434220546AB800B1D186 /* UITableView+ReloadHeights.swift in Sources */,
 				30D1433520546AB700B1D186 /* ComplexButton.swift in Sources */,
+				30073B172065CA99001E0E74 /* RulesButton.swift in Sources */,
 				30D1434120546AB800B1D186 /* UINavigationBar+BorderColor.swift in Sources */,
 				30D1434320546AB800B1D186 /* UITextViewFixed.swift in Sources */,
 				30D1433420546AB700B1D186 /* Chain.swift in Sources */,

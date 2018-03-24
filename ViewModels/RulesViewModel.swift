@@ -9,14 +9,26 @@
 import Foundation
 import Core_UI
 import Model
+import Services
 
 public protocol ChooseRulesViewModelling {
     var io: ProgressedStepIO { get }
+    var currentDescription: String { get }
 }
 
 public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, ProgressedStepIO {
     public var io: ProgressedStepIO {
         return self
+    }
+    
+    public var currentDescription: String {
+        return picker.description(for: currentOutput)
+    }
+    
+    var picker: RulesPicking
+    
+    init(picker: RulesPicking) {
+        self.picker = picker
     }
     
     // Step props
