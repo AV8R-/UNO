@@ -10,6 +10,7 @@
 		30073B172065CA99001E0E74 /* RulesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B162065CA99001E0E74 /* RulesButton.swift */; };
 		30073B192065CACA001E0E74 /* LimitDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B182065CACA001E0E74 /* LimitDescriptionView.swift */; };
 		30073B1B20665B17001E0E74 /* UIView+InnerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */; };
+		300935CF206693DF00CB499C /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300935CE206693DF00CB499C /* Arrow.swift */; };
 		30167B6C202FADFB00DAE775 /* GameCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6B202FADFB00DAE775 /* GameCreating.swift */; };
 		30167B6E202FAE9800DAE775 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6D202FAE9800DAE775 /* Rules.swift */; };
 		30167B72202FB7E400DAE775 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B71202FB7E400DAE775 /* ValidationError.swift */; };
@@ -456,6 +457,7 @@
 		30073B162065CA99001E0E74 /* RulesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesButton.swift; sourceTree = "<group>"; };
 		30073B182065CACA001E0E74 /* LimitDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitDescriptionView.swift; sourceTree = "<group>"; };
 		30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InnerShadow.swift"; sourceTree = "<group>"; };
+		300935CE206693DF00CB499C /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		30167B6B202FADFB00DAE775 /* GameCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreating.swift; sourceTree = "<group>"; };
 		30167B6D202FAE9800DAE775 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		30167B71202FB7E400DAE775 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
 				30073B162065CA99001E0E74 /* RulesButton.swift */,
 				30073B182065CACA001E0E74 /* LimitDescriptionView.swift */,
+				300935CE206693DF00CB499C /* Arrow.swift */,
 			);
 			path = ChooseRules;
 			sourceTree = "<group>";
@@ -1803,6 +1806,7 @@
 				30D1434220546AB800B1D186 /* UITableView+ReloadHeights.swift in Sources */,
 				30D1433520546AB700B1D186 /* ComplexButton.swift in Sources */,
 				30073B172065CA99001E0E74 /* RulesButton.swift in Sources */,
+				300935CF206693DF00CB499C /* Arrow.swift in Sources */,
 				30D1434120546AB800B1D186 /* UINavigationBar+BorderColor.swift in Sources */,
 				30D1434320546AB800B1D186 /* UITextViewFixed.swift in Sources */,
 				30D1433420546AB700B1D186 /* Chain.swift in Sources */,

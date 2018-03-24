@@ -16,6 +16,9 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
     var viewModel: ChooseRulesViewModelling
     var io: ProgressedStepIO
     
+    private var arrowLeftPosition: NSLayoutConstraint!
+    private var arrowRightPosition: NSLayoutConstraint!
+    
     public init(viewModel: ChooseRulesViewModelling, io: ProgressedStepIO) {
         self.io = io
         self.viewModel = viewModel
@@ -34,6 +37,7 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         let b2 = RulesButton(title: NSLocalizedString("MIN", comment: ""))
         let limitView = UIView()
         let hintView = LimitDescriptionView(description: viewModel.currentDescription)
+        let arrow = Arrow()
         limitView.backgroundColor = .red
         
         b1.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +48,7 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         view.addSubview(b1)
         view.addSubview(b2)
         view.addSubview(limitView)
+        view.addSubview(arrow)
         view.addSubview(hintView)
         
         NSLayoutConstraint.activate([
@@ -65,8 +70,32 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
             hintView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             hintView.topAnchor.constraint(equalTo: b1.bottomAnchor, constant: 12),
             hintView.bottomAnchor.constraint(equalTo: limitView.topAnchor, constant: -12),
-            ])
+            
+            arrow.bottomAnchor.constraint(equalTo: hintView.topAnchor, constant: 5),
+        ])
+        
+        arrowLeftPosition = arrow.centerXAnchor.constraint(equalTo: b1.centerXAnchor)
+        arrowRightPosition = arrow.centerXAnchor.constraint(equalTo: b2.centerXAnchor)
+        
+        arrowLeftPosition.isActive = true
         
         self.view = view
+        
+        let p1 = CGPoint(x: 0.25, y: 0.46)
+        let p2 = CGPoint(x: 0.45, y: 0.94)
+        
+        b1.onPress = { [weak arrowLeftPosition, arrowRightPosition] in
+            arrowLeftPosition?.isActive = true
+            arrowRightPosition?.isActive = false
+            
+            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: view.layoutIfNeeded).startAnimation()
+        }
+        
+        b2.onPress = { [weak arrowLeftPosition, arrowRightPosition] in
+            arrowLeftPosition?.isActive = false
+            arrowRightPosition?.isActive = true
+            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: view.layoutIfNeeded).startAnimation()
+        }
     }
+    
 }
