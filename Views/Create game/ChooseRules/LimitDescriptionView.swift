@@ -11,7 +11,17 @@ import Core_UI
 
 final class LimitDescriptionView: UIView {
     
+    var text: String {
+        didSet {
+            label.text = text
+            label.runFade()
+        }
+    }
+    
+    private weak var label: UILabel!
+    
     init(description: String) {
+        self.text = description
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
@@ -24,12 +34,14 @@ final class LimitDescriptionView: UIView {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = description
+        label.text = text
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .white
         label.font = .unoFont(forTextStyle: .body)
         addSubview(label)
+        
+        self.label = label
         
         NSLayoutConstraint.activate([
             background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),

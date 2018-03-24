@@ -14,6 +14,11 @@ import Services
 public protocol ChooseRulesViewModelling {
     var io: ProgressedStepIO { get }
     var currentDescription: String { get }
+    var rules: Rules { set get }
+    func setMaxRules() throws
+    func setMinRules() throws
+    
+    var onRulesChange: ((Bool)->Void)? { set get }
 }
 
 public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, ProgressedStepIO {
@@ -31,6 +36,22 @@ public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, Progres
         self.picker = picker
     }
     
+    public func setMaxRules() throws {
+        rules = try .max(limit: rules.limit())
+    }
+    
+    public func setMinRules() throws {
+        rules = try .min(limit: rules.limit())
+    }
+    
+    public var rules: Rules = .min(limit: 500) {
+        didSet {
+            onRulesChange?(oldValue != rules)
+        }
+    }
+    
+    public var onRulesChange: ((Bool) -> Void)?
+    
     // Step props
     public typealias Input = Void
     public typealias Output = Rules
@@ -39,7 +60,9 @@ public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, Progres
     public var title: String { return NSLocalizedString("Rules", comment: "") }
     public var onShow: ((ChooseRulesViewModel) -> Void)?
     public var onFinish: ((Rules) -> Void)?
-    public var currentOutput: Rules = .min(limit: 500)
+    public var currentOutput: Rules {
+        return rules
+    }
     
     //Progressed step props
     public var onChangeCanGoNext: ((Bool) -> Void)?

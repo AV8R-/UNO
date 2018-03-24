@@ -54,3 +54,15 @@ public enum Rules {
         }
     }
 }
+
+extension Rules: Equatable {
+    public static func ==(lhs: Rules, rhs: Rules) -> Bool {
+        switch (lhs, rhs) {
+        case (.min(let llimit), .min(let rlimit)) where llimit == rlimit,
+             (.max(let llimit), .max(let rlimit)) where llimit == rlimit:
+            return true
+        default:
+            return false
+        }
+    }
+}

@@ -10,8 +10,8 @@ import Foundation
 import Model
 
 struct RulesPicker: RulesPicking {
-    func description(for: Rules) -> String {
-        switch currentRules {
+    func description(for rules: Rules) -> String {
+        switch rules {
         case .max:
             return NSLocalizedString(
                 """

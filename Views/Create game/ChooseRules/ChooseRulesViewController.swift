@@ -18,11 +18,31 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
     
     private var arrowLeftPosition: NSLayoutConstraint!
     private var arrowRightPosition: NSLayoutConstraint!
+    private weak var hintView: LimitDescriptionView!
     
     public init(viewModel: ChooseRulesViewModelling, io: ProgressedStepIO) {
         self.io = io
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        self.viewModel.onRulesChange = { [weak self] isChanged in
+            guard isChanged, let this = self else {
+                return
+            }
+            let p1 = CGPoint(x: 0.25, y: 0.46)
+            let p2 = CGPoint(x: 0.45, y: 0.94)
+            let isMax: Bool, isMin: Bool
+            if case .max = this.viewModel.rules {
+                isMax = true; isMin = false
+            } else {
+                isMin = true; isMax = false
+            }
+            this.arrowLeftPosition.isActive = isMax
+            this.arrowRightPosition.isActive = isMin
+            
+            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: this.view.layoutIfNeeded).startAnimation()
+            this.hintView.text = this.viewModel.currentDescription
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -77,24 +97,17 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         arrowLeftPosition = arrow.centerXAnchor.constraint(equalTo: b1.centerXAnchor)
         arrowRightPosition = arrow.centerXAnchor.constraint(equalTo: b2.centerXAnchor)
         
-        arrowLeftPosition.isActive = true
+        arrowRightPosition.isActive = true
         
         self.view = view
+        self.hintView = hintView
         
-        let p1 = CGPoint(x: 0.25, y: 0.46)
-        let p2 = CGPoint(x: 0.45, y: 0.94)
-        
-        b1.onPress = { [weak arrowLeftPosition, arrowRightPosition] in
-            arrowLeftPosition?.isActive = true
-            arrowRightPosition?.isActive = false
-            
-            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: view.layoutIfNeeded).startAnimation()
+        b1.onPress = { [weak self] in
+            try? self?.viewModel.setMaxRules()
         }
         
-        b2.onPress = { [weak arrowLeftPosition, arrowRightPosition] in
-            arrowLeftPosition?.isActive = false
-            arrowRightPosition?.isActive = true
-            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: view.layoutIfNeeded).startAnimation()
+        b2.onPress = { [weak self] in
+            try? self?.viewModel.setMinRules()
         }
     }
     
