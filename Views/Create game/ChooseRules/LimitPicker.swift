@@ -12,6 +12,7 @@ import Core_UI
 final class LimitPicker: UIView {
     
     private weak var limit: UILabel!
+    private weak var background: BackgroundView!
     
     init() {
         super.init(frame: .zero)
@@ -60,7 +61,11 @@ final class LimitPicker: UIView {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(swipe(_:)))
         addGestureRecognizer(gesture)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+        addGestureRecognizer(tap)
+        
         self.limit = limit
+        self.background = background
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,5 +81,48 @@ final class LimitPicker: UIView {
             .rescale(Double(sender.location(ofTouch: 0, in: self).x))
         
         limit.text = "\(Int(value) - Int(value) % 10)"
+    }
+    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        if let text = limit.text, let num = Int(text), num == 500 {
+            let bg = BackgroundView(color: .lightRed, shadowColor: .darkGray, cornerRadius: 15)
+            let text = UILabel()
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.text = NSLocalizedString("Swipe", comment: "Hint on limit picker")
+            text.font = .unoFont(forTextStyle: .title1)
+            text.textColor = .white
+            bg.alpha = 0
+            text.alpha = 0
+            
+            addSubview(bg)
+            addSubview(text)
+            
+            NSLayoutConstraint.activate([
+                bg.leadingAnchor.constraint(equalTo: background.leadingAnchor),
+                bg.topAnchor.constraint(equalTo: background.topAnchor),
+                bg.rightAnchor.constraint(equalTo: background.rightAnchor),
+                bg.bottomAnchor.constraint(equalTo: background.bottomAnchor),
+                
+                text.centerXAnchor.constraint(equalTo: bg.centerXAnchor),
+                text.centerYAnchor.constraint(equalTo: bg.centerYAnchor),
+            ])
+            
+            UIView.animate(withDuration: 0.3) {
+                bg.alpha = 1
+                text.alpha = 1
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak bg, weak text] in
+                UIView.animate(withDuration: 0.3, animations: {
+                    bg?.alpha = 0
+                    text?.alpha = 0
+                }, completion: { (finished) in
+                    bg?.removeFromSuperview()
+                    text?.removeFromSuperview()
+                })
+            }
+        } else {
+            limit.text = "500"
+        }
     }
 }
