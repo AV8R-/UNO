@@ -24,7 +24,7 @@ final class StartGameCoordinator: Coordinator, Resolving {
         let rulesView: ChooseRulesViewControlling = try resolve()
         let playersView: AddPlayersViewControlling = try resolve()
         
-        let startController = StepsViewController(pages: [rulesView, playersView], tintColor: .darkGreen)
+        let startController = StepsViewController(pages: [rulesView, playersView], tintColor: .lightGreen)
         presenter.pushViewController(startController, animated: true)
         
         startController.onClose = { [weak presenter] in

@@ -122,6 +122,7 @@
 		30D30EC92036243000BFB904 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
 		30D6E346207034D0005A7889 /* AddPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E345207034D0005A7889 /* AddPlayersViewController.swift */; };
 		30D6E3482070360E005A7889 /* AddPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */; };
+		30D6E34A20704682005A7889 /* BackgrondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E34920704682005A7889 /* BackgrondView.swift */; };
 		30FDF4E520615AD400857066 /* StepProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4E420615AD400857066 /* StepProgressButton.swift */; };
 		30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4FE20615C5E00857066 /* ProgressView.swift */; };
 		30FDF50120615CA900857066 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50020615CA900857066 /* Step.swift */; };
@@ -562,6 +563,7 @@
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
 		30D6E345207034D0005A7889 /* AddPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewController.swift; sourceTree = "<group>"; };
 		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
+		30D6E34920704682005A7889 /* BackgrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgrondView.swift; sourceTree = "<group>"; };
 		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
 		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -713,6 +715,7 @@
 			children = (
 				30D6E344207034B6005A7889 /* AddPlayers */,
 				30073B152065CA75001E0E74 /* ChooseRules */,
+				30D6E34920704682005A7889 /* BackgrondView.swift */,
 			);
 			path = "Create game";
 			sourceTree = "<group>";
@@ -1849,6 +1852,7 @@
 				30D1434220546AB800B1D186 /* UITableView+ReloadHeights.swift in Sources */,
 				30D1433520546AB700B1D186 /* ComplexButton.swift in Sources */,
 				30073B172065CA99001E0E74 /* RulesButton.swift in Sources */,
+				30D6E34A20704682005A7889 /* BackgrondView.swift in Sources */,
 				300935CF206693DF00CB499C /* Arrow.swift in Sources */,
 				30D1434120546AB800B1D186 /* UINavigationBar+BorderColor.swift in Sources */,
 				30D1434320546AB800B1D186 /* UITextViewFixed.swift in Sources */,
