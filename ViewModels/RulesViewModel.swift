@@ -65,6 +65,10 @@ public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, Progres
     }
     
     //Progressed step props
-    public var onChangeCanGoNext: ((Bool) -> Void)?
+    public var onChangeCanGoNext: ((Bool) -> Void)? {
+        didSet {
+            onChangeCanGoNext?(isCanGoNext)
+        }
+    }
     public var isCanGoNext: Bool = true
 }

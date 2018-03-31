@@ -48,8 +48,8 @@
 		30AB572920652464008ADA9A /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302FCC6F20651CAB00B02836 /* Swinject.framework */; };
 		30AB572A2065246A008ADA9A /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302FCC6F20651CAB00B02836 /* Swinject.framework */; };
 		30B5FD1C202F99E200194D6F /* CalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B125202F0DAF00B6CF2D /* CalculatorSpec.swift */; };
-		30B82983206539FC00730A7C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B82982206539FC00730A7C /* Register.swift */; };
-		30B8298520653ABA00730A7C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8298420653ABA00730A7C /* Register.swift */; };
+		30B82983206539FC00730A7C /* Assembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B82982206539FC00730A7C /* Assembley.swift */; };
+		30B8298520653ABA00730A7C /* Assembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8298420653ABA00730A7C /* Assembley.swift */; };
 		30B829872065410B00730A7C /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B829862065410B00730A7C /* Resolving.swift */; };
 		30BDAD20205414790059DF96 /* FloatingPoint+AngleConverting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BDAD1F205414790059DF96 /* FloatingPoint+AngleConverting.swift */; };
 		30BDAD222054149E0059DF96 /* Beam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BDAD212054149E0059DF96 /* Beam.swift */; };
@@ -120,6 +120,8 @@
 		30D30EA4203509B300BFB904 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D30E8E203509B300BFB904 /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30D30EBF203509D700BFB904 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30EBE203509D700BFB904 /* MainMenuView.swift */; };
 		30D30EC92036243000BFB904 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
+		30D6E346207034D0005A7889 /* AddPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E345207034D0005A7889 /* AddPlayersViewController.swift */; };
+		30D6E3482070360E005A7889 /* AddPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */; };
 		30FDF4E520615AD400857066 /* StepProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4E420615AD400857066 /* StepProgressButton.swift */; };
 		30FDF4FF20615C5E00857066 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF4FE20615C5E00857066 /* ProgressView.swift */; };
 		30FDF50120615CA900857066 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDF50020615CA900857066 /* Step.swift */; };
@@ -509,8 +511,8 @@
 		307D590D202E5A12007C899D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		308F7D2E203102BD00676829 /* RulesPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPicking.swift; sourceTree = "<group>"; };
 		30AB57262065241E008ADA9A /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		30B82982206539FC00730A7C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		30B8298420653ABA00730A7C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		30B82982206539FC00730A7C /* Assembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembley.swift; sourceTree = "<group>"; };
+		30B8298420653ABA00730A7C /* Assembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembley.swift; sourceTree = "<group>"; };
 		30B829862065410B00730A7C /* Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolving.swift; sourceTree = "<group>"; };
 		30BDAD1F205414790059DF96 /* FloatingPoint+AngleConverting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+AngleConverting.swift"; sourceTree = "<group>"; };
 		30BDAD212054149E0059DF96 /* Beam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beam.swift; sourceTree = "<group>"; };
@@ -558,6 +560,8 @@
 		30D30E9F203509B300BFB904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D30EBE203509D700BFB904 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
+		30D6E345207034D0005A7889 /* AddPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewController.swift; sourceTree = "<group>"; };
+		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
 		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
 		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -707,6 +711,7 @@
 		3035898D20646F80007F61D5 /* Create game */ = {
 			isa = PBXGroup;
 			children = (
+				30D6E344207034B6005A7889 /* AddPlayers */,
 				30073B152065CA75001E0E74 /* ChooseRules */,
 			);
 			path = "Create game";
@@ -718,7 +723,8 @@
 				303589B0206472BC007F61D5 /* ViewModels.h */,
 				303589B1206472BC007F61D5 /* Info.plist */,
 				303589BA206472D7007F61D5 /* RulesViewModel.swift */,
-				30B82982206539FC00730A7C /* Register.swift */,
+				30B82982206539FC00730A7C /* Assembley.swift */,
+				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1046,7 +1052,7 @@
 				30D30E91203509B300BFB904 /* Info.plist */,
 				30D30EBE203509D700BFB904 /* MainMenuView.swift */,
 				30D30EC82036243000BFB904 /* Resources.xcassets */,
-				30B8298420653ABA00730A7C /* Register.swift */,
+				30B8298420653ABA00730A7C /* Assembley.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1058,6 +1064,14 @@
 				30D30E9F203509B300BFB904 /* Info.plist */,
 			);
 			path = ViewsTests;
+			sourceTree = "<group>";
+		};
+		30D6E344207034B6005A7889 /* AddPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				30D6E345207034D0005A7889 /* AddPlayersViewController.swift */,
+			);
+			path = AddPlayers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1325,6 +1339,11 @@
 					307D58AF202D12F7007C899D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					307D58C3202D12F7007C899D = {
 						CreatedOnToolsVersion = 9.2;
@@ -1700,8 +1719,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30B82983206539FC00730A7C /* Register.swift in Sources */,
+				30B82983206539FC00730A7C /* Assembley.swift in Sources */,
 				303589BB206472D7007F61D5 /* RulesViewModel.swift in Sources */,
+				30D6E3482070360E005A7889 /* AddPlayersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1822,9 +1842,10 @@
 				303589A720646F97007F61D5 /* ChooseRulesViewController.swift in Sources */,
 				30D1433320546AB700B1D186 /* AVCaptureDevice+Permissions.swift in Sources */,
 				30D1433C20546AB800B1D186 /* PHPhotoLibrary+Permissions.swift in Sources */,
-				30B8298520653ABA00730A7C /* Register.swift in Sources */,
+				30B8298520653ABA00730A7C /* Assembley.swift in Sources */,
 				30073B192065CACA001E0E74 /* LimitDescriptionView.swift in Sources */,
 				30D1433E20546AB800B1D186 /* ScrollZone.swift in Sources */,
+				30D6E346207034D0005A7889 /* AddPlayersViewController.swift in Sources */,
 				30D1434220546AB800B1D186 /* UITableView+ReloadHeights.swift in Sources */,
 				30D1433520546AB700B1D186 /* ComplexButton.swift in Sources */,
 				30073B172065CA99001E0E74 /* RulesButton.swift in Sources */,

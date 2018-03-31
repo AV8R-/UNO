@@ -10,10 +10,14 @@ import Foundation
 import Swinject
 import ViewModels
 
-public func register(container: Container) {
+public func assemble(to container: Container) {
     container.register(MainMenuViewControlling.self) { _ in MainMenuView() }
     container.register(ChooseRulesViewControlling.self) { r in
         let vm = r.resolve(ChooseRulesViewModelling.self)!
         return ChooseRulesViewController(viewModel: vm, io: vm.io)
+    }
+    container.register(AddPlayersViewControlling.self) { r in
+        let vm = r.resolve(AddPlayersViewModelling.self)!
+        return AddPlayersViewController(viewModel: vm, io: vm.io)
     }
 }
