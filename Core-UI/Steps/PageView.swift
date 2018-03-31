@@ -13,13 +13,13 @@ class PageView: UIScrollView {
     var lastUnlockedPage = 0
     
     var progressedSteps: [ProgressedStep] {
-        return pages.arrangedSubviews.flatMap { $0 as? ProgressedStep }
+        return pages.arrangedSubviews.compactMap { $0 as? ProgressedStep }
     }
     
-    var didShowPage: ((Int) -> Void)?
+    private var didShowPageHandlers: [(Int) -> Void] = []
     
     var currentPage: Int {
-        return Int(contentOffset.x / bounds.width)
+        return Int(contentOffset.x / max(bounds.width, 1))
     }
     
     override var bounds: CGRect {
@@ -49,9 +49,14 @@ class PageView: UIScrollView {
         
         delegate = self
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func append(didSHhowPageHandler handler: @escaping (Int) -> Void) {
+        self.didShowPageHandlers.append(handler)
+        handler(currentPage)
     }
     
     func append(page: UIView) {
@@ -124,12 +129,12 @@ class PageView: UIScrollView {
 
 extension PageView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        didShowPage?(currentPage)
+        didShowPageHandlers.forEach { $0(currentPage) }
         progressedSteps[currentPage].io.didShow()
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        didShowPage?(currentPage)
+        didShowPageHandlers.forEach { $0(currentPage) }
         progressedSteps[currentPage].io.didShow()
     }
 }

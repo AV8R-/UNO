@@ -15,7 +15,6 @@ public protocol Step {
     
     var input: Input? { set get }
     var currentOutput: Output { get }
-    var title: String { get }
     var onFinish: ((Output) -> Void)? { set get }
     var onShow: ((Self) -> Void)? { set get }
 }
@@ -28,6 +27,7 @@ public protocol ProgressedStep {
 public protocol ProgressedStepIO: class {
     var onChangeCanGoNext: ((Bool)->Void)? { set get }
     var isCanGoNext: Bool { get }
+    var title: String { get }
     func finish()
     func didShow()
 }

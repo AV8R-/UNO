@@ -12,9 +12,11 @@ public class StepsViewController: UIViewController {
     let pagedContainer: PageView = .init()
     let pages: [ProgressedStep]
     public var onClose: (() -> Void)?
+    var tintColor: UIColor
     
-    public init(pages: [ProgressedStep]) {
+    public init(pages: [ProgressedStep], tintColor: UIColor) {
         self.pages = pages
+        self.tintColor = tintColor
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,9 +42,14 @@ public class StepsViewController: UIViewController {
         title.textColor = .white
         view.addSubview(title)
         title.text = self.title
+        title.font = .unoFont(forTextStyle: .title2)
+        title.layer.shadowColor = UIColor.black.cgColor
+        title.layer.shadowOffset = CGSize(width: 0, height: 4)
+        title.layer.shadowRadius = 4
+        title.layer.shadowOpacity = 0.25
         
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: view.topAnchor, constant: 47),
+            title.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
@@ -64,7 +71,7 @@ public class StepsViewController: UIViewController {
             pagedContainer.append(page: step.view)
         }
         
-        let progress = ProgressView(pageView: pagedContainer)
+        let progress = ProgressView(pageView: pagedContainer, tintColor: tintColor)
         progress.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(progress)
         
@@ -75,9 +82,13 @@ public class StepsViewController: UIViewController {
         NSLayoutConstraint.activate([
             progress.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             progress.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            progress.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5),
-            ])
+            progress.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+        ])
         
         self.view = view
+        
+        pagedContainer.append { [weak title, weak self] page in
+            title?.text = self?.pages[page].io.title
+        }
     }
 }

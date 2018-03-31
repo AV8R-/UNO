@@ -24,7 +24,7 @@ final class ChooseRulesViewController: UIViewController, ChooseRulesViewControll
         self.io = io
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
+                
         self.viewModel.onRulesChange = { [weak self] isChanged in
             guard isChanged, let this = self else {
                 return

@@ -41,6 +41,7 @@ class StepProgressButton: ComplexButton {
             switch self {
             case .forward where isSelected:
                 let content = CATextLayer()
+                content.contentsScale = UIScreen.main.scale
                 content.frame = CGRect(
                     origin: CGPoint(x: 0, y: frame.size.height/2 - 15),
                     size: frame.size
@@ -63,6 +64,7 @@ class StepProgressButton: ComplexButton {
                 return content
             case .page(let num, let color, let selectedColor):
                 let content = CATextLayer()
+                content.contentsScale = UIScreen.main.scale
                 var frame = frame
                 frame.origin.y -= 2
                 content.frame = frame

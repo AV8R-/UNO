@@ -16,7 +16,7 @@ class ProgressView: UIView {
     var onClose: (()->Void)?
     var onFinish: (()->Void)?
     
-    init(pageView: PageView) {
+    init(pageView: PageView, tintColor: UIColor) {
         allButtons = UIStackView()
         allButtons.spacing = 20
         allButtons.translatesAutoresizingMaskIntoConstraints = false
@@ -32,29 +32,16 @@ class ProgressView: UIView {
             spacing.heightAnchor.constraint(equalTo: allButtons.heightAnchor),
             ])
         
-        pages =  UIStackView()
+        pages = UIStackView()
         pages.spacing = 12
         pages.translatesAutoresizingMaskIntoConstraints = false
         pages.axis = .horizontal
         
-        pageView.didShowPage = { [weak allButtons, weak pages, weak pageView] page in
-            (allButtons?.arrangedSubviews.first as? UIControl)?.isSelected = page == 0
-            (allButtons?.arrangedSubviews.last as? UIControl)?.isSelected = page == (pages?.arrangedSubviews.count ?? 0) - 1
-            let buttons = pages?.arrangedSubviews
-                .flatMap { $0 as? UIControl }
-            buttons?.forEach { $0.isSelected = false }
-            buttons?[page].isSelected = true
-            
-            if page > 0 {
-                pageView?.progressedSteps[page-1].io.finish()
-            }
-        }
-        
-        let forwardButton = StepProgressButton(kind: .forward(selectedColor: .green))
+        let forwardButton = StepProgressButton(kind: .forward(selectedColor: tintColor))
         allButtons.addArrangedSubview(forwardButton)
         
         for page in 0..<pageView.pages.arrangedSubviews.count {
-            let numButton = StepProgressButton(kind: .page(num: page+1, color: .green, selectedColor: .white))
+            let numButton = StepProgressButton(kind: .page(num: page+1, color: tintColor, selectedColor: .white))
             numButton.onPress = { [weak pageView] in
                 pageView?.scrollTo(page: page)
             }
@@ -69,7 +56,7 @@ class ProgressView: UIView {
             lastUnlocked += 1
         }
         if pages.arrangedSubviews.count > 1 {
-            for button in pages.arrangedSubviews[lastUnlocked+1..<pages.arrangedSubviews.count].flatMap({$0 as? UIControl}) {
+            for button in pages.arrangedSubviews[lastUnlocked+1..<pages.arrangedSubviews.count].compactMap({$0 as? UIControl}) {
                 button.isEnabled = false
             }
         }
@@ -87,11 +74,11 @@ class ProgressView: UIView {
                     unlocked = pages.arrangedSubviews.count - 1
                 }
                 
-                for button in pages.arrangedSubviews[0...unlocked].flatMap({$0 as? UIControl}) {
+                for button in pages.arrangedSubviews[0...unlocked].compactMap({$0 as? UIControl}) {
                     button.isEnabled = true
                 }
                 
-                for button in pages.arrangedSubviews[unlocked+1..<pages.arrangedSubviews.count].flatMap({$0 as? UIControl}) {
+                for button in pages.arrangedSubviews[unlocked+1..<pages.arrangedSubviews.count].compactMap({$0 as? UIControl}) {
                     button.isEnabled = false
                 }
             }
@@ -133,7 +120,20 @@ class ProgressView: UIView {
             pages.topAnchor.constraint(equalTo: allButtons.topAnchor),
             pages.bottomAnchor.constraint(equalTo: allButtons.bottomAnchor),
             pages.centerXAnchor.constraint(equalTo: centerXAnchor),
-            ])
+        ])
+        
+        pageView.append { [weak allButtons, weak pages, weak pageView] (page: Int) -> Void in
+            (allButtons?.arrangedSubviews.first as? UIControl)?.isSelected = page == 0
+            (allButtons?.arrangedSubviews.last as? UIControl)?.isSelected = page == (pages?.arrangedSubviews.count ?? 0) - 1
+            let buttons = pages?.arrangedSubviews
+                .compactMap { $0 as? UIControl }
+            buttons?.forEach { $0.isSelected = false }
+            buttons?[page].isSelected = true
+            
+            if page > 0 {
+                pageView?.progressedSteps[page-1].io.finish()
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -145,7 +145,7 @@ class ProgressView: UIView {
         guard pageView.pages.arrangedSubviews.count > 0 else {
             return
         }
-        pageView.didShowPage?(0)
+//        pageView.didShowPage?(0)
         pageView.progressedSteps.first?.io.didShow()
     }
 }

@@ -30,7 +30,7 @@ final class LimitDescriptionView: UIView {
         let background = BackgroundView(
             color: .lightGreen,
             shadowColor: .darkGreen,
-            cornerRadius: 15
+            cornerRadius: 20
         )
         addSubview(background)
         
@@ -46,13 +46,13 @@ final class LimitDescriptionView: UIView {
         self.label = label
         
         NSLayoutConstraint.activate([
-            background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
-            background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            background.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-            background.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            background.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            background.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
-            label.leadingAnchor.constraint(equalTo: background.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: background.trailingAnchor),
+            label.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 30),
+            label.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -30),
             label.topAnchor.constraint(equalTo: background.topAnchor),
             label.bottomAnchor.constraint(equalTo: background.bottomAnchor),
         ])

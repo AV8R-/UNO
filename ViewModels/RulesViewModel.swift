@@ -57,7 +57,7 @@ public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, Progres
     public typealias Output = Rules
 
     public var input: Void?
-    public var title: String { return NSLocalizedString("Rules", comment: "") }
+    public var title: String { return NSLocalizedString("WIN SCORES", comment: "") }
     public var onShow: ((ChooseRulesViewModel) -> Void)?
     public var onFinish: ((Rules) -> Void)?
     public var currentOutput: Rules {

@@ -46,10 +46,10 @@ final class RulesButton: UNOButton {
         overlayMask.addSubview(darkOverlay)
         
         NSLayoutConstraint.activate([
-            background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            background.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-            background.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            background.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            background.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
