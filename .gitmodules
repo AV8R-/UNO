@@ -10,3 +10,6 @@
 [submodule "Dependencies/SwInject"]
 	path = Dependencies/SwInject
 	url = git@github.com:Swinject/Swinject.git
+[submodule "Dependencies/SnapKit"]
+	path = Dependencies/SnapKit
+	url = git@github.com:SnapKit/SnapKit.git
