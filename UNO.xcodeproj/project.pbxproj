@@ -14,6 +14,9 @@
 		30167B6C202FADFB00DAE775 /* GameCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6B202FADFB00DAE775 /* GameCreating.swift */; };
 		30167B6E202FAE9800DAE775 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B6D202FAE9800DAE775 /* Rules.swift */; };
 		30167B72202FB7E400DAE775 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30167B71202FB7E400DAE775 /* ValidationError.swift */; };
+		302886A92082403D00E86494 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302886672082402400E86494 /* SnapKit.framework */; };
+		302886AA2082404300E86494 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302886672082402400E86494 /* SnapKit.framework */; };
+		302886AB2082404300E86494 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 302886672082402400E86494 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		302FCBEB206515A200B02836 /* UNOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FCBEA206515A200B02836 /* UNOButton.swift */; };
 		302FCCE420651D9200B02836 /* RulesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FCCE320651D9200B02836 /* RulesPicker.swift */; };
 		303589A720646F97007F61D5 /* ChooseRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589A620646F97007F61D5 /* ChooseRulesViewController.swift */; };
@@ -132,6 +135,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		302886662082402400E86494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302886212082402400E86494 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		302886682082402400E86494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302886212082402400E86494 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit Tests";
+		};
+		302886AC2082404300E86494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302886212082402400E86494 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
 		302FCC6E20651CAB00B02836 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 302FCC4C20651CAB00B02836 /* Swinject.xcodeproj */;
@@ -463,6 +487,7 @@
 				30D17A342067F0FC005C6331 /* AttributedTextView.framework in Embed Frameworks */,
 				307D5904202D14C3007C899D /* Services.framework in Embed Frameworks */,
 				307D58E0202D132D007C899D /* Model.framework in Embed Frameworks */,
+				302886AB2082404300E86494 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +502,7 @@
 		30167B6B202FADFB00DAE775 /* GameCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreating.swift; sourceTree = "<group>"; };
 		30167B6D202FAE9800DAE775 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		30167B71202FB7E400DAE775 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		302886212082402400E86494 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SnapKit.xcodeproj; sourceTree = "<group>"; };
 		302FCBEA206515A200B02836 /* UNOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNOButton.swift; sourceTree = "<group>"; };
 		302FCC4C20651CAB00B02836 /* Swinject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Swinject.xcodeproj; sourceTree = "<group>"; };
 		302FCCE320651D9200B02836 /* RulesPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPicker.swift; sourceTree = "<group>"; };
@@ -608,6 +634,7 @@
 				30D17A332067F0FC005C6331 /* AttributedTextView.framework in Frameworks */,
 				307D5903202D14C3007C899D /* Services.framework in Frameworks */,
 				307D58DF202D132D007C899D /* Model.framework in Frameworks */,
+				302886AA2082404300E86494 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +676,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302886A92082403D00E86494 /* SnapKit.framework in Frameworks */,
 				30AB572920652464008ADA9A /* Swinject.framework in Frameworks */,
 				30D1430020545B0200B1D186 /* AttributedTextView.framework in Frameworks */,
 			);
@@ -686,6 +714,23 @@
 				302FCCE320651D9200B02836 /* RulesPicker.swift */,
 			);
 			path = GameCreator;
+			sourceTree = "<group>";
+		};
+		302886082082402400E86494 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				302886212082402400E86494 /* SnapKit.xcodeproj */,
+			);
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		302886222082402400E86494 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				302886672082402400E86494 /* SnapKit.framework */,
+				302886692082402400E86494 /* SnapKit Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		302FCBEC20651CAB00B02836 /* SwInject */ = {
@@ -893,6 +938,7 @@
 		30C6ADFB202F0BEA00B6CF2D /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				302886082082402400E86494 /* SnapKit */,
 				302FCBEC20651CAB00B02836 /* SwInject */,
 				30D14307205466E800B1D186 /* SwiftUtils */,
 				30D1429620545AE600B1D186 /* AttributedTextView */,
@@ -1197,6 +1243,7 @@
 				303589B4206472BC007F61D5 /* PBXTargetDependency */,
 				30AB570D2065235D008ADA9A /* PBXTargetDependency */,
 				30D17A362067F0FC005C6331 /* PBXTargetDependency */,
+				302886AD2082404300E86494 /* PBXTargetDependency */,
 			);
 			name = UNO;
 			productName = UNO;
@@ -1403,6 +1450,10 @@
 					ProjectRef = 30C6AF2D202F0BEB00B6CF2D /* Quick.xcodeproj */;
 				},
 				{
+					ProductGroup = 302886222082402400E86494 /* Products */;
+					ProjectRef = 302886212082402400E86494 /* SnapKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 302FCC4D20651CAB00B02836 /* Products */;
 					ProjectRef = 302FCC4C20651CAB00B02836 /* Swinject.xcodeproj */;
 				},
@@ -1424,6 +1475,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		302886672082402400E86494 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 302886662082402400E86494 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		302886692082402400E86494 /* SnapKit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit Tests.xctest";
+			remoteRef = 302886682082402400E86494 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		302FCC6F20651CAB00B02836 /* Swinject.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1874,6 +1939,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		302886AD2082404300E86494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			targetProxy = 302886AC2082404300E86494 /* PBXContainerItemProxy */;
+		};
 		303589B4206472BC007F61D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 303589AD206472BC007F61D5 /* ViewModels */;
