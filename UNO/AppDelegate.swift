@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import Views
-import ViewModels
 import Swinject
-import Services
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let container = Container()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        Services.register(container: AppDelegate.container)
-        ViewModels.assemble(to: AppDelegate.container)
-        Views.assemble(to: AppDelegate.container)
+        ServicesAssembley.register(container: AppDelegate.container)
+        ViewModelsAssembley.assemble(to: AppDelegate.container)
+        ViewsAssembley.assemble(to: AppDelegate.container)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white

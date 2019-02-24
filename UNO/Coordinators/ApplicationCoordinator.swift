@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Views
 
 final class ApplicationCoordinator: Coordinator {
     let window: UIWindow

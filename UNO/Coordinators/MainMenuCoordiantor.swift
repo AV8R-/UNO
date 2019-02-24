@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Views
 
 final class MainMenuCoordinator: Coordinator {
     private var presenter: UINavigationController
