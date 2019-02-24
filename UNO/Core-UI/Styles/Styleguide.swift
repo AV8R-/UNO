@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    public static func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
+    public static func prefferedFontSize(forTextStyle: UIFont.TextStyle) -> CGFloat {
         switch forTextStyle {
         case .signBig: return 36
         case .signSmall: return 30
@@ -22,7 +22,7 @@ extension UIFont {
         }
     }
     
-    private static func prefferedFontName(forTextStyle: UIFontTextStyle) -> String {
+    private static func prefferedFontName(forTextStyle: UIFont.TextStyle) -> String {
         switch forTextStyle {
         case .signBig, .signSmall: return "HelveticaNeue-CondensedBlack"
         case .headline: return "HelveticaNeue-CondensedBold"
@@ -31,7 +31,7 @@ extension UIFont {
         }
     }
     
-    public class func unoFont(forTextStyle: UIFontTextStyle) -> UIFont {
+    public class func unoFont(forTextStyle: UIFont.TextStyle) -> UIFont {
         return UIFontMetrics(forTextStyle: forTextStyle)
             .scaledFont(
                 for: UIFont(
@@ -42,9 +42,9 @@ extension UIFont {
     }
 }
 
-extension UIFontTextStyle {
-    static let signBig = UIFontTextStyle(rawValue: "uno_sign")
-    static let signSmall = UIFontTextStyle(rawValue: "uno_sign")
+extension UIFont.TextStyle {
+    static let signBig = UIFont.TextStyle(rawValue: "uno_sign")
+    static let signSmall = UIFont.TextStyle(rawValue: "uno_sign")
 }
 
 extension UIColor {

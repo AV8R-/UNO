@@ -31,7 +31,7 @@ open class UNOButton: ComplexButton {
         
         let animator = UIViewPropertyAnimator(
             duration: 0.05,
-            curve: UIViewAnimationCurve.easeOut
+            curve: UIView.AnimationCurve.easeOut
         ) {
             self.transform = self.isHighlighted
                 ? CGAffineTransform.identity.scaledBy(x: scale, y: scale)

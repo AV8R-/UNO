@@ -44,7 +44,7 @@ extension UIView {
         shadowLayer.shadowRadius = size
         
         // Causes the inner region in this example to NOT be filled.
-        shadowLayer.fillRule = kCAFillRuleEvenOdd
+        shadowLayer.fillRule = CAShapeLayerFillRule.evenOdd
         
         // Create the larger rectangle path.
         let path = CGMutablePath()

@@ -57,7 +57,6 @@ private enum Styles {
             make.size.equalTo(Constants.addButton.diameter)
         }
         button.setTitle("+", for: .normal)
-        button.touchOutsets = UIEdgeInsetsMake(12, 12, 12, 12)
     }
 }
 

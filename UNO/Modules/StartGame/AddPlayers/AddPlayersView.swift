@@ -52,7 +52,8 @@ final class AddPlayersView: UIView {
 extension AddPlayersView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.text = nil
-        viewModel.didEnter(text: textField.text)
+        viewModel.didEnter(text: textField.text ?? "")
+        return true
     }
 }
 

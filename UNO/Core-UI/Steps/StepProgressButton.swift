@@ -16,7 +16,7 @@ class StepProgressButton: ComplexButton {
         
         var color: UIColor {
             if case .page(_, let color, _) = self  { return color }
-            else                             { return .clear }
+            else                                   { return .clear }
         }
         
         var selectedColor: UIColor {
@@ -48,7 +48,7 @@ class StepProgressButton: ComplexButton {
                 )
                 content.string = "START"
                 content.fontSize = UIFont.prefferedFontSize(forTextStyle: .title1)
-                content.alignmentMode = kCAAlignmentCenter
+                content.alignmentMode = CATextLayerAlignmentMode.center
                 content.font = UIFont.unoFont(forTextStyle: .title1)
                 
                 return content
@@ -59,7 +59,7 @@ class StepProgressButton: ComplexButton {
                 content.strokeColor = UIColor.white.cgColor
                 content.fillColor = UIColor.clear.cgColor
                 content.lineWidth = 4
-                content.lineCap = kCALineCapRound
+                content.lineCap = CAShapeLayerLineCap.round
                 
                 return content
             case .page(let num, let color, let selectedColor):
@@ -70,7 +70,7 @@ class StepProgressButton: ComplexButton {
                 content.frame = frame
                 content.string = "\(num)"
                 content.fontSize = UIFont.prefferedFontSize(forTextStyle: .title1)
-                content.alignmentMode = kCAAlignmentCenter
+                content.alignmentMode = CATextLayerAlignmentMode.center
                 content.font = UIFont.unoFont(forTextStyle: .title1)
                 content.foregroundColor = isSelected
                     ? color.cgColor

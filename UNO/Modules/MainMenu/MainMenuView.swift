@@ -110,10 +110,10 @@ public final class MainMenuView: UIViewController, MainMenuViewControlling {
         layout.itemSize = CGSize(width: width, height: height)
         let buttons = MenuCollectionController(collectionViewLayout: layout)
         buttons.view.translatesAutoresizingMaskIntoConstraints = false
-        buttons.willMove(toParentViewController: self)
-        addChildViewController(buttons)
+        buttons.willMove(toParent: self)
+        addChild(buttons)
         view.addSubview(buttons.view)
-        buttons.didMove(toParentViewController: self)
+        buttons.didMove(toParent: self)
         buttons.delegate = self
 
         // Title
