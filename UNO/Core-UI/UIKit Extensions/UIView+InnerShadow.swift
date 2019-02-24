@@ -32,8 +32,7 @@ extension UIView {
         size: CGFloat,
         cornerRadius: CGFloat = 0.0,
         opacity: Float
-        )
-    {
+    ) {
         layer.masksToBounds = true
         let shadowLayer = CAShapeLayer()
         shadowLayer.frame = bounds;

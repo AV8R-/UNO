@@ -80,6 +80,12 @@
 		DEDC4FDF2222A932006101BF /* UINavigationBar+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCB2222A932006101BF /* UINavigationBar+BorderColor.swift */; };
 		DEDC4FE02222A932006101BF /* UIView+Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCC2222A932006101BF /* UIView+Constrain.swift */; };
 		DEDC4FE12222A932006101BF /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCD2222A932006101BF /* AsyncImageView.swift */; };
+		DEDC4FE52222CC6F006101BF /* UIView+FluentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FE42222CC6F006101BF /* UIView+FluentConfiguration.swift */; };
+		DEDC4FE82222CE7F006101BF /* SearchPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */; };
+		DEDC4FEA2222D06D006101BF /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FE92222D06D006101BF /* Shadow.swift */; };
+		DEDC4FED2222D20A006101BF /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FEC2222D20A006101BF /* UIButton+Style.swift */; };
+		DEDC4FEF2222F04E006101BF /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FEE2222F04E006101BF /* UITextField+Style.swift */; };
+		DEDC4FF12222F612006101BF /* UIButton+TouchOutsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FF02222F612006101BF /* UIButton+TouchOutsets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -429,6 +435,12 @@
 		DEDC4FCB2222A932006101BF /* UINavigationBar+BorderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BorderColor.swift"; sourceTree = "<group>"; };
 		DEDC4FCC2222A932006101BF /* UIView+Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constrain.swift"; sourceTree = "<group>"; };
 		DEDC4FCD2222A932006101BF /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		DEDC4FE42222CC6F006101BF /* UIView+FluentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FluentConfiguration.swift"; sourceTree = "<group>"; };
+		DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayerView.swift; sourceTree = "<group>"; };
+		DEDC4FE92222D06D006101BF /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		DEDC4FEC2222D20A006101BF /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
+		DEDC4FEE2222F04E006101BF /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
+		DEDC4FF02222F612006101BF /* UIButton+TouchOutsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TouchOutsets.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,7 +529,7 @@
 		3049166B20350085006DC13D /* Core-UI */ = {
 			isa = PBXGroup;
 			children = (
-				30D1428C2054508D00B1D186 /* Styleguide.swift */,
+				DEDC4FEB2222D1FA006101BF /* Styles */,
 				30D14301205464C200B1D186 /* Cards */,
 				30BDAD1E205414540059DF96 /* UIKit Extensions */,
 				30BDAD1D205414250059DF96 /* UNOBackground */,
@@ -635,7 +647,9 @@
 		30BDAD1E205414540059DF96 /* UIKit Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC4FE42222CC6F006101BF /* UIView+FluentConfiguration.swift */,
 				30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */,
+				DEDC4FF02222F612006101BF /* UIButton+TouchOutsets.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -754,6 +768,7 @@
 		30D6E344207034B6005A7889 /* AddPlayers */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC4FE62222CE75006101BF /* Views */,
 				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
 				30D6E345207034D0005A7889 /* AddPlayersView.swift */,
 			);
@@ -832,6 +847,25 @@
 				30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */,
 			);
 			path = StartGame;
+			sourceTree = "<group>";
+		};
+		DEDC4FE62222CE75006101BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC4FEB2222D1FA006101BF /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC4FE92222D06D006101BF /* Shadow.swift */,
+				30D1428C2054508D00B1D186 /* Styleguide.swift */,
+				DEDC4FEC2222D20A006101BF /* UIButton+Style.swift */,
+				DEDC4FEE2222F04E006101BF /* UITextField+Style.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1198,6 +1232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC4FED2222D20A006101BF /* UIButton+Style.swift in Sources */,
 				DEDC4F862222A47E006101BF /* StepProgressButton.swift in Sources */,
 				DEDC4F9D2222A4DA006101BF /* Arrow.swift in Sources */,
 				DEDC4F962222A4B7006101BF /* Calculator.swift in Sources */,
@@ -1218,8 +1253,11 @@
 				DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */,
 				DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */,
 				DEDC4F942222A4B7006101BF /* RulesPicker.swift in Sources */,
+				DEDC4FEF2222F04E006101BF /* UITextField+Style.swift in Sources */,
 				DEDC4F832222A47E006101BF /* Beams.swift in Sources */,
 				DEDC4F872222A47E006101BF /* ProgressView.swift in Sources */,
+				DEDC4FE82222CE7F006101BF /* SearchPlayerView.swift in Sources */,
+				DEDC4FEA2222D06D006101BF /* Shadow.swift in Sources */,
 				DEDC4FDF2222A932006101BF /* UINavigationBar+BorderColor.swift in Sources */,
 				DEDC4F892222A47E006101BF /* PageView.swift in Sources */,
 				DEDC4F902222A4AD006101BF /* ValidationError.swift in Sources */,
@@ -1242,12 +1280,14 @@
 				DEDC4F992222A4DA006101BF /* ChooseRulesView.swift in Sources */,
 				DEDC4F8F2222A4AD006101BF /* Rules.swift in Sources */,
 				DEDC4F8B2222A47E006101BF /* StepsViewController.swift in Sources */,
+				DEDC4FF12222F612006101BF /* UIButton+TouchOutsets.swift in Sources */,
 				307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */,
 				DEDC4F802222A47E006101BF /* FloatingPoint+AngleConverting.swift in Sources */,
 				DEDC4F912222A4B7006101BF /* GameCreating.swift in Sources */,
 				DEDC4F9A2222A4DA006101BF /* RulesButton.swift in Sources */,
 				DEDC4FE02222A932006101BF /* UIView+Constrain.swift in Sources */,
 				DEDC4FDC2222A932006101BF /* Dictionary+Merge.swift in Sources */,
+				DEDC4FE52222CC6F006101BF /* UIView+FluentConfiguration.swift in Sources */,
 				DEDC4F7D2222A47E006101BF /* Styleguide.swift in Sources */,
 				DEDC4F932222A4B7006101BF /* RulesPicking.swift in Sources */,
 				DEDC4F952222A4B7006101BF /* Calculating.swift in Sources */,

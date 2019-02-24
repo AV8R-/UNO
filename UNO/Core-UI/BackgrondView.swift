@@ -9,19 +9,18 @@
 import UIKit
 
 final class BackgroundView: UIView {
-    weak var shadowLayer: CALayer?
-    let shadowColor: UIColor
-    let shadowSide: UIView.ShadowSide
-    let shadowSize: CGFloat
+    private weak var shadowLayer: CALayer?
+    var shadowColor: UIColor
+    var shadowSide: UIView.ShadowSide
+    var shadowSize: CGFloat
     
     init(
-        color: UIColor,
-        shadowColor: UIColor,
-        cornerRadius: CGFloat,
+        color: UIColor = .clear,
+        shadowColor: UIColor = .clear,
+        cornerRadius: CGFloat = 0,
         shadowSide: UIView.ShadowSide = [.top, .bottom],
         shadowSize: CGFloat = 4
-        )
-    {
+    ) {
         self.shadowSide = shadowSide
         self.shadowSize = shadowSize
         self.shadowColor = shadowColor

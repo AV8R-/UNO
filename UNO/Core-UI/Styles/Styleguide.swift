@@ -8,9 +8,11 @@
 
 import UIKit
 
-public extension UIFont {
+extension UIFont {
     public static func prefferedFontSize(forTextStyle: UIFontTextStyle) -> CGFloat {
         switch forTextStyle {
+        case .signBig: return 36
+        case .signSmall: return 30
         case .headline: return 72
         case .largeTitle: return 64
         case .title1: return 24
@@ -22,6 +24,7 @@ public extension UIFont {
     
     private static func prefferedFontName(forTextStyle: UIFontTextStyle) -> String {
         switch forTextStyle {
+        case .signBig, .signSmall: return "HelveticaNeue-CondensedBlack"
         case .headline: return "HelveticaNeue-CondensedBold"
         case .title1, .title2, .largeTitle, .body: return "HelveticaNeue-CondensedBlack"
         default: return "HelveticaNeue"
@@ -30,15 +33,21 @@ public extension UIFont {
     
     public class func unoFont(forTextStyle: UIFontTextStyle) -> UIFont {
         return UIFontMetrics(forTextStyle: forTextStyle)
-            .scaledFont(for: UIFont(
-                name: prefferedFontName(forTextStyle: forTextStyle),
-                size: prefferedFontSize(forTextStyle: forTextStyle)
+            .scaledFont(
+                for: UIFont(
+                    name: prefferedFontName(forTextStyle: forTextStyle),
+                    size: prefferedFontSize(forTextStyle: forTextStyle)
                 )!
-        )
+            )
     }
 }
 
-public extension UIColor {
+extension UIFontTextStyle {
+    static let signBig = UIFontTextStyle(rawValue: "uno_sign")
+    static let signSmall = UIFontTextStyle(rawValue: "uno_sign")
+}
+
+extension UIColor {
     static let materialYellow = UIColor(red: 248/255.0, green: 201/255.0, blue: 33/255.0, alpha: 1)
     static let lightRed = UIColor(red: 255/255.0, green: 182/255.0, blue: 0, alpha: 1)
     static let darkRed = UIColor(red: 236/255.0, green: 27/255.0, blue: 35/255.0, alpha: 1)

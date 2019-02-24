@@ -19,6 +19,14 @@ public final class AddPlayersViewModel: Step, ProgressedStepIO {
     init(playersService: GameCreating) {
         self.playersService = playersService
     }
-    
+
+    func didEnter(text: String) {
+        do {
+            currentOutput.append(try Player(name: text))
+        } catch {
+//            view.showError(error)
+        }
+    }
 }
+
 
