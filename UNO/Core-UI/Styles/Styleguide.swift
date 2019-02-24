@@ -24,9 +24,8 @@ extension UIFont {
     
     private static func prefferedFontName(forTextStyle: UIFont.TextStyle) -> String {
         switch forTextStyle {
-        case .signBig, .signSmall: return "HelveticaNeue-CondensedBlack"
         case .headline: return "HelveticaNeue-CondensedBold"
-        case .title1, .title2, .largeTitle, .body: return "HelveticaNeue-CondensedBlack"
+        case .signBig, .signSmall, .title1, .title2, .largeTitle, .body: return "HelveticaNeue-CondensedBlack"
         default: return "HelveticaNeue"
         }
     }

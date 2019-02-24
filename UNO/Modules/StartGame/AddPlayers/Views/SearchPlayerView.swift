@@ -6,7 +6,7 @@ final class SearchPlayerView: UIView {
 
     var delegate: UITextFieldDelegate? {
         set {
-            inputField.delegate = delegate
+            inputField.delegate = newValue
         }
         get {
             return inputField.delegate
@@ -15,14 +15,14 @@ final class SearchPlayerView: UIView {
 
     init() {
         super.init(frame: .zero)
-        setupView()
+        load()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    private func load() {
         backgroundColor = .clear
         snp.makeConstraints { make in
             make.height.equalTo(Constants.height)
@@ -79,7 +79,7 @@ private extension UITextField.Style {
         placeholder: NSLocalizedString("Enter player name", comment: ""),
         tintColor: .white,
         keyboardType: .namePhonePad,
-        returnKeyType: .next,
+        returnKeyType: .default,
         autocorrection: .no
     )
 }

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         ServicesAssembley.register(container: AppDelegate.container)
+        UIView.insetsInit()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator.start()
         self.window = window
         self.coordinator = coordinator
+
 
         return true
     }

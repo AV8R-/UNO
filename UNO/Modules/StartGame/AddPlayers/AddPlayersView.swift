@@ -1,14 +1,21 @@
 import UIKit
 import SnapKit
+import ReactiveKit
+import Bond
 
 final class AddPlayersView: UIView {
     var viewModel: AddPlayersViewModel
+    let disposeBag = DisposeBag()
+
+    private let search = SearchPlayerView()
+    private let list = PlayersListView()
 
     init(viewModel: AddPlayersViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         loadView()
+        bindData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -17,14 +24,12 @@ final class AddPlayersView: UIView {
     
     private func loadView() {
         backgroundColor = .clear
-        
         let background = UIView().configured(with: Styles.background)
-        let search = SearchPlayerView()
-        let listBackground = BackgroundView().configured(with: Styles.itemBackground)
-        
+        search.delegate = self
+
         addSubview(background)
         addSubview(search)
-        addSubview(listBackground)
+        addSubview(list)
 
         background.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(Constants.backgroundInsets)
@@ -36,7 +41,7 @@ final class AddPlayersView: UIView {
             make.right.equalTo(background).offset(-Constants.searchSideInsets)
         }
 
-        listBackground.snp.makeConstraints { make in
+        list.snp.makeConstraints { make in
             make.top.equalTo(search.snp.bottom).offset(Constants.listInsets.top)
             make.left.equalTo(background).offset(Constants.listInsets.left)
             make.bottom.equalTo(background).offset(-Constants.listInsets.bottom)
@@ -47,12 +52,24 @@ final class AddPlayersView: UIView {
     func showError(_ error: Error) {
         print(error)
     }
+
+    func bindData() {
+        viewModel.players.bind(to: list, using: .init { (player, indexPath, tableView) -> UITableViewCell in
+            let cell: PlayerListCell = tableView.dequeueAndRegisterCell()
+            cell.textLabel?.text = player[indexPath.row].name
+            return cell
+        })
+
+        viewModel.players.observeNext { changeset in
+            print(changeset.collection)
+        }.dispose(in: disposeBag)
+    }
 }
 
 extension AddPlayersView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.text = nil
         viewModel.didEnter(text: textField.text ?? "")
+        textField.text = nil
         return true
     }
 }
@@ -72,22 +89,13 @@ private enum Styles {
         background.backgroundColor = .white
         background.layer.cornerRadius = Constants.cornerRadius
     }
-
-    static func itemBackground(_ background: BackgroundView) {
-        background.backgroundColor = .lightGreen
-        background.shadowColor = .darkGreen
-        background.layer.cornerRadius = Constants.itemsCornerRadius
-    }
 }
 
 private enum Constants {
     static let backgroundInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-
     static let cornerRadius: CGFloat = 15
-    static let itemsCornerRadius: CGFloat = 20
 
     static let searchTopInset: CGFloat = 30
     static let searchSideInsets: CGFloat = 10
-
     static let listInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 }

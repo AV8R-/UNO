@@ -1,11 +1,15 @@
 import Foundation
+import Bond
 
 public final class AddPlayersViewModel: Step, ProgressedStepIO {
     typealias Input = Rules
     typealias Output = [Player]
 
     var input: Rules?
-    var currentOutput: [Player] = []
+    var currentOutput: [Player] {
+        return players.array
+    }
+    let players = MutableObservableArray<Player>()
 
     var onFinish: (([Player]) -> Void)?
     var onShow: ((AddPlayersViewModel) -> Void)?
@@ -22,7 +26,7 @@ public final class AddPlayersViewModel: Step, ProgressedStepIO {
 
     func didEnter(text: String) {
         do {
-            currentOutput.append(try Player(name: text))
+            players.append(try Player(name: text))
         } catch {
 //            view.showError(error)
         }

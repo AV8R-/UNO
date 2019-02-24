@@ -31,6 +31,13 @@
 		DE638435222303EE00B0DDE1 /* UINavigationBar+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE638421222303EE00B0DDE1 /* UINavigationBar+BorderColor.swift */; };
 		DE638436222303EE00B0DDE1 /* UIView+Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE638422222303EE00B0DDE1 /* UIView+Constrain.swift */; };
 		DE638437222303EE00B0DDE1 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE638423222303EE00B0DDE1 /* AsyncImageView.swift */; };
+		DE9AC34F22232A3800CCE315 /* PlayersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC34E22232A3800CCE315 /* PlayersListView.swift */; };
+		DE9AC351222334E600CCE315 /* PlayerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC350222334E600CCE315 /* PlayerListCell.swift */; };
+		DE9AC3532223354700CCE315 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC3522223354700CCE315 /* UITableView+Reusable.swift */; };
+		DE9AC355222338BA00CCE315 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC354222338BA00CCE315 /* UILabel+Style.swift */; };
+		DE9AC35922233D3000CCE315 /* UIView+TouchInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC35822233D3000CCE315 /* UIView+TouchInsets.swift */; };
+		DE9AC35B22233DA600CCE315 /* NSObject+AssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC35A22233DA600CCE315 /* NSObject+AssociatedKeys.swift */; };
+		DE9AC35D22233DDC00CCE315 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC35C22233DDC00CCE315 /* Swizzle.swift */; };
 		DEDC4F7D2222A47E006101BF /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1428C2054508D00B1D186 /* Styleguide.swift */; };
 		DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D143022054661400B1D186 /* CardButton.swift */; };
 		DEDC4F7F2222A47E006101BF /* UIView+InnerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */; };
@@ -170,6 +177,13 @@
 		DE638421222303EE00B0DDE1 /* UINavigationBar+BorderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BorderColor.swift"; sourceTree = "<group>"; };
 		DE638422222303EE00B0DDE1 /* UIView+Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constrain.swift"; sourceTree = "<group>"; };
 		DE638423222303EE00B0DDE1 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		DE9AC34E22232A3800CCE315 /* PlayersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListView.swift; sourceTree = "<group>"; };
+		DE9AC350222334E600CCE315 /* PlayerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListCell.swift; sourceTree = "<group>"; };
+		DE9AC3522223354700CCE315 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		DE9AC354222338BA00CCE315 /* UILabel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Style.swift"; sourceTree = "<group>"; };
+		DE9AC35822233D3000CCE315 /* UIView+TouchInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TouchInsets.swift"; sourceTree = "<group>"; };
+		DE9AC35A22233DA600CCE315 /* NSObject+AssociatedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AssociatedKeys.swift"; sourceTree = "<group>"; };
+		DE9AC35C22233DDC00CCE315 /* Swizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		DEDC4FE42222CC6F006101BF /* UIView+FluentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FluentConfiguration.swift"; sourceTree = "<group>"; };
 		DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayerView.swift; sourceTree = "<group>"; };
 		DEDC4FE92222D06D006101BF /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
@@ -231,6 +245,8 @@
 				302FCBEA206515A200B02836 /* UNOButton.swift */,
 				30D17A312066FDCC005C6331 /* Rescale.swift */,
 				30D6E34920704682005A7889 /* BackgrondView.swift */,
+				DE9AC35A22233DA600CCE315 /* NSObject+AssociatedKeys.swift */,
+				DE9AC35C22233DDC00CCE315 /* Swizzle.swift */,
 			);
 			path = "Core-UI";
 			sourceTree = "<group>";
@@ -343,6 +359,8 @@
 			children = (
 				DEDC4FE42222CC6F006101BF /* UIView+FluentConfiguration.swift */,
 				30073B1A20665B17001E0E74 /* UIView+InnerShadow.swift */,
+				DE9AC3522223354700CCE315 /* UITableView+Reusable.swift */,
+				DE9AC35822233D3000CCE315 /* UIView+TouchInsets.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -457,6 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */,
+				DE9AC34E22232A3800CCE315 /* PlayersListView.swift */,
+				DE9AC350222334E600CCE315 /* PlayerListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,6 +488,7 @@
 				30D1428C2054508D00B1D186 /* Styleguide.swift */,
 				DEDC4FEC2222D20A006101BF /* UIButton+Style.swift */,
 				DEDC4FEE2222F04E006101BF /* UITextField+Style.swift */,
+				DE9AC354222338BA00CCE315 /* UILabel+Style.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -702,17 +723,21 @@
 				DEDC4F822222A47E006101BF /* Beam.swift in Sources */,
 				DE638437222303EE00B0DDE1 /* AsyncImageView.swift in Sources */,
 				DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */,
+				DE9AC35922233D3000CCE315 /* UIView+TouchInsets.swift in Sources */,
 				DEDC4F8C2222A47E006101BF /* UNOButton.swift in Sources */,
 				DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */,
 				DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */,
 				DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */,
 				DEDC4F942222A4B7006101BF /* RulesPicker.swift in Sources */,
 				DEDC4FEF2222F04E006101BF /* UITextField+Style.swift in Sources */,
+				DE9AC35B22233DA600CCE315 /* NSObject+AssociatedKeys.swift in Sources */,
 				DEDC4F832222A47E006101BF /* Beams.swift in Sources */,
 				DE638434222303EE00B0DDE1 /* ComplexButton.swift in Sources */,
 				DEDC4F872222A47E006101BF /* ProgressView.swift in Sources */,
 				DEDC4FE82222CE7F006101BF /* SearchPlayerView.swift in Sources */,
 				DE638428222303EE00B0DDE1 /* String+Size.swift in Sources */,
+				DE9AC35D22233DDC00CCE315 /* Swizzle.swift in Sources */,
+				DE9AC355222338BA00CCE315 /* UILabel+Style.swift in Sources */,
 				DEDC4FEA2222D06D006101BF /* Shadow.swift in Sources */,
 				DE63842F222303EE00B0DDE1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DE638430222303EE00B0DDE1 /* PHPhotoLibrary+Permissions.swift in Sources */,
@@ -720,6 +745,7 @@
 				DEDC4F902222A4AD006101BF /* ValidationError.swift in Sources */,
 				DEDC4F972222A4B7006101BF /* ServicesAssembley.swift in Sources */,
 				DE638435222303EE00B0DDE1 /* UINavigationBar+BorderColor.swift in Sources */,
+				DE9AC351222334E600CCE315 /* PlayerListCell.swift in Sources */,
 				DEDC4F812222A47E006101BF /* RadialGradientBuilder.swift in Sources */,
 				DEDC4F842222A47E006101BF /* RadialGradient.swift in Sources */,
 				DEDC4F982222A4DA006101BF /* AddPlayersView.swift in Sources */,
@@ -738,10 +764,12 @@
 				DEDC4F802222A47E006101BF /* FloatingPoint+AngleConverting.swift in Sources */,
 				DEDC4F912222A4B7006101BF /* GameCreating.swift in Sources */,
 				DEDC4F9A2222A4DA006101BF /* RulesButton.swift in Sources */,
+				DE9AC3532223354700CCE315 /* UITableView+Reusable.swift in Sources */,
 				DE638433222303EE00B0DDE1 /* UITextViewFixed.swift in Sources */,
 				DEDC4FE52222CC6F006101BF /* UIView+FluentConfiguration.swift in Sources */,
 				DEDC4F7D2222A47E006101BF /* Styleguide.swift in Sources */,
 				DEDC4F932222A4B7006101BF /* RulesPicking.swift in Sources */,
+				DE9AC34F22232A3800CCE315 /* PlayersListView.swift in Sources */,
 				DE638424222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift in Sources */,
 				DEDC4F952222A4B7006101BF /* Calculating.swift in Sources */,
 				30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */,

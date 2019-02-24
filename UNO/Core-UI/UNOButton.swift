@@ -14,9 +14,10 @@ open class UNOButton: ComplexButton {
         case grow, diminish
     }
     
-    open var highlightDirection: HighlightDirection = .grow
+    open var highlightDirection: HighlightDirection
     
-    public init() {
+    public init(touchDirection: HighlightDirection = .grow) {
+        self.highlightDirection = touchDirection
         super.init(frame: .zero)
         shouldMakeTranclucentOnHiglhlight = false
     }
