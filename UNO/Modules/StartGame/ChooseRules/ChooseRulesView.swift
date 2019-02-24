@@ -27,22 +27,29 @@ final class ChooseRulesView: UIView, ProgressedStep {
         translatesAutoresizingMaskIntoConstraints = false
                 
         self.viewModel.onRulesChange = { [weak self] isChanged in
-            guard isChanged, let this = self else {
+            guard isChanged, let self = self else {
                 return
             }
+
             let p1 = CGPoint(x: 0.25, y: 0.46)
             let p2 = CGPoint(x: 0.45, y: 0.94)
             let isMax: Bool, isMin: Bool
-            if case .max = this.viewModel.rules {
+            if case .max = self.viewModel.rules {
                 isMax = true; isMin = false
             } else {
                 isMin = true; isMax = false
             }
-            this.arrowLeftPosition.isActive = isMax
-            this.arrowRightPosition.isActive = isMin
+            self.arrowLeftPosition.isActive = isMax
+            self.arrowRightPosition.isActive = isMin
             
-            UIViewPropertyAnimator(duration: 0.2, controlPoint1: p1, controlPoint2: p2, animations: this.view.layoutIfNeeded).startAnimation()
-            this.hintView.text = this.viewModel.currentDescription
+            UIViewPropertyAnimator(
+                duration: 0.2,
+                controlPoint1: p1,
+                controlPoint2: p2,
+                animations: self.view.layoutIfNeeded
+            ).startAnimation()
+
+            self.hintView.text = self.viewModel.currentDescription
         }
         
         loadView()
