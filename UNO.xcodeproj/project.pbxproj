@@ -49,8 +49,8 @@
 		DEDC4F952222A4B7006101BF /* Calculating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D590B202D14FE007C899D /* Calculating.swift */; };
 		DEDC4F962222A4B7006101BF /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D590D202E5A12007C899D /* Calculator.swift */; };
 		DEDC4F972222A4B7006101BF /* ServicesAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB57262065241E008ADA9A /* ServicesAssembley.swift */; };
-		DEDC4F982222A4DA006101BF /* AddPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E345207034D0005A7889 /* AddPlayersViewController.swift */; };
-		DEDC4F992222A4DA006101BF /* ChooseRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589A620646F97007F61D5 /* ChooseRulesViewController.swift */; };
+		DEDC4F982222A4DA006101BF /* AddPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E345207034D0005A7889 /* AddPlayersView.swift */; };
+		DEDC4F992222A4DA006101BF /* ChooseRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589A620646F97007F61D5 /* ChooseRulesView.swift */; };
 		DEDC4F9A2222A4DA006101BF /* RulesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B162065CA99001E0E74 /* RulesButton.swift */; };
 		DEDC4F9B2222A4DA006101BF /* LimitDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30073B182065CACA001E0E74 /* LimitDescriptionView.swift */; };
 		DEDC4F9C2222A4DA006101BF /* LimitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D17A092066F1C6005C6331 /* LimitPicker.swift */; };
@@ -365,7 +365,7 @@
 		302FCBEA206515A200B02836 /* UNOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNOButton.swift; sourceTree = "<group>"; };
 		302FCC4C20651CAB00B02836 /* Swinject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Swinject.xcodeproj; sourceTree = "<group>"; };
 		302FCCE320651D9200B02836 /* RulesPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPicker.swift; sourceTree = "<group>"; };
-		303589A620646F97007F61D5 /* ChooseRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesViewController.swift; sourceTree = "<group>"; };
+		303589A620646F97007F61D5 /* ChooseRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesView.swift; sourceTree = "<group>"; };
 		303589BA206472D7007F61D5 /* RulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewModel.swift; sourceTree = "<group>"; };
 		3049169E2035055C006DC13D /* GameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreator.swift; sourceTree = "<group>"; };
 		307D58B0202D12F7007C899D /* UNO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,7 +400,7 @@
 		30D17A312066FDCC005C6331 /* Rescale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		30D30EBE203509D700BFB904 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
-		30D6E345207034D0005A7889 /* AddPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewController.swift; sourceTree = "<group>"; };
+		30D6E345207034D0005A7889 /* AddPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersView.swift; sourceTree = "<group>"; };
 		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
 		30D6E34920704682005A7889 /* BackgrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgrondView.swift; sourceTree = "<group>"; };
 		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 			children = (
 				DEDC4FE22222A947006101BF /* Subviews */,
 				303589BA206472D7007F61D5 /* RulesViewModel.swift */,
-				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
+				303589A620646F97007F61D5 /* ChooseRulesView.swift */,
 			);
 			path = ChooseRules;
 			sourceTree = "<group>";
@@ -755,7 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
-				30D6E345207034D0005A7889 /* AddPlayersViewController.swift */,
+				30D6E345207034D0005A7889 /* AddPlayersView.swift */,
 			);
 			path = AddPlayers;
 			sourceTree = "<group>";
@@ -1228,7 +1228,7 @@
 				DEDC4F842222A47E006101BF /* RadialGradient.swift in Sources */,
 				DEDC4FD92222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DEDC4FD42222A932006101BF /* StringConvertable.swift in Sources */,
-				DEDC4F982222A4DA006101BF /* AddPlayersViewController.swift in Sources */,
+				DEDC4F982222A4DA006101BF /* AddPlayersView.swift in Sources */,
 				DEDC4FD22222A932006101BF /* String+Size.swift in Sources */,
 				DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */,
 				30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */,
@@ -1239,7 +1239,7 @@
 				DEDC4F882222A47E006101BF /* Step.swift in Sources */,
 				DEDC4F922222A4B7006101BF /* GameCreator.swift in Sources */,
 				30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */,
-				DEDC4F992222A4DA006101BF /* ChooseRulesViewController.swift in Sources */,
+				DEDC4F992222A4DA006101BF /* ChooseRulesView.swift in Sources */,
 				DEDC4F8F2222A4AD006101BF /* Rules.swift in Sources */,
 				DEDC4F8B2222A47E006101BF /* StepsViewController.swift in Sources */,
 				307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */,
