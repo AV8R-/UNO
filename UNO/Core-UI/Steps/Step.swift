@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Step {
+protocol Step {
     associatedtype Input
     associatedtype Output
     
@@ -18,12 +18,12 @@ public protocol Step {
     var onShow: ((Self) -> Void)? { set get }
 }
 
-public protocol ProgressedStep {
+protocol ProgressedStep {
     var view: UIView! { get }
     var io: ProgressedStepIO { get }
 }
 
-public protocol ProgressedStepIO: class {
+protocol ProgressedStepIO: class {
     var onChangeCanGoNext: ((Bool)->Void)? { set get }
     var isCanGoNext: Bool { get }
     var title: String { get }
@@ -31,12 +31,12 @@ public protocol ProgressedStepIO: class {
     func didShow()
 }
 
-public extension ProgressedStepIO where Self: Step {
-    public func finish() {
+extension ProgressedStepIO where Self: Step {
+    func finish() {
         onFinish?(currentOutput)
     }
     
-    public func didShow() {
+    func didShow() {
         onShow?(self)
     }
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class StepsViewController: UIViewController {
+class StepsViewController: UIViewController {
     let pagedContainer: PageView = .init()
     let pages: [ProgressedStep]
-    public var onClose: (() -> Void)?
+    var onClose: (() -> Void)?
     var tintColor: UIColor
     
-    public init(pages: [ProgressedStep], tintColor: UIColor) {
+    init(pages: [ProgressedStep], tintColor: UIColor) {
         self.pages = pages
         self.tintColor = tintColor
         super.init(nibName: nil, bundle: nil)
