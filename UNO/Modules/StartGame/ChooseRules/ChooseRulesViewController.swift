@@ -8,11 +8,11 @@
 
 import UIKit
 
-public protocol ChooseRulesViewControlling: ProgressedStep {}
-
-final class ChooseRulesViewController: UIView, ChooseRulesViewControlling {
-    var viewModel: ChooseRulesViewModelling
-    var io: ProgressedStepIO
+final class ChooseRulesView: UIView, ProgressedStep {
+    var viewModel: ChooseRulesViewModel
+    var io: ProgressedStepIO {
+         return viewModel
+    }
     var view: UIView! {
         return self
     }
@@ -21,8 +21,7 @@ final class ChooseRulesViewController: UIView, ChooseRulesViewControlling {
     private var arrowRightPosition: NSLayoutConstraint!
     private weak var hintView: LimitDescriptionView!
     
-    public init(viewModel: ChooseRulesViewModelling, io: ProgressedStepIO) {
-        self.io = io
+    public init(viewModel: ChooseRulesViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false

@@ -1,25 +1,17 @@
-//
-//  AddPlayersViewController.swift
-//  Views
-//
-//  Created by Богдан Маншилин on 31/03/2018.
-//  Copyright © 2018 BManshilin. All rights reserved.
-//
-
 import UIKit
+import SnapKit
 
-public protocol AddPlayersViewControlling: ProgressedStep {}
-
-final class AddPlayersViewController: UIView, AddPlayersViewControlling {
-    var viewModel: AddPlayersViewModelling
-    var io: ProgressedStepIO
+final class AddPlayersView: UIView, ProgressedStep {
+    var viewModel: AddPlayersViewModel
+    var io: ProgressedStepIO {
+        return viewModel
+    }
     var view: UIView! {
         return self
     }
     
-    init(viewModel: AddPlayersViewModelling, io: ProgressedStepIO) {
+    init(viewModel: AddPlayersViewModel) {
         self.viewModel = viewModel
-        self.io = io
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         loadView()
@@ -52,23 +44,33 @@ final class AddPlayersViewController: UIView, AddPlayersViewControlling {
         addSubview(background)
         addSubview(searchBackground)
         addSubview(listBackground)
-        
-        NSLayoutConstraint.activate([
-            background.topAnchor.constraint(equalTo: topAnchor),
-            background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            background.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            searchBackground.topAnchor.constraint(equalTo: background.topAnchor, constant: 30),
-            searchBackground.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 10),
-            searchBackground.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10),
-            searchBackground.heightAnchor.constraint(equalToConstant: 75),
-            
-            listBackground.topAnchor.constraint(equalTo: searchBackground.bottomAnchor, constant: 10),
-            listBackground.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 10),
-            listBackground.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10),
-            listBackground.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -10),
-        ])
+
+        background.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(Constants.backgroundInsets)
+        }
+
+        searchBackground.snp.makeConstraints { make in
+            make.top.equalTo(background).offset(Constants.searchTopInset)
+            make.left.equalTo(background).offset(Constants.searchSideInsets)
+            make.right.equalTo(background).offset(-Constants.searchSideInsets)
+            make.height.equalTo(Constants.searchHeight)
+        }
+
+        listBackground.snp.makeConstraints { make in
+            make.top.equalTo(searchBackground.snp.bottom).offset(Constants.listInsets.top)
+            make.left.equalTo(background).offset(Constants.listInsets.left)
+            make.bottom.equalTo(background).offset(-Constants.listInsets.bottom)
+            make.right.equalTo(background).offset(-Constants.listInsets.right)
+        }
     }
-    
+}
+
+private enum Constants {
+    static let backgroundInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+
+    static let searchTopInset: CGFloat = 30
+    static let searchSideInsets: CGFloat = 10
+    static let searchHeight: CGFloat = 75
+
+    static let listInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 }

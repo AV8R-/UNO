@@ -17,8 +17,8 @@ final class StartGameCoordinator: Resolving {
     }
     
     func start() throws {
-        let rulesView: ChooseRulesViewControlling = try resolve()
-        let playersView: AddPlayersViewControlling = try resolve()
+        let rulesView = ChooseRulesView(viewModel: ChooseRulesViewModel(picker: try resolve()))
+        let playersView = AddPlayersView(viewModel: AddPlayersViewModel(playersService: try resolve()))
         
         let startController = StepsViewController(pages: [rulesView, playersView], tintColor: .lightGreen)
         presenter.pushViewController(startController, animated: true)

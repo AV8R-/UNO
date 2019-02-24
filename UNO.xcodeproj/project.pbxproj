@@ -57,9 +57,7 @@
 		DEDC4F9D2222A4DA006101BF /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300935CE206693DF00CB499C /* Arrow.swift */; };
 		DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E34920704682005A7889 /* BackgrondView.swift */; };
 		DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30EBE203509D700BFB904 /* MainMenuView.swift */; };
-		DEDC4FA02222A4DA006101BF /* ViewsAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8298420653ABA00730A7C /* ViewsAssembley.swift */; };
 		DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589BA206472D7007F61D5 /* RulesViewModel.swift */; };
-		DEDC4FA22222A4E3006101BF /* ViewModelsAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B82982206539FC00730A7C /* ViewModelsAssembley.swift */; };
 		DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */; };
 		DEDC4FB52222A74F006101BF /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
 		DEDC4FCE2222A932006101BF /* AVCaptureDevice+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FB92222A932006101BF /* AVCaptureDevice+Permissions.swift */; };
@@ -382,8 +380,6 @@
 		307D590D202E5A12007C899D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		308F7D2E203102BD00676829 /* RulesPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPicking.swift; sourceTree = "<group>"; };
 		30AB57262065241E008ADA9A /* ServicesAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembley.swift; sourceTree = "<group>"; };
-		30B82982206539FC00730A7C /* ViewModelsAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsAssembley.swift; sourceTree = "<group>"; };
-		30B8298420653ABA00730A7C /* ViewsAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAssembley.swift; sourceTree = "<group>"; };
 		30B829862065410B00730A7C /* Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolving.swift; sourceTree = "<group>"; };
 		30BDAD1F205414790059DF96 /* FloatingPoint+AngleConverting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+AngleConverting.swift"; sourceTree = "<group>"; };
 		30BDAD212054149E0059DF96 /* Beam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beam.swift; sourceTree = "<group>"; };
@@ -566,8 +562,6 @@
 				307D58BC202D12F7007C899D /* LaunchScreen.storyboard */,
 				307D58BF202D12F7007C899D /* Info.plist */,
 				30B829862065410B00730A7C /* Resolving.swift */,
-				30B8298420653ABA00730A7C /* ViewsAssembley.swift */,
-				30B82982206539FC00730A7C /* ViewModelsAssembley.swift */,
 			);
 			path = UNO;
 			sourceTree = "<group>";
@@ -1210,12 +1204,10 @@
 				DEDC4FCE2222A932006101BF /* AVCaptureDevice+Permissions.swift in Sources */,
 				DEDC4FDD2222A932006101BF /* UITextViewFixed.swift in Sources */,
 				DEDC4FD52222A932006101BF /* StrictTypes.swift in Sources */,
-				DEDC4FA22222A4E3006101BF /* ViewModelsAssembley.swift in Sources */,
 				DEDC4F7F2222A47E006101BF /* UIView+InnerShadow.swift in Sources */,
 				DEDC4F8D2222A47E006101BF /* Rescale.swift in Sources */,
 				DEDC4F8E2222A4AD006101BF /* Player.swift in Sources */,
 				DEDC4F822222A47E006101BF /* Beam.swift in Sources */,
-				DEDC4FA02222A4DA006101BF /* ViewsAssembley.swift in Sources */,
 				DEDC4FD62222A932006101BF /* UIColor+random.swift in Sources */,
 				DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */,
 				DEDC4F8C2222A47E006101BF /* UNOButton.swift in Sources */,

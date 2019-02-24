@@ -8,21 +8,7 @@
 
 import Foundation
 
-public protocol ChooseRulesViewModelling {
-    var io: ProgressedStepIO { get }
-    var currentDescription: String { get }
-    var rules: Rules { set get }
-    func setMaxRules() throws
-    func setMinRules() throws
-    
-    var onRulesChange: ((Bool)->Void)? { set get }
-}
-
-public final class ChooseRulesViewModel: ChooseRulesViewModelling, Step, ProgressedStepIO {
-    public var io: ProgressedStepIO {
-        return self
-    }
-    
+public final class ChooseRulesViewModel: Step, ProgressedStepIO {    
     public var currentDescription: String {
         return picker.description(for: currentOutput)
     }

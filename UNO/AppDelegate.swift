@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ServicesAssembley.register(container: AppDelegate.container)
-        ViewModelsAssembley.assemble(to: AppDelegate.container)
-        ViewsAssembley.assemble(to: AppDelegate.container)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white
