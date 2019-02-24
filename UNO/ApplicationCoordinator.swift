@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ApplicationCoordinator: Coordinator {
+final class ApplicationCoordinator {
     let window: UIWindow
     let rootViewController: UINavigationController
     let mainMenu: MainMenuCoordinator

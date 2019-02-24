@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainMenuCoordinator: Coordinator {
+final class MainMenuCoordinator {
     private var presenter: UINavigationController
     private lazy var startGameCoordinator: StartGameCoordinator = {
         return StartGameCoordinator(presenter: presenter)

@@ -17,7 +17,6 @@
 		30B829872065410B00730A7C /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B829862065410B00730A7C /* Resolving.swift */; };
 		30C6B121202F0C1700B6CF2D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C6AFCC202F0BEB00B6CF2D /* Quick.framework */; };
 		30C6B122202F0C1D00B6CF2D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C6AFAF202F0BEB00B6CF2D /* Nimble.framework */; };
-		30D143472055269500B1D186 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D143462055269500B1D186 /* Coordinator.swift */; };
 		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
@@ -62,24 +61,27 @@
 		DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589BA206472D7007F61D5 /* RulesViewModel.swift */; };
 		DEDC4FA22222A4E3006101BF /* ViewModelsAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B82982206539FC00730A7C /* ViewModelsAssembley.swift */; };
 		DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */; };
-		DEDC4FA42222A65B006101BF /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14308205466E800B1D186 /* AsyncImageView.swift */; };
-		DEDC4FA52222A65B006101BF /* AVCaptureDevice+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14309205466E800B1D186 /* AVCaptureDevice+Permissions.swift */; };
-		DEDC4FA62222A65B006101BF /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1430A205466E800B1D186 /* Chain.swift */; };
-		DEDC4FA72222A65B006101BF /* ComplexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1430B205466E800B1D186 /* ComplexButton.swift */; };
-		DEDC4FA82222A65B006101BF /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1430C205466E800B1D186 /* Dictionary+Merge.swift */; };
-		DEDC4FA92222A65B006101BF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14311205466E800B1D186 /* LeftAlignedCollectionViewFlowLayout.swift */; };
-		DEDC4FAA2222A65B006101BF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 30D14312205466E800B1D186 /* LICENSE */; };
-		DEDC4FAB2222A65B006101BF /* PHPhotoLibrary+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14313205466E800B1D186 /* PHPhotoLibrary+Permissions.swift */; };
-		DEDC4FAC2222A65B006101BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 30D14314205466E800B1D186 /* README.md */; };
-		DEDC4FAD2222A65B006101BF /* ScrollZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14315205466E800B1D186 /* ScrollZone.swift */; };
-		DEDC4FAE2222A65B006101BF /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14316205466E800B1D186 /* String+Size.swift */; };
-		DEDC4FAF2222A65B006101BF /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14317205466E800B1D186 /* UIColor+random.swift */; };
-		DEDC4FB02222A65B006101BF /* UINavigationBar+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14318205466E800B1D186 /* UINavigationBar+BorderColor.swift */; };
-		DEDC4FB12222A65B006101BF /* UITableView+ReloadHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14319205466E800B1D186 /* UITableView+ReloadHeights.swift */; };
-		DEDC4FB22222A65B006101BF /* UITextViewFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431A205466E800B1D186 /* UITextViewFixed.swift */; };
-		DEDC4FB32222A65B006101BF /* UIView+Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431B205466E800B1D186 /* UIView+Constrain.swift */; };
-		DEDC4FB42222A65B006101BF /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1431C205466E800B1D186 /* UIView+Utils.swift */; };
 		DEDC4FB52222A74F006101BF /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
+		DEDC4FCE2222A932006101BF /* AVCaptureDevice+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FB92222A932006101BF /* AVCaptureDevice+Permissions.swift */; };
+		DEDC4FCF2222A932006101BF /* ScrollZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FBA2222A932006101BF /* ScrollZone.swift */; };
+		DEDC4FD02222A932006101BF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DEDC4FBB2222A932006101BF /* LICENSE */; };
+		DEDC4FD12222A932006101BF /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FBC2222A932006101BF /* UIView+Utils.swift */; };
+		DEDC4FD22222A932006101BF /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FBD2222A932006101BF /* String+Size.swift */; };
+		DEDC4FD32222A932006101BF /* JsonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FBF2222A932006101BF /* JsonTools.swift */; };
+		DEDC4FD42222A932006101BF /* StringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC02222A932006101BF /* StringConvertable.swift */; };
+		DEDC4FD52222A932006101BF /* StrictTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC12222A932006101BF /* StrictTypes.swift */; };
+		DEDC4FD62222A932006101BF /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC22222A932006101BF /* UIColor+random.swift */; };
+		DEDC4FD72222A932006101BF /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC32222A932006101BF /* Chain.swift */; };
+		DEDC4FD82222A932006101BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DEDC4FC42222A932006101BF /* README.md */; };
+		DEDC4FD92222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC52222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		DEDC4FDA2222A932006101BF /* PHPhotoLibrary+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC62222A932006101BF /* PHPhotoLibrary+Permissions.swift */; };
+		DEDC4FDB2222A932006101BF /* UITableView+ReloadHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC72222A932006101BF /* UITableView+ReloadHeights.swift */; };
+		DEDC4FDC2222A932006101BF /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC82222A932006101BF /* Dictionary+Merge.swift */; };
+		DEDC4FDD2222A932006101BF /* UITextViewFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FC92222A932006101BF /* UITextViewFixed.swift */; };
+		DEDC4FDE2222A932006101BF /* ComplexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCA2222A932006101BF /* ComplexButton.swift */; };
+		DEDC4FDF2222A932006101BF /* UINavigationBar+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCB2222A932006101BF /* UINavigationBar+BorderColor.swift */; };
+		DEDC4FE02222A932006101BF /* UIView+Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCC2222A932006101BF /* UIView+Constrain.swift */; };
+		DEDC4FE12222A932006101BF /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC4FCD2222A932006101BF /* AsyncImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,24 +397,6 @@
 		30D1428C2054508D00B1D186 /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		30D1429D20545AE600B1D186 /* AttributedTextView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AttributedTextView.xcodeproj; sourceTree = "<group>"; };
 		30D143022054661400B1D186 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-		30D14308205466E800B1D186 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
-		30D14309205466E800B1D186 /* AVCaptureDevice+Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Permissions.swift"; sourceTree = "<group>"; };
-		30D1430A205466E800B1D186 /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
-		30D1430B205466E800B1D186 /* ComplexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexButton.swift; sourceTree = "<group>"; };
-		30D1430C205466E800B1D186 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Merge.swift"; sourceTree = "<group>"; };
-		30D14311205466E800B1D186 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		30D14312205466E800B1D186 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		30D14313205466E800B1D186 /* PHPhotoLibrary+Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Permissions.swift"; sourceTree = "<group>"; };
-		30D14314205466E800B1D186 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		30D14315205466E800B1D186 /* ScrollZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollZone.swift; sourceTree = "<group>"; };
-		30D14316205466E800B1D186 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
-		30D14317205466E800B1D186 /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
-		30D14318205466E800B1D186 /* UINavigationBar+BorderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BorderColor.swift"; sourceTree = "<group>"; };
-		30D14319205466E800B1D186 /* UITableView+ReloadHeights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadHeights.swift"; sourceTree = "<group>"; };
-		30D1431A205466E800B1D186 /* UITextViewFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFixed.swift; sourceTree = "<group>"; };
-		30D1431B205466E800B1D186 /* UIView+Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constrain.swift"; sourceTree = "<group>"; };
-		30D1431C205466E800B1D186 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
-		30D143462055269500B1D186 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		30D14348205526C600B1D186 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
 		30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordiantor.swift; sourceTree = "<group>"; };
@@ -429,6 +413,26 @@
 		30FDF50220615CC400857066 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		30FDF50420615D4D00857066 /* Reference.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = Reference.rtfd; sourceTree = "<group>"; };
 		30FDF5062061689C00857066 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		DEDC4FB92222A932006101BF /* AVCaptureDevice+Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Permissions.swift"; sourceTree = "<group>"; };
+		DEDC4FBA2222A932006101BF /* ScrollZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollZone.swift; sourceTree = "<group>"; };
+		DEDC4FBB2222A932006101BF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DEDC4FBC2222A932006101BF /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		DEDC4FBD2222A932006101BF /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		DEDC4FBF2222A932006101BF /* JsonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTools.swift; sourceTree = "<group>"; };
+		DEDC4FC02222A932006101BF /* StringConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConvertable.swift; sourceTree = "<group>"; };
+		DEDC4FC12222A932006101BF /* StrictTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrictTypes.swift; sourceTree = "<group>"; };
+		DEDC4FC22222A932006101BF /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
+		DEDC4FC32222A932006101BF /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
+		DEDC4FC42222A932006101BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DEDC4FC52222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		DEDC4FC62222A932006101BF /* PHPhotoLibrary+Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Permissions.swift"; sourceTree = "<group>"; };
+		DEDC4FC72222A932006101BF /* UITableView+ReloadHeights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadHeights.swift"; sourceTree = "<group>"; };
+		DEDC4FC82222A932006101BF /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Merge.swift"; sourceTree = "<group>"; };
+		DEDC4FC92222A932006101BF /* UITextViewFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFixed.swift; sourceTree = "<group>"; };
+		DEDC4FCA2222A932006101BF /* ComplexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexButton.swift; sourceTree = "<group>"; };
+		DEDC4FCB2222A932006101BF /* UINavigationBar+BorderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BorderColor.swift"; sourceTree = "<group>"; };
+		DEDC4FCC2222A932006101BF /* UIView+Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constrain.swift"; sourceTree = "<group>"; };
+		DEDC4FCD2222A932006101BF /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,11 +461,9 @@
 		30073B152065CA75001E0E74 /* ChooseRules */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC4FE22222A947006101BF /* Subviews */,
+				303589BA206472D7007F61D5 /* RulesViewModel.swift */,
 				303589A620646F97007F61D5 /* ChooseRulesViewController.swift */,
-				30073B162065CA99001E0E74 /* RulesButton.swift */,
-				30073B182065CACA001E0E74 /* LimitDescriptionView.swift */,
-				30D17A092066F1C6005C6331 /* LimitPicker.swift */,
-				300935CE206693DF00CB499C /* Arrow.swift */,
 			);
 			path = ChooseRules;
 			sourceTree = "<group>";
@@ -516,26 +518,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3035898D20646F80007F61D5 /* Create game */ = {
-			isa = PBXGroup;
-			children = (
-				30D6E344207034B6005A7889 /* AddPlayers */,
-				30073B152065CA75001E0E74 /* ChooseRules */,
-				30D6E34920704682005A7889 /* BackgrondView.swift */,
-			);
-			path = "Create game";
-			sourceTree = "<group>";
-		};
-		303589AF206472BC007F61D5 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				303589BA206472D7007F61D5 /* RulesViewModel.swift */,
-				30B82982206539FC00730A7C /* ViewModelsAssembley.swift */,
-				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		3049166B20350085006DC13D /* Core-UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +528,7 @@
 				30BDAD1C2054141E0059DF96 /* Steps */,
 				302FCBEA206515A200B02836 /* UNOButton.swift */,
 				30D17A312066FDCC005C6331 /* Rescale.swift */,
+				30D6E34920704682005A7889 /* BackgrondView.swift */,
 			);
 			path = "Core-UI";
 			sourceTree = "<group>";
@@ -573,18 +556,18 @@
 		307D58B2202D12F7007C899D /* UNO */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC4FB62222A837006101BF /* Modules */,
 				307D58B3202D12F7007C899D /* AppDelegate.swift */,
-				30D14307205466E800B1D186 /* SwiftUtils */,
+				30D14348205526C600B1D186 /* ApplicationCoordinator.swift */,
 				3049166B20350085006DC13D /* Core-UI */,
-				30D1434A205526CF00B1D186 /* Coordinators */,
-				307D58D9202D132D007C899D /* Model */,
 				307D58EF202D14C3007C899D /* Services */,
-				30D30E8F203509B300BFB904 /* Views */,
-				303589AF206472BC007F61D5 /* ViewModels */,
 				307D58BA202D12F7007C899D /* Assets.xcassets */,
+				30D30EC82036243000BFB904 /* Resources.xcassets */,
 				307D58BC202D12F7007C899D /* LaunchScreen.storyboard */,
 				307D58BF202D12F7007C899D /* Info.plist */,
 				30B829862065410B00730A7C /* Resolving.swift */,
+				30B8298420653ABA00730A7C /* ViewsAssembley.swift */,
+				30B82982206539FC00730A7C /* ViewModelsAssembley.swift */,
 			);
 			path = UNO;
 			sourceTree = "<group>";
@@ -611,6 +594,7 @@
 		307D58EF202D14C3007C899D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				307D58D9202D132D007C899D /* Model */,
 				30167B56202FADE800DAE775 /* GameCreator */,
 				307D590F202E5A36007C899D /* Calculating */,
 				30AB57262065241E008ADA9A /* ServicesAssembley.swift */,
@@ -665,6 +649,7 @@
 		30C6ADFB202F0BEA00B6CF2D /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC4FB82222A932006101BF /* SwiftUtils */,
 				302886082082402400E86494 /* SnapKit */,
 				302FCBEC20651CAB00B02836 /* SwInject */,
 				30D1429620545AE600B1D186 /* AttributedTextView */,
@@ -772,58 +757,87 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
-		30D14307205466E800B1D186 /* SwiftUtils */ = {
+		30D6E344207034B6005A7889 /* AddPlayers */ = {
 			isa = PBXGroup;
 			children = (
-				30D14308205466E800B1D186 /* AsyncImageView.swift */,
-				30D14309205466E800B1D186 /* AVCaptureDevice+Permissions.swift */,
-				30D1430A205466E800B1D186 /* Chain.swift */,
-				30D1430B205466E800B1D186 /* ComplexButton.swift */,
-				30D1430C205466E800B1D186 /* Dictionary+Merge.swift */,
-				30D14311205466E800B1D186 /* LeftAlignedCollectionViewFlowLayout.swift */,
-				30D14312205466E800B1D186 /* LICENSE */,
-				30D14313205466E800B1D186 /* PHPhotoLibrary+Permissions.swift */,
-				30D14314205466E800B1D186 /* README.md */,
-				30D14315205466E800B1D186 /* ScrollZone.swift */,
-				30D14316205466E800B1D186 /* String+Size.swift */,
-				30D14317205466E800B1D186 /* UIColor+random.swift */,
-				30D14318205466E800B1D186 /* UINavigationBar+BorderColor.swift */,
-				30D14319205466E800B1D186 /* UITableView+ReloadHeights.swift */,
-				30D1431A205466E800B1D186 /* UITextViewFixed.swift */,
-				30D1431B205466E800B1D186 /* UIView+Constrain.swift */,
-				30D1431C205466E800B1D186 /* UIView+Utils.swift */,
+				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
+				30D6E345207034D0005A7889 /* AddPlayersViewController.swift */,
+			);
+			path = AddPlayers;
+			sourceTree = "<group>";
+		};
+		DEDC4FB62222A837006101BF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC4FE32222A9A3006101BF /* StartGame */,
+				DEDC4FB72222A84B006101BF /* MainMenu */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DEDC4FB72222A84B006101BF /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */,
+				30D30EBE203509D700BFB904 /* MainMenuView.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		DEDC4FB82222A932006101BF /* SwiftUtils */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC4FB92222A932006101BF /* AVCaptureDevice+Permissions.swift */,
+				DEDC4FBA2222A932006101BF /* ScrollZone.swift */,
+				DEDC4FBB2222A932006101BF /* LICENSE */,
+				DEDC4FBC2222A932006101BF /* UIView+Utils.swift */,
+				DEDC4FBD2222A932006101BF /* String+Size.swift */,
+				DEDC4FBE2222A932006101BF /* JsonTools */,
+				DEDC4FC22222A932006101BF /* UIColor+random.swift */,
+				DEDC4FC32222A932006101BF /* Chain.swift */,
+				DEDC4FC42222A932006101BF /* README.md */,
+				DEDC4FC52222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift */,
+				DEDC4FC62222A932006101BF /* PHPhotoLibrary+Permissions.swift */,
+				DEDC4FC72222A932006101BF /* UITableView+ReloadHeights.swift */,
+				DEDC4FC82222A932006101BF /* Dictionary+Merge.swift */,
+				DEDC4FC92222A932006101BF /* UITextViewFixed.swift */,
+				DEDC4FCA2222A932006101BF /* ComplexButton.swift */,
+				DEDC4FCB2222A932006101BF /* UINavigationBar+BorderColor.swift */,
+				DEDC4FCC2222A932006101BF /* UIView+Constrain.swift */,
+				DEDC4FCD2222A932006101BF /* AsyncImageView.swift */,
 			);
 			path = SwiftUtils;
 			sourceTree = "<group>";
 		};
-		30D1434A205526CF00B1D186 /* Coordinators */ = {
+		DEDC4FBE2222A932006101BF /* JsonTools */ = {
 			isa = PBXGroup;
 			children = (
-				30D143462055269500B1D186 /* Coordinator.swift */,
-				30D14348205526C600B1D186 /* ApplicationCoordinator.swift */,
-				30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */,
+				DEDC4FBF2222A932006101BF /* JsonTools.swift */,
+				DEDC4FC02222A932006101BF /* StringConvertable.swift */,
+				DEDC4FC12222A932006101BF /* StrictTypes.swift */,
+			);
+			path = JsonTools;
+			sourceTree = "<group>";
+		};
+		DEDC4FE22222A947006101BF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				30073B162065CA99001E0E74 /* RulesButton.swift */,
+				30073B182065CACA001E0E74 /* LimitDescriptionView.swift */,
+				30D17A092066F1C6005C6331 /* LimitPicker.swift */,
+				300935CE206693DF00CB499C /* Arrow.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		DEDC4FE32222A9A3006101BF /* StartGame */ = {
+			isa = PBXGroup;
+			children = (
+				30D6E344207034B6005A7889 /* AddPlayers */,
+				30073B152065CA75001E0E74 /* ChooseRules */,
 				30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */,
 			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		30D30E8F203509B300BFB904 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3035898D20646F80007F61D5 /* Create game */,
-				30D30EBE203509D700BFB904 /* MainMenuView.swift */,
-				30D30EC82036243000BFB904 /* Resources.xcassets */,
-				30B8298420653ABA00730A7C /* ViewsAssembley.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		30D6E344207034B6005A7889 /* AddPlayers */ = {
-			isa = PBXGroup;
-			children = (
-				30D6E345207034D0005A7889 /* AddPlayersViewController.swift */,
-			);
-			path = AddPlayers;
+			path = StartGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1167,12 +1181,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC4FD82222A932006101BF /* README.md in Resources */,
 				307D58BE202D12F7007C899D /* LaunchScreen.storyboard in Resources */,
 				307D58BB202D12F7007C899D /* Assets.xcassets in Resources */,
-				DEDC4FAC2222A65B006101BF /* README.md in Resources */,
 				DEDC4FB52222A74F006101BF /* Resources.xcassets in Resources */,
-				DEDC4FAA2222A65B006101BF /* LICENSE in Resources */,
 				DEDC4F8A2222A47E006101BF /* Reference.rtfd in Resources */,
+				DEDC4FD02222A932006101BF /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,62 +1207,64 @@
 				DEDC4F862222A47E006101BF /* StepProgressButton.swift in Sources */,
 				DEDC4F9D2222A4DA006101BF /* Arrow.swift in Sources */,
 				DEDC4F962222A4B7006101BF /* Calculator.swift in Sources */,
-				30D143472055269500B1D186 /* Coordinator.swift in Sources */,
-				DEDC4FAB2222A65B006101BF /* PHPhotoLibrary+Permissions.swift in Sources */,
-				DEDC4FB02222A65B006101BF /* UINavigationBar+BorderColor.swift in Sources */,
+				DEDC4FCE2222A932006101BF /* AVCaptureDevice+Permissions.swift in Sources */,
+				DEDC4FDD2222A932006101BF /* UITextViewFixed.swift in Sources */,
+				DEDC4FD52222A932006101BF /* StrictTypes.swift in Sources */,
 				DEDC4FA22222A4E3006101BF /* ViewModelsAssembley.swift in Sources */,
 				DEDC4F7F2222A47E006101BF /* UIView+InnerShadow.swift in Sources */,
 				DEDC4F8D2222A47E006101BF /* Rescale.swift in Sources */,
 				DEDC4F8E2222A4AD006101BF /* Player.swift in Sources */,
-				DEDC4FA92222A65B006101BF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DEDC4F822222A47E006101BF /* Beam.swift in Sources */,
 				DEDC4FA02222A4DA006101BF /* ViewsAssembley.swift in Sources */,
+				DEDC4FD62222A932006101BF /* UIColor+random.swift in Sources */,
 				DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */,
 				DEDC4F8C2222A47E006101BF /* UNOButton.swift in Sources */,
 				DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */,
+				DEDC4FDA2222A932006101BF /* PHPhotoLibrary+Permissions.swift in Sources */,
+				DEDC4FDB2222A932006101BF /* UITableView+ReloadHeights.swift in Sources */,
+				DEDC4FDE2222A932006101BF /* ComplexButton.swift in Sources */,
 				DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */,
-				DEDC4FB12222A65B006101BF /* UITableView+ReloadHeights.swift in Sources */,
 				DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */,
 				DEDC4F942222A4B7006101BF /* RulesPicker.swift in Sources */,
 				DEDC4F832222A47E006101BF /* Beams.swift in Sources */,
 				DEDC4F872222A47E006101BF /* ProgressView.swift in Sources */,
+				DEDC4FDF2222A932006101BF /* UINavigationBar+BorderColor.swift in Sources */,
 				DEDC4F892222A47E006101BF /* PageView.swift in Sources */,
 				DEDC4F902222A4AD006101BF /* ValidationError.swift in Sources */,
 				DEDC4F972222A4B7006101BF /* ServicesAssembley.swift in Sources */,
 				DEDC4F812222A47E006101BF /* RadialGradientBuilder.swift in Sources */,
 				DEDC4F842222A47E006101BF /* RadialGradient.swift in Sources */,
-				DEDC4FA42222A65B006101BF /* AsyncImageView.swift in Sources */,
+				DEDC4FD92222A932006101BF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				DEDC4FD42222A932006101BF /* StringConvertable.swift in Sources */,
 				DEDC4F982222A4DA006101BF /* AddPlayersViewController.swift in Sources */,
+				DEDC4FD22222A932006101BF /* String+Size.swift in Sources */,
 				DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */,
 				30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */,
 				30B829872065410B00730A7C /* Resolving.swift in Sources */,
-				DEDC4FA52222A65B006101BF /* AVCaptureDevice+Permissions.swift in Sources */,
+				DEDC4FD32222A932006101BF /* JsonTools.swift in Sources */,
+				DEDC4FD12222A932006101BF /* UIView+Utils.swift in Sources */,
+				DEDC4FCF2222A932006101BF /* ScrollZone.swift in Sources */,
 				DEDC4F882222A47E006101BF /* Step.swift in Sources */,
-				DEDC4FAE2222A65B006101BF /* String+Size.swift in Sources */,
 				DEDC4F922222A4B7006101BF /* GameCreator.swift in Sources */,
-				DEDC4FB32222A65B006101BF /* UIView+Constrain.swift in Sources */,
-				DEDC4FAF2222A65B006101BF /* UIColor+random.swift in Sources */,
 				30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */,
-				DEDC4FAD2222A65B006101BF /* ScrollZone.swift in Sources */,
 				DEDC4F992222A4DA006101BF /* ChooseRulesViewController.swift in Sources */,
 				DEDC4F8F2222A4AD006101BF /* Rules.swift in Sources */,
-				DEDC4FA72222A65B006101BF /* ComplexButton.swift in Sources */,
 				DEDC4F8B2222A47E006101BF /* StepsViewController.swift in Sources */,
 				307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */,
 				DEDC4F802222A47E006101BF /* FloatingPoint+AngleConverting.swift in Sources */,
 				DEDC4F912222A4B7006101BF /* GameCreating.swift in Sources */,
 				DEDC4F9A2222A4DA006101BF /* RulesButton.swift in Sources */,
-				DEDC4FB42222A65B006101BF /* UIView+Utils.swift in Sources */,
+				DEDC4FE02222A932006101BF /* UIView+Constrain.swift in Sources */,
+				DEDC4FDC2222A932006101BF /* Dictionary+Merge.swift in Sources */,
 				DEDC4F7D2222A47E006101BF /* Styleguide.swift in Sources */,
 				DEDC4F932222A4B7006101BF /* RulesPicking.swift in Sources */,
-				DEDC4FA62222A65B006101BF /* Chain.swift in Sources */,
 				DEDC4F952222A4B7006101BF /* Calculating.swift in Sources */,
-				DEDC4FB22222A65B006101BF /* UITextViewFixed.swift in Sources */,
 				30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */,
+				DEDC4FD72222A932006101BF /* Chain.swift in Sources */,
 				DEDC4F9C2222A4DA006101BF /* LimitPicker.swift in Sources */,
+				DEDC4FE12222A932006101BF /* AsyncImageView.swift in Sources */,
 				DEDC4F852222A47E006101BF /* UNOBackground.swift in Sources */,
 				DEDC4F9B2222A4DA006101BF /* LimitDescriptionView.swift in Sources */,
-				DEDC4FA82222A65B006101BF /* Dictionary+Merge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

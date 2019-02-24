@@ -8,13 +8,12 @@
 
 import UIKit
 
-final class StartGameCoordinator: Coordinator, Resolving {
+final class StartGameCoordinator: Resolving {
     
     private let presenter: UINavigationController
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
-        
     }
     
     func start() throws {
