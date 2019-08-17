@@ -48,29 +48,53 @@ final class AddPlayersView: UIView {
             make.right.equalTo(background).offset(-Constants.listInsets.right)
         }
     }
-
+    
     func showError(_ error: Error) {
         print(error)
     }
 
     func bindData() {
-        viewModel.players.bind(to: list, using: .init { (player, indexPath, tableView) -> UITableViewCell in
+        viewModel.players.bind(to: list, using: .init { (players, indexPath, tableView) -> UITableViewCell in
             let cell: PlayerListCell = tableView.dequeueAndRegisterCell()
-            cell.textLabel?.text = player[indexPath.row].name
+            let player = players[indexPath.row]
+            cell.textLabel?.text = player.name
+            cell.minusButton.reactive.controlEvents(.touchUpInside)
+                .observeNext { [unowned self] _ in
+                    guard let index = self.viewModel.players.array.index(of: player) else {
+                        return
+                    }
+                    self.viewModel.players.remove(at: index)
+                }
+                .dispose(in: self.disposeBag)
             return cell
         })
 
-        viewModel.players.observeNext { changeset in
-            print(changeset.collection)
-        }.dispose(in: disposeBag)
+        viewModel.players
+            .observeNext { changeset in
+                print(changeset.collection)
+            }
+            .dispose(in: disposeBag)
+        
+        search.addButton.reactive.tap
+            .observeNext { [unowned input = search.inputField, unowned self] _ in
+                _ = self.textFieldShouldReturn(input)
+            }
+            .dispose(in: disposeBag)
+        
+        search.keyboardToolbar.startGameButton.reactive.tap
+            .observeNext { [unowned self] _ in
+                self.io.finish()
+            }
+            .dispose(in: disposeBag)
+
     }
 }
 
 extension AddPlayersView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel.didEnter(text: textField.text ?? "")
+        viewModel.appendPlayer(name: textField.text ?? "")
         textField.text = nil
-        return true
+        return false
     }
 }
 

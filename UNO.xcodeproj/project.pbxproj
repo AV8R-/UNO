@@ -15,6 +15,7 @@
 		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
+		30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */; };
 		9021B564B03B6292985F862C /* Pods_UNO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F013A38A4300E9B539467053 /* Pods_UNO.framework */; };
 		DE638424222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63840F222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift */; };
 		DE638425222303EE00B0DDE1 /* ScrollZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE638410222303EE00B0DDE1 /* ScrollZone.swift */; };
@@ -153,6 +154,7 @@
 		30D6E345207034D0005A7889 /* AddPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersView.swift; sourceTree = "<group>"; };
 		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
 		30D6E34920704682005A7889 /* BackgrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgrondView.swift; sourceTree = "<group>"; };
+		30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToolbar.swift; sourceTree = "<group>"; };
 		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
 		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				DEDC4FE72222CE7F006101BF /* SearchPlayerView.swift */,
 				DE9AC34E22232A3800CCE315 /* PlayersListView.swift */,
 				DE9AC350222334E600CCE315 /* PlayerListCell.swift */,
+				30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				DEDC4F822222A47E006101BF /* Beam.swift in Sources */,
 				DE638437222303EE00B0DDE1 /* AsyncImageView.swift in Sources */,
 				DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */,
+				30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */,
 				DE9AC35922233D3000CCE315 /* UIView+TouchInsets.swift in Sources */,
 				DEDC4F8C2222A47E006101BF /* UNOButton.swift in Sources */,
 				DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */,

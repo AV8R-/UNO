@@ -1,6 +1,10 @@
 import Foundation
 import Bond
 
+enum AddPlayerViewModelError: Error {
+    case playerAlreadyExist
+}
+
 public final class AddPlayersViewModel: Step, ProgressedStepIO {
     typealias Input = Rules
     typealias Output = [Player]
@@ -24,9 +28,14 @@ public final class AddPlayersViewModel: Step, ProgressedStepIO {
         self.playersService = playersService
     }
 
-    func didEnter(text: String) {
+    func appendPlayer(name: String) {
         do {
-            players.append(try Player(name: text))
+            let player = try Player(name: name)
+            guard !players.array.contains(player) else {
+                throw AddPlayerViewModelError.playerAlreadyExist
+            }
+            
+            players.append(player)
         } catch {
 //            view.showError(error)
         }

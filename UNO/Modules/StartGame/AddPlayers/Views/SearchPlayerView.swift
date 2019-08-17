@@ -1,9 +1,13 @@
 import UIKit
+import SnapKit
+import Bond
+import ReactiveKit
 
 final class SearchPlayerView: UIView {
     let addButton = UIButton(normalStyle: .add).configured(with: Styles.plus)
     let inputField = UITextField(style: .input)
-
+    let keyboardToolbar = AddPlayerToolBar()
+        
     var delegate: UITextFieldDelegate? {
         set {
             inputField.delegate = newValue
@@ -42,6 +46,13 @@ final class SearchPlayerView: UIView {
 
         inputField.rightView = addButton
         inputField.rightViewMode = .always
+        inputField.returnKeyType = .next
+        
+        inputField.inputAccessoryView = keyboardToolbar
+        
+        keyboardToolbar.hideKeyboardButton.reactive.tap.observeNext { [unowned self] in
+            self.endEditing(true)
+        }.dispose(in: bag)
     }
 }
 

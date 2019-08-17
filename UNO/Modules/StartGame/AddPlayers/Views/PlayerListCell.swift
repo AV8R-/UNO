@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 
 final class PlayerListCell: UITableViewCell, Reusable {
-    let button = UNOButton(touchDirection: .diminish).configured(with: Styles.minus)
+    let minusButton = UNOButton(touchDirection: .diminish).configured(with: Styles.minus)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -16,8 +16,8 @@ final class PlayerListCell: UITableViewCell, Reusable {
     private func loadView() {
         backgroundColor = .clear
 
-        contentView.addSubview(button)
-        button.snp.makeConstraints { make in
+        contentView.addSubview(minusButton)
+        minusButton.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(Constants.button.rightInset)
             make.centerY.equalToSuperview()
         }
