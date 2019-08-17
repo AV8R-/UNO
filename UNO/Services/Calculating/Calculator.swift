@@ -20,7 +20,7 @@ internal struct Calculator: Calculating {
 
     var gameOverHandler: (([Player : Int]) -> Void)?
     
-    private var scores: [Player: [Int]]
+    private(set) var scores: [Player: [Int]]
     
     /// Throws error of type `ValidationError`
     init(rules: Rules, players: [Player]) throws {
@@ -59,8 +59,7 @@ internal struct Calculator: Calculating {
     
     mutating func addRound(
         _ createRoundHandler: (_ for: [Player])->[Player: Int]
-        ) throws
-    {
+    ) throws {
         scores = try createRoundHandler(players).reduce(scores) {
             var scores = $0
             guard var array = scores[$1.key] else {

@@ -71,13 +71,3 @@ public protocol Calculating {
     /// - Throws `CalculatorError.inconsistentRound(allPlayers:_,got:_)`
     mutating func addRound(_ createRoundHandler: (_ for: [Player])->[Player: Int]) throws
 }
-
-extension Player: Hashable {
-    public var hashValue: Int {
-        return name.hashValue
-    }
-    
-    public static func ==(lhs: Player, rhs: Player) -> Bool {
-        return lhs.name == rhs.name
-    }
-}

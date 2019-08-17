@@ -16,6 +16,10 @@
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
 		30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */; };
+		30ED28B123081871005DF641 /* AddPlayersViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */; };
+		30ED28B223081CBA005DF641 /* CalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B125202F0DAF00B6CF2D /* CalculatorSpec.swift */; };
+		30ED28B423081DE0005DF641 /* PlayersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28B323081DE0005DF641 /* PlayersServiceMock.swift */; };
+		30ED28B623081E05005DF641 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28B523081E05005DF641 /* Stubs.swift */; };
 		9021B564B03B6292985F862C /* Pods_UNO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F013A38A4300E9B539467053 /* Pods_UNO.framework */; };
 		DE638424222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63840F222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift */; };
 		DE638425222303EE00B0DDE1 /* ScrollZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE638410222303EE00B0DDE1 /* ScrollZone.swift */; };
@@ -155,6 +159,9 @@
 		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
 		30D6E34920704682005A7889 /* BackgrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgrondView.swift; sourceTree = "<group>"; };
 		30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToolbar.swift; sourceTree = "<group>"; };
+		30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModelSpec.swift; sourceTree = "<group>"; };
+		30ED28B323081DE0005DF641 /* PlayersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersServiceMock.swift; sourceTree = "<group>"; };
+		30ED28B523081E05005DF641 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
 		30FDF4E420615AD400857066 /* StepProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProgressButton.swift; sourceTree = "<group>"; };
 		30FDF4FE20615C5E00857066 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		30FDF50020615CA900857066 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -295,6 +302,9 @@
 			children = (
 				307D58CA202D12F7007C899D /* Info.plist */,
 				30C6B125202F0DAF00B6CF2D /* CalculatorSpec.swift */,
+				30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */,
+				30ED28B323081DE0005DF641 /* PlayersServiceMock.swift */,
+				30ED28B523081E05005DF641 /* Stubs.swift */,
 			);
 			path = UNOTests;
 			sourceTree = "<group>";
@@ -560,6 +570,7 @@
 					};
 					307D58C3202D12F7007C899D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 307D58AF202D12F7007C899D;
 					};
@@ -611,8 +622,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UNO/Pods-UNO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AttributedTextView/AttributedTextView.framework",
@@ -623,8 +632,6 @@
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
@@ -643,15 +650,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-UNO-checkManifestLockResult.txt",
 			);
@@ -665,16 +668,14 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UNOTests/Pods-UNOTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,15 +688,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-UNOTests-checkManifestLockResult.txt",
 			);
@@ -787,6 +784,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30ED28B423081DE0005DF641 /* PlayersServiceMock.swift in Sources */,
+				30ED28B223081CBA005DF641 /* CalculatorSpec.swift in Sources */,
+				30ED28B123081871005DF641 /* AddPlayersViewModelSpec.swift in Sources */,
+				30ED28B623081E05005DF641 /* Stubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,12 +966,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDN2V9TNSF;
 				INFOPLIST_FILE = UNOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manshilin.UNOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNO.app/UNO";
@@ -983,6 +986,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDN2V9TNSF;
 				INFOPLIST_FILE = UNOTests/Info.plist;

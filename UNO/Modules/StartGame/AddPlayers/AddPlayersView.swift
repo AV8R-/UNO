@@ -60,10 +60,7 @@ final class AddPlayersView: UIView {
             cell.textLabel?.text = player.name
             cell.minusButton.reactive.controlEvents(.touchUpInside)
                 .observeNext { [unowned self] _ in
-                    guard let index = self.viewModel.players.array.index(of: player) else {
-                        return
-                    }
-                    self.viewModel.players.remove(at: index)
+                    self.viewModel.removePlayer(player)
                 }
                 .dispose(in: self.disposeBag)
             return cell
@@ -92,7 +89,7 @@ final class AddPlayersView: UIView {
 
 extension AddPlayersView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel.appendPlayer(name: textField.text ?? "")
+        try? viewModel.appendPlayer(name: textField.text ?? "")
         textField.text = nil
         return false
     }

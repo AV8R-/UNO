@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Player: Equatable {
+public struct Player: Hashable {
     public var name: String
     
     public init(name: String) throws {

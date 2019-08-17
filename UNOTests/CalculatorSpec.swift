@@ -1,44 +1,32 @@
-//
-//  CalculatorSpec.swift
-//  UNOTests
-//
-//  Created by Богдан Маншилин on 10/02/2018.
-//  Copyright © 2018 BManshilin. All rights reserved.
-//
-
+import Foundation
 import Quick
 import Nimble
 
 @testable import UNO
 
 final class CalculatorSpec: QuickSpec {
-    struct MockCreating: GameCreating {
-        var players: [Player]
-        var rules: Rules
-        var scoresLimit: Int {
-            return try! rules.limit()
-        }
-    }
-    
+   
     override func spec() {
-        var calculator: Calculating!
+        var calculator: Calculator!
+        var players: [Player]!
 
-        let players = try! ["First", "Second"].map(Player.init)
         let limit = 500
-        let creating = MockCreating(players: players, rules: .min(limit: limit))
         let firstPlayerScoresPerRound = 5
         let secondPlayerScoresPerRound = 10
+        let thirdPlayerScoresPerRound = 8
 
         let round = { (_: [Player]) -> [Player : Int] in
             return [
                 players[0]: firstPlayerScoresPerRound,
-                players[1]: secondPlayerScoresPerRound
+                players[1]: secondPlayerScoresPerRound,
+                players[2]: thirdPlayerScoresPerRound,
             ]
         }
         
         describe("calculator") {
             beforeEach {
-                calculator = Calculator(creator: creating)
+                players = Stubs.game.players
+                calculator = try! Calculator(rules: .max(limit: 500), players: players)
             }
             
             describe("add round") {
@@ -53,7 +41,12 @@ final class CalculatorSpec: QuickSpec {
                 it("increments rounds count") {
                     let rounds = calculator.roundsCount
                     try! calculator.addRound(round)
-                    expect(rounds+1).to(equal(calculator.roundsCount))
+                    
+                    expect(calculator.roundsCount).to(equal(rounds+1))
+                    expect(calculator.scores[players.first!]).toNot(beNil())
+                    expect(calculator.scores[players.last!]).toNot(beNil())
+                    expect(calculator.scores[players.first!]!.count).to(equal(rounds+1))
+                    expect(calculator.scores[players.last!]!.count).to(equal(rounds+1))
                 }
             }
             

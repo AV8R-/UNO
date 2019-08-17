@@ -3,6 +3,7 @@ import Bond
 
 enum AddPlayerViewModelError: Error {
     case playerAlreadyExist
+    case playerNameShouldNotBeEmpty
 }
 
 public final class AddPlayersViewModel: Step, ProgressedStepIO {
@@ -28,7 +29,7 @@ public final class AddPlayersViewModel: Step, ProgressedStepIO {
         self.playersService = playersService
     }
 
-    func appendPlayer(name: String) {
+    func appendPlayer(name: String) throws {
         do {
             let player = try Player(name: name)
             guard !players.array.contains(player) else {
@@ -36,9 +37,24 @@ public final class AddPlayersViewModel: Step, ProgressedStepIO {
             }
             
             players.append(player)
+        } catch is ValidationError {
+            throw AddPlayerViewModelError.playerNameShouldNotBeEmpty
         } catch {
-//            view.showError(error)
+            throw error
         }
+    }
+    
+    func removePlayer(_ player: Player) {
+        guard let index = players.array.index(of: player) else {
+            return
+        }
+        
+        players.remove(at: index)
+
+    }
+    
+    func createGame() {
+        
     }
 }
 
