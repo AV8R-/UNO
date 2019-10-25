@@ -335,12 +335,90 @@
                         <outlet property="pagedContainer" destination="2Bx-7P-wJV" id="5eg-RY-Dfg"/>
                         <outlet property="titleLabel" destination="Xx7-DH-cjb" id="3zk-aA-XyH"/>
                         <segue destination="nQ1-xw-iPJ" kind="unwind" identifier="unwind" unwindAction="unwindToMainMenuWithSegue:" id="RXz-ue-X0y"/>
+                        <segue destination="7H5-Kk-UqW" kind="show" identifier="game" id="8UJ-vT-pBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTe-hb-GwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="nQ1-xw-iPJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="401" y="-34"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="irC-LH-AHP">
+            <objects>
+                <viewController id="7H5-Kk-UqW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cd6-7r-Mnb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzn-EA-faf" customClass="UNOBackground" customModule="UNO" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="lightBlue"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fromColor">
+                                        <color key="value" name="lightBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="toColor">
+                                        <color key="value" name="darkBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjh-rI-UWX">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="896"/>
+                                <color key="backgroundColor" name="gameControlsOverlay"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="0pj-uJ-Ppy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-zI-GjL">
+                                <rect key="frame" x="48" y="0.0" width="2" height="896"/>
+                                <color key="backgroundColor" name="gameLeftSeparator"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="JLJ-qM-v1F"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k75-2O-PBO">
+                                <rect key="frame" x="366" y="0.0" width="48" height="896"/>
+                                <color key="backgroundColor" name="gameControlsOverlay"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="c55-H7-OPL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-H8-yaS">
+                                <rect key="frame" x="364" y="0.0" width="2" height="896"/>
+                                <color key="backgroundColor" name="gameRightSeparator"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="aoM-2N-42H"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="fKg-ZO-nVF"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UFc-zI-GjL" firstAttribute="leading" secondItem="jjh-rI-UWX" secondAttribute="trailing" id="1m6-Wl-mb0"/>
+                            <constraint firstItem="jjh-rI-UWX" firstAttribute="leading" secondItem="Cd6-7r-Mnb" secondAttribute="leading" id="386-O6-6Er"/>
+                            <constraint firstItem="UFc-zI-GjL" firstAttribute="bottom" secondItem="jjh-rI-UWX" secondAttribute="bottom" id="4J6-S4-XNo"/>
+                            <constraint firstAttribute="bottom" secondItem="jjh-rI-UWX" secondAttribute="bottom" id="5tq-5o-PjH"/>
+                            <constraint firstItem="k75-2O-PBO" firstAttribute="top" secondItem="Cd6-7r-Mnb" secondAttribute="top" id="6SC-S6-hQS"/>
+                            <constraint firstAttribute="trailing" secondItem="Xzn-EA-faf" secondAttribute="trailing" id="6yc-fe-Qxd"/>
+                            <constraint firstAttribute="bottom" secondItem="Xzn-EA-faf" secondAttribute="bottom" id="8Ky-yG-zdr"/>
+                            <constraint firstItem="k75-2O-PBO" firstAttribute="leading" secondItem="l9a-H8-yaS" secondAttribute="trailing" id="AAU-9a-JOl"/>
+                            <constraint firstItem="Xzn-EA-faf" firstAttribute="leading" secondItem="Cd6-7r-Mnb" secondAttribute="leading" id="G7M-Je-ubS"/>
+                            <constraint firstItem="l9a-H8-yaS" firstAttribute="bottom" secondItem="k75-2O-PBO" secondAttribute="bottom" id="VAj-8E-eOj"/>
+                            <constraint firstAttribute="trailing" secondItem="k75-2O-PBO" secondAttribute="trailing" id="e7b-Yd-4bt"/>
+                            <constraint firstItem="l9a-H8-yaS" firstAttribute="top" secondItem="k75-2O-PBO" secondAttribute="top" id="mNg-OT-RlJ"/>
+                            <constraint firstItem="jjh-rI-UWX" firstAttribute="top" secondItem="Cd6-7r-Mnb" secondAttribute="top" id="moi-qv-yR7"/>
+                            <constraint firstAttribute="bottom" secondItem="k75-2O-PBO" secondAttribute="bottom" id="tK3-UU-7gX"/>
+                            <constraint firstItem="UFc-zI-GjL" firstAttribute="top" secondItem="jjh-rI-UWX" secondAttribute="top" id="wgk-CX-SpU"/>
+                            <constraint firstItem="Xzn-EA-faf" firstAttribute="top" secondItem="Cd6-7r-Mnb" secondAttribute="top" id="zbX-Sn-dBx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YbQ-3C-dxJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aNr-JB-wxt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xy6-zK-Gx1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="-34"/>
         </scene>
     </scenes>
     <resources>
@@ -353,6 +431,15 @@
         </namedColor>
         <namedColor name="darkBlue">
             <color red="0.16500000655651093" green="0.28200000524520874" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gameControlsOverlay">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.500021977186203" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gameLeftSeparator">
+            <color red="0.40392156862745099" green="0.6588235294117647" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gameRightSeparator">
+            <color red="0.85490196078431369" green="0.21568627450980393" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightBlue">
             <color red="0.0" green="0.44699999690055847" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
