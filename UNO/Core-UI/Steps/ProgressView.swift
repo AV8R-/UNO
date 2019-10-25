@@ -3,6 +3,11 @@ import SnapKit
 
 class ProgressView: UIControl {
     
+    enum PrimaryAction {
+        case back
+        case forward
+    }
+    
     private var controlButtonsView: UIStackView!
     private var numberButtonsView: UIStackView!
 
@@ -12,9 +17,65 @@ class ProgressView: UIControl {
         }
     }
     
-    var selectedNumer: Int = 0 {
+    var selectedNumber: Int = 0 {
         didSet {
-            selectedNumer = (0...numberButtonsCount-1).clamp(selectedNumer)
+            guard selectedNumber != oldValue else {
+                return
+            }
+            
+            switch selectedNumber {
+            case ..<0:
+                primaryAction = .back
+                sendActions(for: .primaryActionTriggered)
+                
+            case 0..<numberButtonsCount:
+                primaryAction = nil
+                sendActions(for: .valueChanged)
+                
+            case numberButtonsCount...:
+                primaryAction = .forward
+                sendActions(for: .primaryActionTriggered)
+                
+            default:
+                fatalError()
+            }
+            
+            selectedNumber = (0...numberButtonsCount-1).clamp(selectedNumber)
+            updateSelectedButton()
+        }
+    }
+    
+    var primaryAction: PrimaryAction?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupView() {
+        backgroundColor = .clear
+        setupLine()
+        setupContolButtonsStackView()
+        setupNumberButtons()
+    }
+    
+    private func setupLine() {
+        let line = UIView()
+        line.translatesAutoresizingMaskIntoConstraints = false
+        line.backgroundColor = .white
+        addSubview(line)
+        
+        line.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(48)
+            make.height.equalTo(10)
+            make.centerY.equalToSuperview()
         }
     }
         
@@ -40,13 +101,15 @@ class ProgressView: UIControl {
         controlButtonsView.snp.makeConstraints { $0.edges.equalToSuperview() }
         
         backButton.onPress = { [weak self] in
-            self?.selectedNumer -= 1
-            self?.sendActions(for: .valueChanged)
+            guard let self = self else {
+                return
+            }
+            
+            self.selectedNumber -= 1
         }
         
         forwardButton.onPress = { [weak self] in
-            self?.selectedNumer += 1
-            self?.sendActions(for: .valueChanged)
+            self?.selectedNumber += 1
         }
     }
     
@@ -68,8 +131,7 @@ class ProgressView: UIControl {
         for page in 0..<numberButtonsCount {
             let numButton = StepProgressButton(kind: .page(num: page+1, color: tintColor, selectedColor: .white))
             numButton.onPress = { [weak self] in
-                self?.selectedNumer = page
-                self?.sendActions(for: .valueChanged)
+                self?.selectedNumber = page
             }
             numberButtonsView.addArrangedSubview(numButton)
         }
@@ -81,35 +143,15 @@ class ProgressView: UIControl {
             make.top.bottom.equalTo(controlButtonsView)
             make.centerX.equalToSuperview()
         }
-    }
-    
-    private func setupLine() {
-        let line = UIView()
-        line.translatesAutoresizingMaskIntoConstraints = false
-        line.backgroundColor = .white
-        addSubview(line)
         
-        line.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(48)
-            make.height.equalTo(10)
-            make.centerY.equalToSuperview()
-        }
+        updateSelectedButton()
     }
     
-    private func setupView() {
-        backgroundColor = .clear
-        setupLine()
-        setupContolButtonsStackView()
-        setupNumberButtons()
-    }
+    // MARK: - Updates
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupView()
+    private func updateSelectedButton() {
+        numberButtonsView.arrangedSubviews.enumerated().lazy
+            .map { (index: $0, button: $1 as! StepProgressButton) }
+            .forEach { $0.button.isSelected = $0.index == selectedNumber }
     }
 }

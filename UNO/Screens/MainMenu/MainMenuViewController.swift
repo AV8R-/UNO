@@ -24,6 +24,10 @@ public final class MainMenuViewController: UIViewController {
     @IBAction func didPressRulesButton(_ sender: UIButton) {
         performSegue(withIdentifier: Segue.rules, sender: sender)
     }
+    
+    @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {
+        navigationController?.navigationController?.popToViewController(self, animated: true)
+    }
 }
 
 private enum Segue {

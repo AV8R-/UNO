@@ -8,7 +8,7 @@ final class StartGameViewController: UIViewController, Resolving {
             Style.setupTitleLabel(titleLabel)
         }
     }
-    
+        
     private lazy var pages: [ProgressedStep] = [
         ChooseRulesView(viewModel: ChooseRulesViewModel(picker: try! self.resolve())),
         AddPlayersView(viewModel: AddPlayersViewModel(playersService: try! self.resolve())),
@@ -22,16 +22,35 @@ final class StartGameViewController: UIViewController, Resolving {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        for step in pages {
-            pagedContainer.append(page: step.view)
-        }
         
-        pagedContainer.append { [weak self] page in
+        pages.forEach { pagedContainer.append(page: $0.view) }
+        
+        pagedContainer.observeDidShowPageHandler { [weak self] page in
             self?.titleLabel.text = self?.pages[page].io.title
         }
-
     }
+    
+    @IBAction func didSelectPage(_ sender: ProgressView) {
+        pagedContainer.scrollTo(page: sender.selectedNumber)
+    }
+    
+    @IBAction func didSelectPrimaryAction(_ sender: ProgressView) {
+        switch sender.primaryAction {
+        case .back:
+            performSegue(withIdentifier: Segues.unwind.rawValue, sender: self)
+            
+        case .forward:
+            performSegue(withIdentifier: Segues.game.rawValue, sender: self)
+            
+        case nil:
+            break
+        }
+    }
+}
+
+private enum Segues: String {
+    case unwind
+    case game
 }
 
 private enum Style {

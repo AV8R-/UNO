@@ -17,7 +17,6 @@
 		307D58BB202D12F7007C899D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307D58BA202D12F7007C899D /* Assets.xcassets */; };
 		307D58BE202D12F7007C899D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D58BC202D12F7007C899D /* LaunchScreen.storyboard */; };
 		30B829872065410B00730A7C /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B829862065410B00730A7C /* Resolving.swift */; };
-		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
 		30DD331F230C9DF300D71CD0 /* UIRange+Clamped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD331E230C9DF300D71CD0 /* UIRange+Clamped.swift */; };
 		30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */; };
 		30ED28B123081871005DF641 /* AddPlayersViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */; };
@@ -156,7 +155,6 @@
 		30D1428A20542C7400B1D186 /* UNOBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNOBackground.swift; sourceTree = "<group>"; };
 		30D1428C2054508D00B1D186 /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		30D143022054661400B1D186 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-		30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
 		30D17A092066F1C6005C6331 /* LimitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitPicker.swift; sourceTree = "<group>"; };
 		30D17A312066FDCC005C6331 /* Rescale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
@@ -470,7 +468,6 @@
 			children = (
 				30D6E344207034B6005A7889 /* AddPlayers */,
 				30073B152065CA75001E0E74 /* ChooseRules */,
-				30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */,
 				30632810230ACD9E008EC8C8 /* StartGameViewController.swift */,
 			);
 			path = StartGame;
@@ -753,7 +750,6 @@
 				DEDC4F882222A47E006101BF /* Step.swift in Sources */,
 				DEDC4F922222A4B7006101BF /* GameCreator.swift in Sources */,
 				DE638425222303EE00B0DDE1 /* ScrollZone.swift in Sources */,
-				30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */,
 				DE638432222303EE00B0DDE1 /* Dictionary+Merge.swift in Sources */,
 				DEDC4F992222A4DA006101BF /* ChooseRulesView.swift in Sources */,
 				DEDC4F8F2222A4AD006101BF /* Rules.swift in Sources */,

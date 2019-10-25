@@ -27,6 +27,8 @@ class PageView: UIScrollView {
     private func setup() {
         backgroundColor = .clear
         isPagingEnabled = true
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator  = false
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +42,7 @@ class PageView: UIScrollView {
         delegate = self
     }
     
-    func append(didSHhowPageHandler handler: @escaping (Int) -> Void) {
+    func observeDidShowPageHandler( handler: @escaping (Int) -> Void) {
         self.didShowPageHandlers.append(handler)
         handler(currentPage)
     }
