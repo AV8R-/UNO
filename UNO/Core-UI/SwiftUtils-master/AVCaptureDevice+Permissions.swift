@@ -15,10 +15,16 @@ extension AVCaptureDevice {
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
         
         switch cameraAuthorizationStatus {
-        case .denied, .restricted: fail?()
-        case .authorized: exec()
+        case .denied, .restricted:
+            fail?()
+            
+        case .authorized:
+            exec()
             
         case .notDetermined:
+            fallthrough
+            
+        @unknown default:
             AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
                 if granted {
                     exec()
@@ -26,6 +32,7 @@ extension AVCaptureDevice {
                     fail?()
                 }
             }
+
         }
     }
 }

@@ -1,151 +1,115 @@
-//
-//  ProgressView.swift
-//  Core-UI
-//
-//  Created by Богдан Маншилин on 20/03/2018.
-//  Copyright © 2018 BManshilin. All rights reserved.
-//
-
 import UIKit
+import SnapKit
 
-class ProgressView: UIView {
-    private weak var pageView: PageView!
-    private var steps: [ProgressedStep] = []
-    private var allButtons: UIStackView
-    private var pages: UIStackView
-    var onClose: (()->Void)?
-    var onFinish: (()->Void)?
+class ProgressView: UIControl {
     
-    init(pageView: PageView, tintColor: UIColor) {
-        allButtons = UIStackView()
-        allButtons.spacing = 20
-        allButtons.translatesAutoresizingMaskIntoConstraints = false
-        allButtons.axis = .horizontal
+    private var controlButtonsView: UIStackView!
+    private var numberButtonsView: UIStackView!
+
+    @IBInspectable var numberButtonsCount: Int = 0 {
+        didSet {
+            setupNumberButtons()
+        }
+    }
+    
+    var selectedNumer: Int = 0 {
+        didSet {
+            selectedNumer = (0...numberButtonsCount-1).clamp(selectedNumer)
+        }
+    }
+        
+    private func setupContolButtonsStackView() {
+        controlButtonsView = UIStackView()
+        controlButtonsView.spacing = 20
+        controlButtonsView.translatesAutoresizingMaskIntoConstraints = false
+        controlButtonsView.axis = .horizontal
         
         let backButton = StepProgressButton(kind: .back)
-        allButtons.addArrangedSubview(backButton)
+        controlButtonsView.addArrangedSubview(backButton)
         
         let spacing = UIView()
         spacing.translatesAutoresizingMaskIntoConstraints = false
-        allButtons.addArrangedSubview(spacing)
-        NSLayoutConstraint.activate([
-            spacing.heightAnchor.constraint(equalTo: allButtons.heightAnchor),
-            ])
-        
-        pages = UIStackView()
-        pages.spacing = 12
-        pages.translatesAutoresizingMaskIntoConstraints = false
-        pages.axis = .horizontal
+        controlButtonsView.addArrangedSubview(spacing)
+        spacing.snp.makeConstraints { $0.height.equalToSuperview() }
         
         let forwardButton = StepProgressButton(kind: .forward(selectedColor: tintColor))
-        allButtons.addArrangedSubview(forwardButton)
+        controlButtonsView.addArrangedSubview(forwardButton)
         
-        for page in 0..<pageView.pages.arrangedSubviews.count {
+        addSubview(controlButtonsView)
+
+        controlButtonsView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        
+        backButton.onPress = { [weak self] in
+            self?.selectedNumer -= 1
+            self?.sendActions(for: .valueChanged)
+        }
+        
+        forwardButton.onPress = { [weak self] in
+            self?.selectedNumer += 1
+            self?.sendActions(for: .valueChanged)
+        }
+    }
+    
+    private func setupNumberButtons() {
+        if numberButtonsView == nil {
+            numberButtonsView = UIStackView()
+            numberButtonsView.spacing = 12
+            numberButtonsView.translatesAutoresizingMaskIntoConstraints = false
+            numberButtonsView.axis = .horizontal
+        }
+        
+        if numberButtonsView.arrangedSubviews.count > 0 {
+            numberButtonsView.arrangedSubviews.forEach {
+                numberButtonsView.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+        }
+        
+        for page in 0..<numberButtonsCount {
             let numButton = StepProgressButton(kind: .page(num: page+1, color: tintColor, selectedColor: .white))
-            numButton.onPress = { [weak pageView] in
-                pageView?.scrollTo(page: page)
+            numButton.onPress = { [weak self] in
+                self?.selectedNumer = page
+                self?.sendActions(for: .valueChanged)
             }
-            pages.addArrangedSubview(numButton)
+            numberButtonsView.addArrangedSubview(numButton)
         }
         
-        var lastUnlocked = 0
-        for step in pageView.progressedSteps {
-            if !step.io.isCanGoNext {
-                break
-            }
-            lastUnlocked += 1
-        }
-        if pages.arrangedSubviews.count > 1 {
-            for button in pages.arrangedSubviews[lastUnlocked+1..<pages.arrangedSubviews.count].compactMap({$0 as? UIControl}) {
-                button.isEnabled = false
-            }
-        }
-        for (num, step) in pageView.progressedSteps.enumerated() {
-            
-            step.io.onChangeCanGoNext = { [weak pageView, weak pages] isCanGoNext in
-                guard let pageView = pageView, let pages = pages else {
-                    return
-                }
-                
-                var unlocked = isCanGoNext ? num + 1 : num
-                pageView.unlockPages(upTo: unlocked+1)
-                
-                if unlocked >= pages.arrangedSubviews.count {
-                    unlocked = pages.arrangedSubviews.count - 1
-                }
-                
-                for button in pages.arrangedSubviews[0...unlocked].compactMap({$0 as? UIControl}) {
-                    button.isEnabled = true
-                }
-                
-                for button in pages.arrangedSubviews[unlocked+1..<pages.arrangedSubviews.count].compactMap({$0 as? UIControl}) {
-                    button.isEnabled = false
-                }
-            }
-        }
         
-        super.init(frame: .zero)
+        addSubview(numberButtonsView)
         
+        numberButtonsView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(controlButtonsView)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    private func setupLine() {
         let line = UIView()
         line.translatesAutoresizingMaskIntoConstraints = false
         line.backgroundColor = .white
         addSubview(line)
-        addSubview(allButtons)
-        addSubview(pages)
-        self.pageView = pageView
         
-        backButton.onPress = { [weak self] in
-            if self?.pageView?.scrollBack() == false {
-                self?.onClose?()
-            }
+        line.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(48)
+            make.height.equalTo(10)
+            make.centerY.equalToSuperview()
         }
-        
-        forwardButton.onPress = { [weak self] in
-            if self?.pageView?.scrollForward() == false {
-                self?.pageView?.progressedSteps.last?.io.finish()
-                self?.onClose?()
-            }
-        }
-        
-        NSLayoutConstraint.activate([
-            allButtons.topAnchor.constraint(equalTo: topAnchor),
-            allButtons.bottomAnchor.constraint(equalTo: bottomAnchor),
-            allButtons.leftAnchor.constraint(equalTo: leftAnchor),
-            allButtons.rightAnchor.constraint(equalTo: rightAnchor),
-            heightAnchor.constraint(equalToConstant: 50),
-            line.leadingAnchor.constraint(equalTo: allButtons.leadingAnchor, constant: 50-2),
-            line.trailingAnchor.constraint(equalTo: allButtons.trailingAnchor, constant: -50+2),
-            line.heightAnchor.constraint(equalToConstant: 10),
-            line.centerYAnchor.constraint(equalTo: centerYAnchor),
-            pages.topAnchor.constraint(equalTo: allButtons.topAnchor),
-            pages.bottomAnchor.constraint(equalTo: allButtons.bottomAnchor),
-            pages.centerXAnchor.constraint(equalTo: centerXAnchor),
-        ])
-        
-        pageView.append { [weak allButtons, weak pages, weak pageView] (page: Int) -> Void in
-            (allButtons?.arrangedSubviews.first as? UIControl)?.isSelected = page == 0
-            (allButtons?.arrangedSubviews.last as? UIControl)?.isSelected = page == (pages?.arrangedSubviews.count ?? 0) - 1
-            let buttons = pages?.arrangedSubviews
-                .compactMap { $0 as? UIControl }
-            buttons?.forEach { $0.isSelected = false }
-            buttons?[page].isSelected = true
-            
-            if page > 0 {
-                pageView?.progressedSteps[page-1].io.finish()
-            }
-        }
+    }
+    
+    private func setupView() {
+        backgroundColor = .clear
+        setupLine()
+        setupContolButtonsStackView()
+        setupNumberButtons()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        guard pageView.pages.arrangedSubviews.count > 0 else {
-            return
-        }
-//        pageView.didShowPage?(0)
-        pageView.progressedSteps.first?.io.didShow()
+        super.init(coder: aDecoder)
+        setupView()
     }
 }

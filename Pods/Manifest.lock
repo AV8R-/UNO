@@ -1,14 +1,14 @@
 PODS:
-  - AttributedTextView (1.2.3)
-  - Bond (7.4.1):
+  - AttributedTextView (1.4.1)
+  - Bond (7.6.0):
     - Differ (~> 1.3)
     - ReactiveKit (~> 3.10)
-  - Differ (1.4.1)
-  - Nimble (8.0.1)
-  - Quick (1.3.4)
-  - ReactiveKit (3.10.0)
-  - SnapKit (4.2.0)
-  - Swinject (2.5.0)
+  - Differ (1.4.3)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
+  - ReactiveKit (3.14.0)
+  - SnapKit (5.0.1)
+  - Swinject (2.7.1)
 
 DEPENDENCIES:
   - AttributedTextView
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - Swinject
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AttributedTextView
     - Bond
     - Differ
@@ -30,15 +30,15 @@ SPEC REPOS:
     - Swinject
 
 SPEC CHECKSUMS:
-  AttributedTextView: 4c073150101402f0420ac3016ca4610bab156726
-  Bond: 6e73608fdd9d44e84f52f9bf9d56098ad80cbbb1
-  Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: f4f7f063c524394c73ed93ac70983c609805d481
-  ReactiveKit: af0d53664c2326a03d2c9f92c92a30bbc7f3a9ee
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  AttributedTextView: 9e01651d96c1af861a9c67c2cc3f94c30320d1c2
+  Bond: 5d626bfbbfc60b213ec35badb8f4fd81beff6a5f
+  Differ: 6c7477d6187e8c36d02ec342a3c321061b85a0ea
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  ReactiveKit: bee31957333d98c5b443609fe099ebccdf055d15
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
 PODFILE CHECKSUM: 7b9a9700e6e2e2a088683bb452949260174b9b94
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

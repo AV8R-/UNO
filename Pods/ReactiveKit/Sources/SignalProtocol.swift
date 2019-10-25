@@ -80,3 +80,38 @@ extension SignalProtocol {
         return (self as? Signal<Element, Error>) ?? Signal(self.observe)
     }
 }
+
+extension SignalProtocol {
+
+    /// Attaches a subscriber with closure-based behavior.
+    ///
+    /// This method creates the subscriber and immediately requests an unlimited number of values, prior to returning the subscriber.
+    /// - parameter receiveComplete: The closure to execute on completion.
+    /// - parameter receiveValue: The closure to execute on receipt of a value.
+    /// - Returns: A cancellable instance; used when you end assignment of the received value. Deallocation of the result will tear down the subscription stream.
+    public func sink(receiveCompletion: @escaping ((Subscribers.Completion<Error>) -> Void), receiveValue: @escaping ((Element) -> Void)) -> AnyCancellable {
+        let disposable = observe { event in
+            switch event {
+            case .next(let element):
+                receiveValue(element)
+            case .failed(let error):
+                receiveCompletion(.failure(error))
+            case .completed:
+                receiveCompletion(.finished)
+            }
+        }
+        return AnyCancellable(disposable.dispose)
+    }
+}
+
+extension SignalProtocol where Error == Never {
+
+    /// Attaches a subscriber with closure-based behavior.
+    ///
+    /// This method creates the subscriber and immediately requests an unlimited number of values, prior to returning the subscriber.
+    /// - parameter receiveValue: The closure to execute on receipt of a value.
+    /// - Returns: A cancellable instance; used when you end assignment of the received value. Deallocation of the result will tear down the subscription stream.
+    public func sink(receiveValue: @escaping ((Element) -> Void)) -> AnyCancellable {
+        return sink(receiveCompletion: { _ in }, receiveValue: receiveValue)
+    }
+}

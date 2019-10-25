@@ -13,13 +13,26 @@ extension PHPhotoLibrary {
     static func executeIfPermitted(_ exec: @escaping ()->Void, fail: (()->Void)? = nil) {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .authorized: exec()
-        case .denied, .restricted : fail?()
+        case .authorized:
+            exec()
+            
+        case .denied, .restricted:
+            fail?()
+            
         case .notDetermined:
+            fallthrough
+
+        @unknown default:
             PHPhotoLibrary.requestAuthorization() { status in
                 switch status {
-                case .authorized: exec()
-                case .denied, .restricted, .notDetermined: fail?()
+                case .authorized:
+                    exec()
+                    
+                case .denied, .restricted, .notDetermined:
+                    fallthrough
+                    
+                @unknown default:
+                    fail?()
                 }
             }
         }

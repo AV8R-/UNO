@@ -9,12 +9,11 @@
 import UIKit
 
 public final class UNOBackground: UIView {
-    public var colors = [
-        UIColor.lightRed,
-        UIColor.darkRed,
-    ]
     
-    var gradient: CALayer? {
+    @IBInspectable public var fromColor: UIColor = UIColor.lightRed
+    @IBInspectable public var toColor: UIColor = UIColor.darkRed
+    
+    private var gradient: CALayer? {
         didSet {
             guard let gradient = gradient else {
                 return
@@ -22,12 +21,14 @@ public final class UNOBackground: UIView {
             layer.insertSublayer(gradient, at: 0)
         }
     }
-    var beamsMask: CALayer? {
+    
+    private var beamsMask: CALayer? {
         didSet {
             beams?.layer.mask = beamsMask
         }
     }
-    var beams: UIView? {
+    
+    private var beams: UIView? {
         didSet {
             guard let beams = beams else {
                 return
@@ -49,6 +50,7 @@ public final class UNOBackground: UIView {
         }
         
         let center = CGPoint(x: bounds.width/2, y: 80)
+        let colors = [fromColor, toColor]
         
         self.beams = Beams(rotationCenter: center)
         

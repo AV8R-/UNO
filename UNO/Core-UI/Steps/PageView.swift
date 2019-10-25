@@ -1,16 +1,8 @@
-//
-//  PageView.swift
-//  Core-UI
-//
-//  Created by Богдан Маншилин on 20/03/2018.
-//  Copyright © 2018 BManshilin. All rights reserved.
-//
-
 import UIKit
+import SnapKit
 
 class PageView: UIScrollView {
     weak var pages: UIStackView!
-    var lastUnlockedPage = 0
     
     var progressedSteps: [ProgressedStep] {
         return pages.arrangedSubviews.compactMap { $0 as? ProgressedStep }
@@ -22,15 +14,18 @@ class PageView: UIScrollView {
         return Int(contentOffset.x / max(bounds.width, 1))
     }
     
-    override var bounds: CGRect {
-        didSet {
-            self.blockPages(from: self.lastUnlockedPage+1)
-        }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = .clear
         isPagingEnabled = true
         
         let stackView = UIStackView()
@@ -40,18 +35,9 @@ class PageView: UIScrollView {
         stackView.backgroundColor = .cyan
         self.pages = stackView
         
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            ])
-        
+        stackView.snp.makeConstraints { $0.edges.equalToSuperview() }
+                
         delegate = self
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func append(didSHhowPageHandler handler: @escaping (Int) -> Void) {
@@ -65,33 +51,6 @@ class PageView: UIScrollView {
             page.heightAnchor.constraint(equalTo: heightAnchor),
             page.widthAnchor.constraint(equalTo: widthAnchor),
             ])
-    }
-    
-    func blockPages(from: Int) {
-        guard pages.arrangedSubviews.count > from,
-            from > 0 else
-        {
-            return
-        }
-        lastUnlockedPage = from - 1
-        
-        let last = CGFloat(pages.arrangedSubviews.count-from)
-        
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -bounds.width * last)
-    }
-    
-    func unlockPages(upTo: Int) {
-        guard pages.arrangedSubviews.count >= upTo,
-            upTo > 0 else
-        {
-            return
-        }
-        lastUnlockedPage = upTo - 1
-        
-        let last = CGFloat(pages.arrangedSubviews.count - upTo)
-        
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -bounds.width * last)
-        
     }
     
     func scrollTo(page: Int) {

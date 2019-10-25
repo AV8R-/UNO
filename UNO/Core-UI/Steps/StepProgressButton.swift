@@ -20,7 +20,7 @@ class StepProgressButton: ComplexButton {
         }
         
         var selectedColor: UIColor {
-            if case .page(_, _, let color) = self      { return color }
+            if case .page(_, _, let color) = self   { return color }
             else if case .forward(let color) = self { return color }
             else                                    { return .clear }
         }

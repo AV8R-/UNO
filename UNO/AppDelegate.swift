@@ -13,7 +13,6 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coordinator: ApplicationCoordinator?
     static let container = Container()
 
     func application(
@@ -22,14 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         ServicesAssembley.register(container: AppDelegate.container)
         UIView.insetsInit()
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.backgroundColor = .white
-        let coordinator = ApplicationCoordinator(window: window)
-        coordinator.start()
-        self.window = window
-        self.coordinator = coordinator
-
 
         return true
     }

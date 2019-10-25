@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		21DA198178DE217374955695 /* Pods_UNOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A75AE631BFE2B3E2C80884B /* Pods_UNOTests.framework */; };
+		30606BA32308437C001F6E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30606BA22308437C001F6E8A /* Main.storyboard */; };
+		30606BA523084501001F6E8A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30606BA4230844FD001F6E8A /* MainMenuViewController.swift */; };
+		30632811230ACD9E008EC8C8 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30632810230ACD9E008EC8C8 /* StartGameViewController.swift */; };
+		30632813230ACF36008EC8C8 /* AddPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30632812230ACF36008EC8C8 /* AddPlayersViewController.swift */; };
+		30632815230ACF45008EC8C8 /* ChooseRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30632814230ACF45008EC8C8 /* ChooseRulesViewController.swift */; };
 		307D58B4202D12F7007C899D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D58B3202D12F7007C899D /* AppDelegate.swift */; };
 		307D58BB202D12F7007C899D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307D58BA202D12F7007C899D /* Assets.xcassets */; };
 		307D58BE202D12F7007C899D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D58BC202D12F7007C899D /* LaunchScreen.storyboard */; };
 		30B829872065410B00730A7C /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B829862065410B00730A7C /* Resolving.swift */; };
-		30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D14348205526C600B1D186 /* ApplicationCoordinator.swift */; };
 		30D1434C20552D3D00B1D186 /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */; };
-		30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */; };
+		30DD331F230C9DF300D71CD0 /* UIRange+Clamped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD331E230C9DF300D71CD0 /* UIRange+Clamped.swift */; };
 		30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */; };
 		30ED28B123081871005DF641 /* AddPlayersViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */; };
 		30ED28B223081CBA005DF641 /* CalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B125202F0DAF00B6CF2D /* CalculatorSpec.swift */; };
@@ -77,7 +81,6 @@
 		DEDC4F9C2222A4DA006101BF /* LimitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D17A092066F1C6005C6331 /* LimitPicker.swift */; };
 		DEDC4F9D2222A4DA006101BF /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300935CE206693DF00CB499C /* Arrow.swift */; };
 		DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E34920704682005A7889 /* BackgrondView.swift */; };
-		DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D30EBE203509D700BFB904 /* MainMenuView.swift */; };
 		DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303589BA206472D7007F61D5 /* RulesViewModel.swift */; };
 		DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */; };
 		DEDC4FB52222A74F006101BF /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D30EC82036243000BFB904 /* Resources.xcassets */; };
@@ -126,6 +129,11 @@
 		303589A620646F97007F61D5 /* ChooseRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesView.swift; sourceTree = "<group>"; };
 		303589BA206472D7007F61D5 /* RulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewModel.swift; sourceTree = "<group>"; };
 		3049169E2035055C006DC13D /* GameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreator.swift; sourceTree = "<group>"; };
+		30606BA22308437C001F6E8A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		30606BA4230844FD001F6E8A /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		30632810230ACD9E008EC8C8 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		30632812230ACF36008EC8C8 /* AddPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewController.swift; sourceTree = "<group>"; };
+		30632814230ACF45008EC8C8 /* ChooseRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesViewController.swift; sourceTree = "<group>"; };
 		307D58B0202D12F7007C899D /* UNO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307D58B3202D12F7007C899D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		307D58BA202D12F7007C899D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,16 +156,14 @@
 		30D1428A20542C7400B1D186 /* UNOBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNOBackground.swift; sourceTree = "<group>"; };
 		30D1428C2054508D00B1D186 /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		30D143022054661400B1D186 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-		30D14348205526C600B1D186 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
-		30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordiantor.swift; sourceTree = "<group>"; };
 		30D17A092066F1C6005C6331 /* LimitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitPicker.swift; sourceTree = "<group>"; };
 		30D17A312066FDCC005C6331 /* Rescale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
-		30D30EBE203509D700BFB904 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		30D30EC82036243000BFB904 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
 		30D6E345207034D0005A7889 /* AddPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersView.swift; sourceTree = "<group>"; };
 		30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModel.swift; sourceTree = "<group>"; };
 		30D6E34920704682005A7889 /* BackgrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgrondView.swift; sourceTree = "<group>"; };
+		30DD331E230C9DF300D71CD0 /* UIRange+Clamped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRange+Clamped.swift"; sourceTree = "<group>"; };
 		30ED28AE230738B6005DF641 /* AddPlayerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToolbar.swift; sourceTree = "<group>"; };
 		30ED28B023081871005DF641 /* AddPlayersViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersViewModelSpec.swift; sourceTree = "<group>"; };
 		30ED28B323081DE0005DF641 /* PlayersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersServiceMock.swift; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 				DEDC4FE22222A947006101BF /* Subviews */,
 				303589BA206472D7007F61D5 /* RulesViewModel.swift */,
 				303589A620646F97007F61D5 /* ChooseRulesView.swift */,
+				30632814230ACF45008EC8C8 /* ChooseRulesViewController.swift */,
 			);
 			path = ChooseRules;
 			sourceTree = "<group>";
@@ -247,7 +254,6 @@
 			children = (
 				DE63840E222303EE00B0DDE1 /* SwiftUtils-master */,
 				DEDC4FEB2222D1FA006101BF /* Styles */,
-				30D14301205464C200B1D186 /* Cards */,
 				30BDAD1E205414540059DF96 /* UIKit Extensions */,
 				30BDAD1D205414250059DF96 /* UNOBackground */,
 				30BDAD1C2054141E0059DF96 /* Steps */,
@@ -283,9 +289,8 @@
 		307D58B2202D12F7007C899D /* UNO */ = {
 			isa = PBXGroup;
 			children = (
-				DEDC4FB62222A837006101BF /* Modules */,
+				DEDC4FB62222A837006101BF /* Screens */,
 				307D58B3202D12F7007C899D /* AppDelegate.swift */,
-				30D14348205526C600B1D186 /* ApplicationCoordinator.swift */,
 				3049166B20350085006DC13D /* Core-UI */,
 				307D58EF202D14C3007C899D /* Services */,
 				307D58BA202D12F7007C899D /* Assets.xcassets */,
@@ -293,6 +298,7 @@
 				307D58BC202D12F7007C899D /* LaunchScreen.storyboard */,
 				307D58BF202D12F7007C899D /* Info.plist */,
 				30B829862065410B00730A7C /* Resolving.swift */,
+				30606BA22308437C001F6E8A /* Main.storyboard */,
 			);
 			path = UNO;
 			sourceTree = "<group>";
@@ -355,7 +361,6 @@
 		30BDAD1D205414250059DF96 /* UNOBackground */ = {
 			isa = PBXGroup;
 			children = (
-				30D1427420542C3B00B1D186 /* Builders */,
 				30BDAD1F205414790059DF96 /* FloatingPoint+AngleConverting.swift */,
 				30D1428820542C4A00B1D186 /* RadialGradientBuilder.swift */,
 				30BDAD212054149E0059DF96 /* Beam.swift */,
@@ -386,27 +391,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		30D1427420542C3B00B1D186 /* Builders */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Builders;
-			sourceTree = "<group>";
-		};
-		30D14301205464C200B1D186 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				30D143022054661400B1D186 /* CardButton.swift */,
-			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
 		30D6E344207034B6005A7889 /* AddPlayers */ = {
 			isa = PBXGroup;
 			children = (
 				DEDC4FE62222CE75006101BF /* Views */,
 				30D6E3472070360E005A7889 /* AddPlayersViewModel.swift */,
 				30D6E345207034D0005A7889 /* AddPlayersView.swift */,
+				30632812230ACF36008EC8C8 /* AddPlayersViewController.swift */,
 			);
 			path = AddPlayers;
 			sourceTree = "<group>";
@@ -440,24 +431,25 @@
 				DE638421222303EE00B0DDE1 /* UINavigationBar+BorderColor.swift */,
 				DE638422222303EE00B0DDE1 /* UIView+Constrain.swift */,
 				DE638423222303EE00B0DDE1 /* AsyncImageView.swift */,
+				30DD331E230C9DF300D71CD0 /* UIRange+Clamped.swift */,
 			);
 			path = "SwiftUtils-master";
 			sourceTree = "<group>";
 		};
-		DEDC4FB62222A837006101BF /* Modules */ = {
+		DEDC4FB62222A837006101BF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				DEDC4FE32222A9A3006101BF /* StartGame */,
 				DEDC4FB72222A84B006101BF /* MainMenu */,
 			);
-			path = Modules;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		DEDC4FB72222A84B006101BF /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				30D1434D20552E0300B1D186 /* MainMenuCoordiantor.swift */,
-				30D30EBE203509D700BFB904 /* MainMenuView.swift */,
+				30D143022054661400B1D186 /* CardButton.swift */,
+				30606BA4230844FD001F6E8A /* MainMenuViewController.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -479,6 +471,7 @@
 				30D6E344207034B6005A7889 /* AddPlayers */,
 				30073B152065CA75001E0E74 /* ChooseRules */,
 				30D1434B20552D3D00B1D186 /* StartGameCoordinator.swift */,
+				30632810230ACD9E008EC8C8 /* StartGameViewController.swift */,
 			);
 			path = StartGame;
 			sourceTree = "<group>";
@@ -561,6 +554,7 @@
 				TargetAttributes = {
 					307D58AF202D12F7007C899D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -570,7 +564,7 @@
 					};
 					307D58C3202D12F7007C899D = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1030;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 307D58AF202D12F7007C899D;
 					};
@@ -601,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307D58BE202D12F7007C899D /* LaunchScreen.storyboard in Resources */,
+				30606BA32308437C001F6E8A /* Main.storyboard in Resources */,
 				307D58BB202D12F7007C899D /* Assets.xcassets in Resources */,
 				DEDC4FB52222A74F006101BF /* Resources.xcassets in Resources */,
 				DEDC4F8A2222A47E006101BF /* Reference.rtfd in Resources */,
@@ -623,7 +618,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-UNO/Pods-UNO-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-UNO/Pods-UNO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AttributedTextView/AttributedTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
@@ -642,7 +637,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UNO/Pods-UNO-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UNO/Pods-UNO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		83F1CDEE9F3A4B210E183112 /* [CP] Check Pods Manifest.lock */ = {
@@ -669,7 +664,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-UNOTests/Pods-UNOTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-UNOTests/Pods-UNOTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -680,7 +675,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UNOTests/Pods-UNOTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UNOTests/Pods-UNOTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CBCD73FD9C1919C8C96C523D /* [CP] Check Pods Manifest.lock */ = {
@@ -713,9 +708,11 @@
 				DEDC4F862222A47E006101BF /* StepProgressButton.swift in Sources */,
 				DE638427222303EE00B0DDE1 /* UIView+Utils.swift in Sources */,
 				DEDC4F9D2222A4DA006101BF /* Arrow.swift in Sources */,
+				30632811230ACD9E008EC8C8 /* StartGameViewController.swift in Sources */,
 				DEDC4F962222A4B7006101BF /* Calculator.swift in Sources */,
 				DE638436222303EE00B0DDE1 /* UIView+Constrain.swift in Sources */,
 				DE638431222303EE00B0DDE1 /* UITableView+ReloadHeights.swift in Sources */,
+				30632813230ACF36008EC8C8 /* AddPlayersViewController.swift in Sources */,
 				DEDC4F7F2222A47E006101BF /* UIView+InnerShadow.swift in Sources */,
 				DEDC4F8D2222A47E006101BF /* Rescale.swift in Sources */,
 				DEDC4F8E2222A4AD006101BF /* Player.swift in Sources */,
@@ -725,14 +722,15 @@
 				DEDC4F7E2222A47E006101BF /* CardButton.swift in Sources */,
 				30ED28AF230738B6005DF641 /* AddPlayerToolbar.swift in Sources */,
 				DE9AC35922233D3000CCE315 /* UIView+TouchInsets.swift in Sources */,
+				30DD331F230C9DF300D71CD0 /* UIRange+Clamped.swift in Sources */,
 				DEDC4F8C2222A47E006101BF /* UNOButton.swift in Sources */,
-				DEDC4F9F2222A4DA006101BF /* MainMenuView.swift in Sources */,
 				DEDC4FA32222A4E3006101BF /* AddPlayersViewModel.swift in Sources */,
 				DEDC4F9E2222A4DA006101BF /* BackgrondView.swift in Sources */,
 				DEDC4F942222A4B7006101BF /* RulesPicker.swift in Sources */,
 				DEDC4FEF2222F04E006101BF /* UITextField+Style.swift in Sources */,
 				DE9AC35B22233DA600CCE315 /* NSObject+AssociatedKeys.swift in Sources */,
 				DEDC4F832222A47E006101BF /* Beams.swift in Sources */,
+				30606BA523084501001F6E8A /* MainMenuViewController.swift in Sources */,
 				DE638434222303EE00B0DDE1 /* ComplexButton.swift in Sources */,
 				DEDC4F872222A47E006101BF /* ProgressView.swift in Sources */,
 				DEDC4FE82222CE7F006101BF /* SearchPlayerView.swift in Sources */,
@@ -751,7 +749,6 @@
 				DEDC4F842222A47E006101BF /* RadialGradient.swift in Sources */,
 				DEDC4F982222A4DA006101BF /* AddPlayersView.swift in Sources */,
 				DEDC4FA12222A4E3006101BF /* RulesViewModel.swift in Sources */,
-				30D1434E20552E0300B1D186 /* MainMenuCoordiantor.swift in Sources */,
 				30B829872065410B00730A7C /* Resolving.swift in Sources */,
 				DEDC4F882222A47E006101BF /* Step.swift in Sources */,
 				DEDC4F922222A4B7006101BF /* GameCreator.swift in Sources */,
@@ -770,10 +767,10 @@
 				DEDC4FE52222CC6F006101BF /* UIView+FluentConfiguration.swift in Sources */,
 				DEDC4F7D2222A47E006101BF /* Styleguide.swift in Sources */,
 				DEDC4F932222A4B7006101BF /* RulesPicking.swift in Sources */,
+				30632815230ACF45008EC8C8 /* ChooseRulesViewController.swift in Sources */,
 				DE9AC34F22232A3800CCE315 /* PlayersListView.swift in Sources */,
 				DE638424222303EE00B0DDE1 /* AVCaptureDevice+Permissions.swift in Sources */,
 				DEDC4F952222A4B7006101BF /* Calculating.swift in Sources */,
-				30D14349205526C600B1D186 /* ApplicationCoordinator.swift in Sources */,
 				DEDC4F9C2222A4DA006101BF /* LimitPicker.swift in Sources */,
 				DEDC4F852222A47E006101BF /* UNOBackground.swift in Sources */,
 				DEDC4F9B2222A4DA006101BF /* LimitDescriptionView.swift in Sources */,
@@ -938,7 +935,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manshilin.UNO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -955,7 +952,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manshilin.UNO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -974,7 +971,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manshilin.UNOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNO.app/UNO";
 			};
@@ -993,7 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manshilin.UNOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNO.app/UNO";
 			};

@@ -30,28 +30,26 @@ class StepsViewController: UIViewController {
         
         let background = UNOBackground()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.colors = [
-            UIColor.lightBlue,
-            UIColor.darkBlue,
-        ]
+        background.fromColor = UIColor.lightBlue
+        background.toColor = UIColor.darkBlue
         
         view.addSubview(background)
-        
-        let title = UILabel()
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.textColor = .white
-        view.addSubview(title)
-        title.text = self.title
-        title.font = .unoFont(forTextStyle: .title2)
-        title.layer.shadowColor = UIColor.black.cgColor
-        title.layer.shadowOffset = CGSize(width: 0, height: 4)
-        title.layer.shadowRadius = 4
-        title.layer.shadowOpacity = 0.25
-        
-        NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        ])
+//
+//        let title = UILabel()
+//        title.translatesAutoresizingMaskIntoConstraints = false
+//        title.textColor = .white
+//        view.addSubview(title)
+//        title.text = self.title
+//        title.font = .unoFont(forTextStyle: .title2)
+//        title.layer.shadowColor = UIColor.black.cgColor
+//        title.layer.shadowOffset = CGSize(width: 0, height: 4)
+//        title.layer.shadowRadius = 4
+//        title.layer.shadowOpacity = 0.25
+//
+//        NSLayoutConstraint.activate([
+//            title.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+//            title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//        ])
         
         pagedContainer.translatesAutoresizingMaskIntoConstraints = false
         pagedContainer.backgroundColor = .clear
@@ -71,24 +69,24 @@ class StepsViewController: UIViewController {
             pagedContainer.append(page: step.view)
         }
         
-        let progress = ProgressView(pageView: pagedContainer, tintColor: tintColor)
-        progress.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(progress)
-        
-        progress.onClose = { [weak self] in
-            self?.onClose?()
-        }
-        
-        NSLayoutConstraint.activate([
-            progress.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            progress.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            progress.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-        ])
+//        let progress = ProgressView(pageView: pagedContainer, tintColor: tintColor)
+//        progress.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(progress)
+//        
+//        progress.onClose = { [weak self] in
+//            self?.onClose?()
+//        }
+//        
+//        NSLayoutConstraint.activate([
+//            progress.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+//            progress.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+//            progress.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+//        ])
         
         self.view = view
         
-        pagedContainer.append { [weak title, weak self] page in
-            title?.text = self?.pages[page].io.title
-        }
+//        pagedContainer.append { [weak title, weak self] page in
+//            title?.text = self?.pages[page].io.title
+//        }
     }
 }

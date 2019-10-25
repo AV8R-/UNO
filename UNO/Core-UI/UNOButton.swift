@@ -10,24 +10,30 @@ import UIKit
 
 open class UNOButton: ComplexButton {
     
-    public enum HighlightDirection {
+    public enum HighlightDirection: Int {
         case grow, diminish
     }
     
-    open var highlightDirection: HighlightDirection
+    @IBInspectable var highlightDirection: Int = HighlightDirection.grow.rawValue
     
     public init(touchDirection: HighlightDirection = .grow) {
-        self.highlightDirection = touchDirection
+        self.highlightDirection = touchDirection.rawValue
         super.init(frame: .zero)
         shouldMakeTranclucentOnHiglhlight = false
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        shouldMakeTranclucentOnHiglhlight = false
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        shouldMakeTranclucentOnHiglhlight = false
     }
     
     override open var isHighlighted: Bool { didSet {
-        let isGrow = highlightDirection == .grow
+        let isGrow = highlightDirection == HighlightDirection.grow.rawValue
         let scale: CGFloat = isGrow ? 1.05 : 0.95
         
         let animator = UIViewPropertyAnimator(

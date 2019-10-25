@@ -1,11 +1,3 @@
-//
-//  UIView+Extensions.swift
-//  UltimateGuitar
-//
-//  Created by Bogdan Manshilin on 1/14/17.
-//
-//
-
 import UIKit
 
 //MARK: - Инициализация
@@ -72,7 +64,7 @@ extension UIView {
 
 //MARK: - Анимации
 public extension CATransition {
-    public convenience init(fadeDuration:TimeInterval) {
+    convenience init(fadeDuration:TimeInterval) {
         self.init()
         duration = fadeDuration
         timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
@@ -81,13 +73,13 @@ public extension CATransition {
 }
 
 public extension UIView {
-    public func runFade (_ duration: TimeInterval = 0.2) {
+    func runFade (_ duration: TimeInterval = 0.2) {
         layer.add(CATransition(fadeDuration: duration), forKey: nil)
     }
-    public func runShakeAnimation(_ duration: TimeInterval) {
+    func runShakeAnimation(_ duration: TimeInterval) {
         runShakeAnimation(duration, repeatCount: 2, xCenterOffset: 6.0)
     }
-    public func runShakeAnimation(_ duration: TimeInterval, repeatCount: Float, xCenterOffset: CGFloat) {
+    func runShakeAnimation(_ duration: TimeInterval, repeatCount: Float, xCenterOffset: CGFloat) {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = duration
         animation.repeatCount = repeatCount
@@ -96,7 +88,7 @@ public extension UIView {
         animation.toValue = NSValue(cgPoint: CGPoint(x: center.x + xCenterOffset, y: center.y))
         layer.add(animation, forKey: "shake")
     }
-    public func startFadeInFadeOutAnimation(_ duration: TimeInterval = 0.75, repeatCount: Float = Float.infinity, fromValue: Float = 1, toValue: Float = 0, autoreverses: Bool = true) {
+    func startFadeInFadeOutAnimation(_ duration: TimeInterval = 0.75, repeatCount: Float = Float.infinity, fromValue: Float = 1, toValue: Float = 0, autoreverses: Bool = true) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.fromValue = NSNumber(value: fromValue as Float)
@@ -106,7 +98,7 @@ public extension UIView {
         animation.repeatCount = repeatCount
         layer.add(animation, forKey:"fadeInOut")
     }
-    public func opacityPulseAnimation(_ duration: TimeInterval = 30) {
+    func opacityPulseAnimation(_ duration: TimeInterval = 30) {
         let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "opacity")
         pulseAnimation.duration = duration
         pulseAnimation.toValue = 1
@@ -115,7 +107,7 @@ public extension UIView {
         pulseAnimation.repeatCount = Float.infinity
         self.layer.add(pulseAnimation, forKey: nil)
     }
-    public func scalePulseAnimation(_ duration: TimeInterval = 30) {
+    func scalePulseAnimation(_ duration: TimeInterval = 30) {
         let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
         pulseAnimation.duration = duration
         pulseAnimation.toValue = 1
@@ -132,7 +124,7 @@ public extension UIView {
         
     }
     
-    public func startJiggling() {
+    func startJiggling() {
         let degreesToRadians = { (x: Double) -> CGFloat in
             return CGFloat(Double.pi * x / 180)
         }
@@ -163,7 +155,7 @@ public extension UIView {
             }, completion: nil)
     }
     
-    public func stopJiggling() {
+    func stopJiggling() {
         layer.removeAllAnimations()
         transform = CGAffineTransform.identity
     }
@@ -187,20 +179,13 @@ extension UIView {
         
         addSubview(vc.view)
         
-        _ = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[content]|",
-            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
-            metrics: nil,
-            views: ["content" : vc.view]
-        ).map { $0.isActive = true }
-        
-        _ = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[content]|",
-            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
-            metrics: nil,
-            views: ["content" : vc.view]
-        ).map { $0.isActive = true }
-        
+        NSLayoutConstraint.activate([
+            vc.view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: trailingAnchor),
+            vc.view.topAnchor.constraint(equalTo: topAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+
         layoutIfNeeded()
     }
 }
